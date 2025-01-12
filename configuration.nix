@@ -11,14 +11,30 @@
     ];
 
   # Use the grub EFI boot loader.
-  boot.loader = {
-    efi = {
-      efiSysMountPoint = "/boot/efi"; # make sure to change this to your EFI partition!
-    };
-    grub = {
-      efiInstallAsRemovable = true;
-      efiSupport = true;
-      device = "nodev";
+  boot = {
+    # kernelPackages = pkgs.linuxPackages_latest;
+    initrd.kernelModules = [ "amdgpu" ];
+    loader = {
+      efi = {
+        efiSysMountPoint = "/boot/efi"; # make sure to change this to your EFI partition!
+      };
+      grub = {
+        efiInstallAsRemovable = true;
+        efiSupport = true;
+        useOSProber = true;
+        devices = [ "nodev" ];
+        extraEntries = ''
+          menuentry "MacOS" {
+            exit
+          }
+          menuentry "Reboot" {
+            reboot
+          }
+          menuentry "Poweroff" {
+            halt
+          }
+        '';
+      };
     };
   };
 
