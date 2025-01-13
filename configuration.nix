@@ -27,12 +27,6 @@
           menuentry "MacOS" {
             exit
           }
-          menuentry "Reboot" {
-            reboot
-          }
-          menuentry "Poweroff" {
-            halt
-          }
         '';
 	theme = pkgs.stdenv.mkDerivation {
 	  pname = "distro-grub-themes";
