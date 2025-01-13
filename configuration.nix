@@ -114,7 +114,6 @@
     description = "Andre";
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
     packages = with pkgs; [
-      firefox
     ];
   };
 
