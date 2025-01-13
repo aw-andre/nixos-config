@@ -13,7 +13,6 @@
   # Use the grub EFI boot loader.
   boot = {
     # kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "reboot=pci" ];
     initrd.kernelModules = [ "amdgpu" ];
     loader = {
       efi = {
