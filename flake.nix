@@ -27,7 +27,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.andreaw = {
-              imports = [ ./home-configuration.nix ];
+              imports = [ ./home.nix ];
             };
           }
           nixos-hardware.nixosModules.apple-t2
