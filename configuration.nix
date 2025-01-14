@@ -87,7 +87,9 @@
   services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
 
-
+  # Mouse and Touchpad
+  services.xserver.libinput.naturalScrolling = true;
+  services.xserver.libinput.touchpad.disableWhileTyping = true;
   
 
   # Configure keymap in X11
