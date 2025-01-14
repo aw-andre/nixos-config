@@ -52,7 +52,7 @@
   hardware.firmware = [
     (pkgs.stdenvNoCC.mkDerivation {
       name = "brcm-firmware";
-      
+      src = ./firmware/brcm;
       buildCommand = ''
         dir="$out/lib/firmware"
         mkdir -p "$dir"
