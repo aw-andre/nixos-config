@@ -11,6 +11,7 @@
     home-manager.enable = true;
     nixvim = {
       enable = true;
+      vimAlias = true;
     };
   };
   home.packages = with pkgs; [
