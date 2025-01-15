@@ -9,8 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,16 +32,19 @@
 
         home-manager.nixosModules.home-manager {
           # home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = {
-	    inherit inputs;
-	  };
+	  home-manager = {
+            useUserPackages = true;
+            extraSpecialArgs = {
+	      inherit inputs;
+	    };
 
-          home-manager.users.andreaw = {
-            imports = [ ./home-manager/home.nix ];
-          };
+            users.andreaw = {
+              imports = [
+	        ./home-manager/home.nix
+	      ];
+            };
+	  };
         }
-        nixos-hardware.nixosModules.apple-t2
       ];
     };
   };

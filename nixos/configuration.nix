@@ -7,6 +7,10 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ''${builtins.fetchGit {
+      url = "https://github.com/NixOS/nixos-hardware.git";
+      rev = "8870dcaff63dfc6647fb10648b827e9d40b0a337";
+    }}/apple/t2''
   ];
 
   nixpkgs.config.allowUnfree = true;
