@@ -27,6 +27,13 @@
     firefox.enable = true;
     vim.enable = true;
     git.enable = true;
+    kitty = {
+      enable = true;
+      font.name = "JetBrains Mono";
+      font.size = 17;
+      themeFile = "VSCode_Dark";
+      extraConfig = "cursor_trail 1";
+    };
     nixvim = {
       enable = true;
       vimAlias = true;

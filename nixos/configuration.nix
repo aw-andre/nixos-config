@@ -111,6 +111,8 @@
     };
   };
 
+  programs.hyprland.enable = true;
+
   users.users = {
     andreaw = {
       initialPassword = "setyourpassword";
