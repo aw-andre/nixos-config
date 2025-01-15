@@ -51,17 +51,5 @@
           nixos-hardware.nixosModules.apple-t2
         ];
       };
-      hmConfig = {
-        andreaw = home-manager.lib.homeManagerConfiguration {
-          inherit system pkgs;
-          username = "andreaw";
-          homeDirectory = "/home/andreaw";
-          configuration = {
-            imports = [
-              ./home-manager/home.nix
-            ];
-          };
-        };
-      };
     };
 }
