@@ -2,6 +2,8 @@
   description = "NixOS Flake for T2 Mac";
 
   inputs = {
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -17,9 +19,9 @@
 
   outputs = inputs @ {
     self,
+    nixos-hardware,
     nixpkgs,
     home-manager,
-    nixos-hardware,
     ...
   }:
   let
@@ -29,6 +31,7 @@
       specialArgs = { inherit inputs outputs; };
       modules = [
         ./nixos/configuration.nix
+	nixos-hardware.nixosModules.apple-t2
 
         home-manager.nixosModules.home-manager {
           # home-manager.useGlobalPkgs = true;
