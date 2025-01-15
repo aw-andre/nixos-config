@@ -1,20 +1,35 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
   ];
-  home.username = "andreaw";
-  home.homeDirectory = "/home/andreaw";
-  home.stateVersion = "25.05";
+
+  nixpkgs = {
+    overlays = [];
+    config = {
+      allowUnfree = true;
+    };
+  };
+
+  home = {
+    username = "andreaw";
+    homeDirectory = "/home/andreaw";
+    stateVersion = "25.05";
+  };
+
   programs = {
     home-manager.enable = true;
+    firefox.enable = true;
+    vim.enable = true;
+    git.enable = true;
     nixvim = {
       enable = true;
       vimAlias = true;
     };
   };
-  home.packages = with pkgs; [
-    firefox
-  ];
 }
