@@ -100,6 +100,7 @@
         naturalScrolling = true;
         disableWhileTyping = true;
       };
+      mouse.naturalScrolling = true;
     };
 
     printing.enable = true;
