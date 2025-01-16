@@ -7,6 +7,7 @@
 }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./hyprland.nix
   ];
 
   nixpkgs = {
@@ -27,6 +28,7 @@
     firefox.enable = true;
     vim.enable = true;
     git.enable = true;
+
     kitty = {
       enable = true;
       font.name = "JetBrains Mono";
@@ -34,6 +36,7 @@
       themeFile = "VSCode_Dark";
       extraConfig = "cursor_trail 1";
     };
+
     nixvim = {
       enable = true;
       vimAlias = true;
