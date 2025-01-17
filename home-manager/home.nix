@@ -8,6 +8,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./hyprland.nix
+    ./nixvim.nix
   ];
 
   nixpkgs = {
@@ -35,11 +36,6 @@
       font.size = 17;
       themeFile = "VSCode_Dark";
       extraConfig = "cursor_trail 1";
-    };
-
-    nixvim = {
-      enable = true;
-      vimAlias = true;
     };
   };
 }
