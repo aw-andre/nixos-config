@@ -54,6 +54,7 @@
   };
 
   hardware = {
+    opengl.enable = true;
     firmware = [
       (pkgs.stdenvNoCC.mkDerivation {
         name = "brcm-firmware";
@@ -86,7 +87,10 @@
       };
     };
 
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
 
     xserver = {
       enable = true;

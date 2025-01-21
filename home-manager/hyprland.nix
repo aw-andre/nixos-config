@@ -3,10 +3,9 @@
     enable = true;
     xwayland.enable = true;
     settings = {
-
      # See https://wiki.hyprland.org/Configuring/Monitors/
      monitor = [
-       "eDP-2, 3072x1920@60, 0x480, 1.4"
+       "eDP-2, 3072x1920@60, 0x480, 1.2"
        "DP-2, 3840x2160@60, 3072x0, 1.2"
      ];
  
