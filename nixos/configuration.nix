@@ -14,6 +14,7 @@
 
   boot = {
     # kernelPackages = pkgs.linuxPackages_latest;
+    consoleLogLevel = 3;
     initrd.kernelModules = [ "amdgpu" ];
 
     loader = {
@@ -54,7 +55,15 @@
   };
 
   hardware = {
-    opengl.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        mesa
+	libva
+	intel-media-driver
+	intel-vaapi-driver
+      ];
+    };
     firmware = [
       (pkgs.stdenvNoCC.mkDerivation {
         name = "brcm-firmware";
@@ -87,25 +96,25 @@
       };
     };
 
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-
-    xserver = {
-      enable = true;
-      desktopManager.plasma5.enable = true;
-      xkb.layout = "us";
-    };
-
-    libinput = {
-      enable = true;
-      touchpad = {
-        naturalScrolling = true;
-        disableWhileTyping = true;
-      };
-      mouse.naturalScrolling = true;
-    };
+#    displayManager.sddm = {
+#      enable = true;
+#      wayland.enable = true;
+#    };
+#
+#    xserver = {
+#      enable = true;
+#      desktopManager.plasma5.enable = true;
+#      xkb.layout = "us";
+#    };
+#
+#    libinput = {
+#      enable = true;
+#      touchpad = {
+#        naturalScrolling = true;
+#        disableWhileTyping = true;
+#      };
+#      mouse.naturalScrolling = true;
+#    };
 
     printing.enable = true;
 
