@@ -13,8 +13,11 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
-    # kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     kernelParams = [
+      "quiet"
+      "splash"
+      #"nomodeset"
       "intel_iommu=on"
       "iommu=pt"
       "pcie_ports=compat"
@@ -26,7 +29,7 @@
     ];
 
     consoleLogLevel = 3;
-    initrd.kernelModules = [ "amdgpu" ];
+    initrd.kernelModules = [ "i915" "amdgpu" ];
 
     loader = {
       efi = {
@@ -67,6 +70,7 @@
 
   hardware = {
     graphics.enable = true;
+    apple-t2.enableAppleSetOsLoader = true;
     firmware = [
       (pkgs.stdenvNoCC.mkDerivation {
         name = "brcm-firmware";
@@ -132,10 +136,10 @@
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 
-  environment.systemPackages = with pkgs; [
-    mesa
-  ];
-
+#  environment.systemPackages = with pkgs; [
+#    mesa
+#  ];
+#
   users.users = {
     andreaw = {
       initialPassword = "setyourpassword";
