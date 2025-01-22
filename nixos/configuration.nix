@@ -14,6 +14,17 @@
 
   boot = {
     # kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "intel_iommu=on"
+      "iommu=pt"
+      "pcie_ports=compat"
+      "i915.force_probe=*"
+      "i915.enable_psr=0"
+      "i915.enable_fbc=0"
+      "i915.modeset=1"
+      "i915.enable_guc=3"
+    ];
+
     consoleLogLevel = 3;
     initrd.kernelModules = [ "amdgpu" ];
 
@@ -55,15 +66,7 @@
   };
 
   hardware = {
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        mesa
-	libva
-	intel-media-driver
-	intel-vaapi-driver
-      ];
-    };
+    graphics.enable = true;
     firmware = [
       (pkgs.stdenvNoCC.mkDerivation {
         name = "brcm-firmware";
@@ -128,6 +131,10 @@
     enable = true;
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
+
+  environment.systemPackages = with pkgs; [
+    mesa
+  ];
 
   users.users = {
     andreaw = {
