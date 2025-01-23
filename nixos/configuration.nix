@@ -18,6 +18,8 @@
       "quiet"
       "splash"
       #"nomodeset"
+      "amdgpu.dc=1"
+      "amdgpu.dpm=1"
       "intel_iommu=on"
       "iommu=pt"
       "pcie_ports=compat"
@@ -36,30 +38,31 @@
         efiSysMountPoint = "/boot/efi";
       };
 
-      grub = {
-        efiInstallAsRemovable = true;
-        efiSupport = true;
-        useOSProber = true;
-        devices = [ "nodev" ];
-
-        extraEntries = ''
-          menuentry "MacOS" {
-            exit
-          }
-        '';
-
-	theme = pkgs.stdenv.mkDerivation {
-	  pname = "distro-grub-themes";
-	  version = "3.1";
-	  src = pkgs.fetchFromGitHub {
-	    owner = "AdisonCavani";
-	    repo = "distro-grub-themes";
-	    rev = "v3.1";
-	    hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
-	  };
-	  installPhase = "cp -r customize/nixos $out";
-	};
-      };
+      systemd-boot.enable = true;
+#      grub = {
+#        efiInstallAsRemovable = true;
+#        efiSupport = true;
+#        useOSProber = true;
+#        devices = [ "nodev" ];
+#
+#        extraEntries = ''
+#          menuentry "MacOS" {
+#            exit
+#          }
+#        '';
+#
+#	theme = pkgs.stdenv.mkDerivation {
+#	  pname = "distro-grub-themes";
+#	  version = "3.1";
+#	  src = pkgs.fetchFromGitHub {
+#	    owner = "AdisonCavani";
+#	    repo = "distro-grub-themes";
+#	    rev = "v3.1";
+#	    hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
+#	  };
+#	  installPhase = "cp -r customize/nixos $out";
+#	};
+#      };
     };
   };
 
@@ -81,6 +84,7 @@
           cp -r ${./firmware}/* "$dir"
         '';
       })
+      pkgs.linux-firmware
     ];
 
     bluetooth = {
@@ -101,6 +105,7 @@
         # Remove if you want to SSH using passwords
         # PasswordAuthentication = false;
       };
+
     };
 
 #    displayManager.sddm = {
@@ -129,6 +134,10 @@
       enable = true;
       pulse.enable = true;
     };
+
+    udev.extraRules = ''
+      SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="low"
+    '';
   };
 
   programs.hyprland = {
