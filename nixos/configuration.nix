@@ -20,14 +20,22 @@
       #"nomodeset"
       "amdgpu.dc=1"
       "amdgpu.dpm=1"
+      "amdgpu.runpm=0"
+      "amdgpu.bapm=0"
+      "amdgpu.audio=0"
+      "amdgpu.ppfeaturemask=0xffffffff"
+      "amdgpu.modeset=1"
+      "amdgpu_iommu=on"
       "intel_iommu=on"
       "iommu=pt"
+      "pci=noaer"
       "pcie_ports=compat"
       "i915.force_probe=*"
       "i915.enable_psr=0"
       "i915.enable_fbc=0"
       "i915.modeset=1"
       "i915.enable_guc=3"
+      "video=DP-2:d"
     ];
 
     consoleLogLevel = 3;
