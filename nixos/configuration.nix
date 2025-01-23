@@ -87,22 +87,22 @@
       };
     };
 
-    displayManager.sddm.enable = true;
-
-    xserver = {
-      enable = true;
-      desktopManager.plasma5.enable = true;
-      xkb.layout = "us";
-    };
-
-    libinput = {
-      enable = true;
-      touchpad = {
-        naturalScrolling = true;
-        disableWhileTyping = true;
-      };
-      mouse.naturalScrolling = true;
-    };
+#    displayManager.sddm.enable = true;
+#
+#    xserver = {
+#      enable = true;
+#      desktopManager.plasma5.enable = true;
+#      xkb.layout = "us";
+#    };
+#
+#    libinput = {
+#      enable = true;
+#      touchpad = {
+#        naturalScrolling = true;
+#        disableWhileTyping = true;
+#      };
+#      mouse.naturalScrolling = true;
+#    };
 
     printing.enable = true;
 
