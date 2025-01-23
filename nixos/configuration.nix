@@ -55,6 +55,7 @@
   };
 
   hardware = {
+    apple-t2.enableAppleSetOsLoader = true;
     firmware = [
       (pkgs.stdenvNoCC.mkDerivation {
         name = "brcm-firmware";
