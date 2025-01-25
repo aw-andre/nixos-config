@@ -17,7 +17,6 @@
     kernelParams = [
       "quiet"
       "splash"
-      #"nomodeset"
       "amdgpu.dc=1"
       "amdgpu.dpm=1"
       "amdgpu.runpm=0"
@@ -35,7 +34,7 @@
       "i915.enable_fbc=0"
       "i915.modeset=1"
       "i915.enable_guc=3"
-      "video=DP-2:d"
+      #"video=DP-2:d"
     ];
 
     consoleLogLevel = 3;

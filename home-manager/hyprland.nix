@@ -5,8 +5,9 @@
     settings = {
      # See https://wiki.hyprland.org/Configuring/Monitors/
      monitor = [
-       "eDP-2, 3072x1920@60, 0x480, 1.2"
-       "DP-2, 3840x2160@60, 3072x0, 1.2"
+       "desc: Apple Computer Inc Color LCD, 3072x1920@60, 0x480, 1.2"
+       "desc: Samsung Electric Company U32J59x HCJX601110, 3840x2160@60, 3072x0, 1.2"
+       "desc: , disable"
      ];
  
  
