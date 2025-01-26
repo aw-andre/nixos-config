@@ -152,6 +152,11 @@
     package = inputs.hyprland.packages."${pkgs.system}".hyprland;
   };
 
+  fonts.packages = with pkgs; [
+    font-awesome
+    nerd-fonts.jetbrains-mono
+  ];
+
 #  environment.systemPackages = with pkgs; [
 #    mesa
 #  ];
