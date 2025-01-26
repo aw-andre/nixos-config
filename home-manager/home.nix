@@ -35,7 +35,7 @@
     kitty = {
       enable = true;
       font.name = "JetBrains Mono";
-      font.size = 17;
+      font.size = 15;
       themeFile = "VSCode_Dark";
       extraConfig = "cursor_trail 1";
     };
