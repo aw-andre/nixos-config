@@ -7,8 +7,11 @@
      monitor = [
        #"desc:Apple Computer Inc Color LCD, 3072x1920@60, 0x480, 0.8"
        #"desc:Samsung Electric Company U32J59x HCJX601110, 3840x2160@60, 3072x0, 1.2"
-       "eDP-1, preferred, auto, 1.2"
-       "DP-5, preferred, auto, 1.2"
+       "desc:Apple Computer Inc Color LCD, preferred, auto, 1.5"
+       "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2"
+       #"eDP-1, preferred, auto, 1.5"
+       #"eDP-2, preferred, auto, 1.5"
+       #", preferred, auto, 1.2"
        "desc: , disable"
      ];
  
@@ -48,7 +51,7 @@
      env = [
        "XCURSOR_SIZE,24"
        "HYPRCURSOR_SIZE,24"
-       #"AQ_DRM_DEVICES,/dev/dri/card1"#:/dev/dri/card0"
+       "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"
      ];
  
  
