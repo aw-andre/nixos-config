@@ -37,7 +37,11 @@
       font.name = "JetBrains Mono";
       font.size = 15;
       themeFile = "VSCode_Dark";
-      extraConfig = "cursor_trail 1";
+      extraConfig = ''
+        cursor_trail 1
+        cursor_trail_decay 0.1 0.3
+        cursor_trail_start_threshold 0
+      '';
     };
   };
 }
