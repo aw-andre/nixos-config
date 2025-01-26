@@ -5,7 +5,7 @@
     settings = {
      # See https://wiki.hyprland.org/Configuring/Monitors/
      monitor = [
-       "desc: Apple Computer Inc Color LCD, 3072x1920@60, 0x480, 1.2"
+       "desc: Apple Computer Inc Color LCD, 3072x1920@60, 0x480, 0.8"
        "desc: Samsung Electric Company U32J59x HCJX601110, 3840x2160@60, 3072x0, 1.2"
        "desc: , disable"
      ];
@@ -182,6 +182,7 @@
          # -1.0 - 1.0, 0 means no modification.
          "sensitivity" = "0";
 
+         "natural_scroll" = "true";
          touchpad = {
              "natural_scroll" = "true";
          };
