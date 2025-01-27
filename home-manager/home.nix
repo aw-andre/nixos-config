@@ -9,7 +9,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./hyprland.nix
     ./waybar.nix
-    ./nixvim.nix
+    ./nixvim
   ];
 
   nixpkgs = {
