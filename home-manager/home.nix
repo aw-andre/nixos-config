@@ -25,6 +25,10 @@
     stateVersion = "25.05";
   };
 
+  services = {
+    blueman-applet.enable = true;
+  };
+
   programs = {
     home-manager.enable = true;
     wofi.enable = true;
