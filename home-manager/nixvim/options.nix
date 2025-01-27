@@ -30,12 +30,7 @@
       smarttab = true;
 
       # System clipboard support, needs xclip/wl-clipboard
-      clipboard = {
-	providers = {
-	  wl-copy.enable = true; # Wayland 
-	};
-	register = "unnamedplus";
-      };
+      clipboard.providers.wl-copy.enable = true; # Wayland 
 
       # Save undo history
       undofile = true;
