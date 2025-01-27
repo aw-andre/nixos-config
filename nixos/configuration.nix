@@ -158,6 +158,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    networkmanagerapplet
   ];
 
   users.users = {
