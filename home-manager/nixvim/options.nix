@@ -35,7 +35,6 @@
       # Save undo history
       undofile = true;
 
-
       # Highlight the current line for cursor
       cursorline = true;
 
@@ -47,5 +46,13 @@
 
       # Start scrolling when the cursor is X lines away from the top/bottom
       scrolloff = 5;
+
+      showmode = false;
+      hlsearch = true;
+      incsearch = true;
+      wrap = true;
+      breakindent = true;
+      linebreak = true;
+      virtualedit = "block";
     };
   }

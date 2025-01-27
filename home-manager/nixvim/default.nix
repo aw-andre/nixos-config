@@ -5,7 +5,11 @@
     viAlias = true;
     vimAlias = true;
     colorschemes.vscode.enable = true;
-    globals.mapleader = " ";
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+      have_nerd_font = true;
+    };
     imports = [
       #./keymaps.nix
       ./options.nix
