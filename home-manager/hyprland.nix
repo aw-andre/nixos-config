@@ -228,10 +228,10 @@
         "$mainMod, J, togglesplit,"
 
      # Move focus with mainMod + arrow key
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
 
      # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
@@ -284,6 +284,8 @@
 
      # Requires playerctl
      bindl = [
+        ", switch:off:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.5'"
+        ", switch:on:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
