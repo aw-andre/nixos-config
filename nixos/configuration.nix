@@ -157,10 +157,9 @@
     nerd-fonts.jetbrains-mono
   ];
 
-#  environment.systemPackages = with pkgs; [
-#    mesa
-#  ];
-#
+  environment.systemPackages = with pkgs; [
+  ];
+
   users.users = {
     andreaw = {
       initialPassword = "setyourpassword";
