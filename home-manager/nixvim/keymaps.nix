@@ -2,6 +2,30 @@
   keymaps = [
     {
       mode = "n";
+      key = "[d";
+      action = vim.diagnostic.goto_prev;
+      options = { desc = "Go to previous [D]iagnostic message" };
+    }
+    {
+      mode = "n";
+      key = "]d";
+      action = vim.diagnostic.goto_next;
+      options = { desc = "Go to next [D]iagnostic message" };
+    }
+    {
+      mode = "n";
+      key = "<leader>e";
+      action = vim.diagnostic.open_float;
+      options = { desc = "Show diagnostic [E]rror messages" };
+    }
+    {
+      mode = "n";
+      key = "<leader>q";
+      action = vim.diagnostic.setloclist;
+      options = { desc = "Open diagnostic [Q]uickfix list" };
+    }
+    {
+      mode = "n";
       key = "<C-h>";
       action = "<C-w><C-h>";
       options = { desc = "Move focus to the left window" };
