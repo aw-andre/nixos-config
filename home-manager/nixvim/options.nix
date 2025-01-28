@@ -54,5 +54,9 @@
       breakindent = true;
       linebreak = true;
       virtualedit = "block";
+      timeoutlen = 300;
+#      fillchars = {
+#        eob = " ";
+#      };
     };
   }
