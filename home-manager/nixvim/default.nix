@@ -11,7 +11,7 @@
       have_nerd_font = true;
     };
     imports = [
-      #./keymaps.nix
+      ./keymaps.nix
       ./options.nix
       #./plugins.nix
     ];
