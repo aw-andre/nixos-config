@@ -13,7 +13,8 @@
     imports = [
       ./keymaps.nix
       ./options.nix
-      #./plugins.nix
+      ./autocmd.nix
+      ./plugins
     ];
   };
 }
