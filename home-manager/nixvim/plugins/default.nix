@@ -1,5 +1,6 @@
 {
   imports = [
+    #./undotree.nix
     #./nvim-surround.nix
     #./oil.nix
     #./conform.nix
@@ -10,12 +11,13 @@
     #./debug.nix
     #./lint.nix
     #./lsp.nix
-    #./telescope.nix
+    ./telescope.nix
     #./treesitter.nix
-    #./ufo.nix
+    ./nvim-ufo.nix
     #./markdown-preview.nix
   ];
   plugins = {
+    #undotree.enable = true;
     nvim-surround.enable = true;
     oil.enable = true;
     conform-nvim.enable = true;
@@ -26,9 +28,7 @@
     dap.enable = true;
     lint.enable = true;
     lsp.enable = true;
-    telescope.enable = true;
     treesitter.enable = true;
-    nvim-ufo.enable = true;
     markdown-preview.enable = true;
   };
 }
