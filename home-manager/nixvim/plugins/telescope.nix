@@ -69,6 +69,12 @@
               action = "<Cmd>Telescope buffers<CR>";
               options = { desc = "[F]ind [B]uffers"; };
             }
+            {
+              mode = "n";
+              key = "<leader>fu";
+              action = "<Cmd>Telescope undoCR>";
+              options = { desc = "[F]ind [U]ndotree"; };
+            }
 #            {
 #              mode = "n";
 #              key = "<leader>f%";
