@@ -3,7 +3,7 @@
     #./undotree.nix
     #./nvim-surround.nix
     #./oil.nix
-    #./conform.nix
+    ./conform-nvim.nix
     #./neoscroll.nix
     #./which-key.nix
     #./blink-cmp.nix
