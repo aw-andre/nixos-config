@@ -11,6 +11,12 @@
   keymaps = [
             {
               mode = "n";
+              key = "<leader>fu";
+              action.__raw = "require('telescope').extensions.undo.undo";
+              options = { desc = "[F]ind [U]ndo"; };
+            }
+            {
+              mode = "n";
               key = "<leader>fh";
               action.__raw = "require('telescope.builtin').help_tags";
               options = { desc = "[F]ind [H]elp"; };
