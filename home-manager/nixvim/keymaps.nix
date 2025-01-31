@@ -3,25 +3,25 @@
     {
       mode = "n";
       key = "[d";
-      action = "vim.diagnostic.goto_prev";
+      action.__raw = "vim.diagnostic.goto_prev";
       options = { desc = "Go to previous [D]iagnostic message"; };
     }
     {
       mode = "n";
       key = "]d";
-      action = "vim.diagnostic.goto_next";
+      action.__raw = "vim.diagnostic.goto_next";
       options = { desc = "Go to next [D]iagnostic message"; };
     }
     {
       mode = "n";
       key = "<leader>e";
-      action = "vim.diagnostic.open_float";
+      action.__raw = "vim.diagnostic.open_float";
       options = { desc = "Show diagnostic [E]rror messages"; };
     }
     {
       mode = "n";
       key = "<leader>q";
-      action = "vim.diagnostic.setloclist";
+      action.__raw = "vim.diagnostic.setloclist";
       options = { desc = "Open diagnostic [Q]uickfix list"; };
     }
     {
