@@ -1,5 +1,5 @@
 {
-    opts = {
+    programs.nixvim.opts = {
       # Line numbers
       number = true;
       relativenumber = true;
