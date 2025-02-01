@@ -66,42 +66,42 @@
       action = "<CMD>m '>+1<CR>gv=gv";
       options = { desc = "Join lower line"; };
     }
-    {
-      mode = "n";
-      key = "<C-f>";
-      action = "<C-f>zz";
-      options = { desc = "Move down one page and center"; };
-    }
-    {
-      mode = "n";
-      key = "<C-b>";
-      action = "<C-b>zz";
-      options = { desc = "Move up one page and center"; };
-    }
-    {
-      mode = "n";
-      key = "<C-d>";
-      action = "<C-d>zz";
-      options = { desc = "Move down half a page and center"; };
-    }
-    {
-      mode = "n";
-      key = "<C-u>";
-      action = "<C-u>zz";
-      options = { desc = "Move up half a page and center"; };
-    }
-    {
-      mode = "n";
-      key = "n";
-      action = "nzzzv";
-      options = { desc = "Go to next search and center"; };
-    }
-    {
-      mode = "n";
-      key = "N";
-      action = "Nzzzv";
-      options = { desc = "Go to previous search and center"; };
-    }
+#    {
+#      mode = "n";
+#      key = "<C-f>";
+#      action = "<C-f>zz";
+#      options = { desc = "Move down one page and center"; };
+#    }
+#    {
+#      mode = "n";
+#      key = "<C-b>";
+#      action = "<C-b>zz";
+#      options = { desc = "Move up one page and center"; };
+#    }
+#    {
+#      mode = "n";
+#      key = "<C-d>";
+#      action = "<C-d>zz";
+#      options = { desc = "Move down half a page and center"; };
+#    }
+#    {
+#      mode = "n";
+#      key = "<C-u>";
+#      action = "<C-u>zz";
+#      options = { desc = "Move up half a page and center"; };
+#    }
+#    {
+#      mode = "n";
+#      key = "n";
+#      action = "nzzzv";
+#      options = { desc = "Go to next search and center"; };
+#    }
+#    {
+#      mode = "n";
+#      key = "N";
+#      action = "Nzzzv";
+#      options = { desc = "Go to previous search and center"; };
+#    }
     {
       mode = "n";
       key = "<Esc>";
