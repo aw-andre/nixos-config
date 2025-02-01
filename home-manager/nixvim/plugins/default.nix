@@ -10,7 +10,7 @@
     #./comment.nix
     #./debug.nix
     #./lint.nix
-    #./lsp.nix
+    ./lsp.nix
     ./telescope.nix
     #./treesitter.nix
     ./nvim-ufo.nix
@@ -20,7 +20,7 @@
     #undotree.enable = true;
     nvim-surround.enable = true;
     oil.enable = true;
-    conform-nvim.enable = true;
+    #conform-nvim.enable = true;
     neoscroll.enable = true;
     which-key.enable = true;
     blink-cmp.enable = true;
