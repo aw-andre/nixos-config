@@ -4,7 +4,7 @@
     #./nvim-surround.nix
     #./oil.nix
     ./conform-nvim.nix
-    #./neoscroll.nix
+    ./neoscroll.nix
     #./which-key.nix
     #./blink-cmp.nix
     #./comment.nix
