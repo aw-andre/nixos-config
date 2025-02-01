@@ -1,7 +1,7 @@
 {
   imports = [
     #./undotree.nix
-    #./nvim-surround.nix
+    ./nvim-surround.nix
     #./oil.nix
     ./conform-nvim.nix
     ./neoscroll.nix
