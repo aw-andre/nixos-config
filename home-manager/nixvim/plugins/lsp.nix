@@ -71,13 +71,13 @@
         }
         {
           mode = "n";
-          key = "<leader>R";
+          key = "<leader>r";
           action.__raw = "vim.lsp.buf.rename";
           options = { desc = "[R]ename"; };
         }
         {
           mode = "n";
-          key = "<leader>C";
+          key = "<leader>c";
           action.__raw = "vim.lsp.buf.code_action";
           options = { desc = "[C]ode Action"; };
         }
@@ -86,6 +86,12 @@
           key = "K";
           action.__raw = "vim.lsp.buf.hover";
           options = { desc = "Hover Documentation"; };
+        }
+        {
+          mode = "n";
+          key = "<leader>h";
+          action.__raw = "function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end";
+          options = { desc = "Toggle Inlay [H]ints"; };
         }
       ];
     };
