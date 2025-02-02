@@ -5,13 +5,11 @@
     ./oil.nix
     ./conform-nvim.nix
     ./neoscroll.nix
-    #./debug.nix
+    #./dap.nix
     #./lint.nix
     ./lsp.nix
     ./telescope.nix
-    #./treesitter.nix
     ./nvim-ufo.nix
-    #./markdown-preview.nix
   ];
   programs.nixvim.plugins = {
     which-key.enable = true;

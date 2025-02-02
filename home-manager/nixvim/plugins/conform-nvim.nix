@@ -20,9 +20,7 @@
         mode = "n";
         key = "=";
         action.__raw = "function() require('conform').format({ async = true, lsp_fallback = true }) end";
-        options = {
-          desc = "Format buffer";
-        };
+        options.desc = "Format buffer";
       }
     ];
   };
