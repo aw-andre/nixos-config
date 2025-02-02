@@ -11,7 +11,7 @@
     ./telescope.nix
     ./nvim-ufo.nix
   ];
-  programs.nixvim.plugins = {
+  plugins = {
     which-key.enable = true;
     blink-cmp.enable = true;
     comment.enable = true;

@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.nvim-surround = {
+  plugins.nvim-surround = {
     enable = true;
     settings.keymaps = {
       insert = "<C-g>s";

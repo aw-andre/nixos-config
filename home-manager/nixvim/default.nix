@@ -10,11 +10,11 @@
       maplocalleader = " ";
       have_nerd_font = true;
     };
+    imports = [
+      ./keymaps.nix
+      ./options.nix
+      ./autocmd.nix
+      ./plugins
+    ];
   };
-  imports = [
-    ./keymaps.nix
-    ./options.nix
-    ./autocmd.nix
-    ./plugins
-  ];
 }

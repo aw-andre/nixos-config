@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.neoscroll = {
+  plugins.neoscroll = {
     enable = true;
     luaConfig.pre = "require('neoscroll').setup({ duration_multiplier = 0.35 })";
     settings = {
