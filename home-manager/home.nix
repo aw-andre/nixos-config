@@ -34,7 +34,7 @@
   programs = {
     home-manager.enable = true;
     wofi.enable = true;
-    firefox.enable = true;
+    qutebrowser.enable = true;
     vim.enable = true;
     git.enable = true;
 
