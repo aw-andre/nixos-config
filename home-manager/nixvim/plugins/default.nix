@@ -9,6 +9,7 @@
     ./lsp.nix
     ./telescope.nix
     ./nvim-ufo.nix
+    ./auto-hlsearch.nix
   ];
   plugins = {
     which-key.enable = true;

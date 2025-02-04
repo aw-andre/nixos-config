@@ -102,12 +102,12 @@
 #      action = "Nzzzv";
 #      options.desc = "Go to previous search and center";
 #    }
-    {
-      mode = "n";
-      key = "<Esc>";
-      action = "<cmd>nohlsearch<CR>";
-      options.desc = "Set nohlsearch";
-    }
+#    {
+#      mode = "n";
+#      key = "<Esc>";
+#      action = "<cmd>nohlsearch<CR>";
+#      options.desc = "Set nohlsearch";
+#    }
     {
       mode =  [ "n" "v" ];
       key = "k";
