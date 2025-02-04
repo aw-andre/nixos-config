@@ -9,6 +9,7 @@
         c = [ "clang-format" ];
         lua = [ "stylua" ];
         nix = [ "nixfmt" ];
+        python = [ "black" ];
         "*" = [ "codespell" ];
         "_" = [ "trim_whitespace" ];
       };
@@ -17,8 +18,23 @@
         clang-format.command = lib.getExe pkgs.llvmPackages_19.clang-unwrapped;
         stylua.command = lib.getExe pkgs.stylua;
         nixfmt.command = lib.getExe pkgs.nixfmt-rfc-style;
+        black.command = lib.getExe pkgs.black;
         codespell.command = lib.getExe pkgs.codespell;
       };
+      format_after_save = # Lua
+        ''
+          function(bufnr)
+            if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+              return
+            end
+
+            if not slow_format_filetypes[vim.bo[bufnr].filetype] then
+              return
+            end
+
+            return { lsp_fallback = true }
+          end
+        '';
     };
   };
   keymaps = [
