@@ -10,6 +10,7 @@
     ./telescope.nix
     ./nvim-ufo.nix
     ./auto-hlsearch.nix
+    ./lualine.nix
   ];
   plugins = {
     which-key.enable = true;
