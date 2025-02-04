@@ -2,30 +2,6 @@
   keymaps = [
     {
       mode = "n";
-      key = "[d";
-      action.__raw = "vim.diagnostic.goto_prev";
-      options.desc = "Go to previous [D]iagnostic message";
-    }
-    {
-      mode = "n";
-      key = "]d";
-      action.__raw = "vim.diagnostic.goto_next";
-      options.desc = "Go to next [D]iagnostic message";
-    }
-    {
-      mode = "n";
-      key = "<leader>e";
-      action.__raw = "vim.diagnostic.open_float";
-      options.desc = "Show diagnostic [E]rror messages";
-    }
-    {
-      mode = "n";
-      key = "<leader>q";
-      action.__raw = "vim.diagnostic.setloclist";
-      options.desc = "Open diagnostic [Q]uickfix list";
-    }
-    {
-      mode = "n";
       key = "<C-h>";
       action = "<C-w><C-h>";
       options.desc = "Move focus to the left window";
@@ -66,48 +42,6 @@
       action = "<CMD>m '>+1<CR>gv=gv";
       options.desc = "Join lower line";
     }
-#    {
-#      mode = "n";
-#      key = "<C-f>";
-#      action = "<C-f>zz";
-#      options.desc = "Move down one page and center";
-#    }
-#    {
-#      mode = "n";
-#      key = "<C-b>";
-#      action = "<C-b>zz";
-#      options.desc = "Move up one page and center";
-#    }
-#    {
-#      mode = "n";
-#      key = "<C-d>";
-#      action = "<C-d>zz";
-#      options.desc = "Move down half a page and center";
-#    }
-#    {
-#      mode = "n";
-#      key = "<C-u>";
-#      action = "<C-u>zz";
-#      options.desc = "Move up half a page and center";
-#    }
-#    {
-#      mode = "n";
-#      key = "n";
-#      action = "nzzzv";
-#      options.desc = "Go to next search and center";
-#    }
-#    {
-#      mode = "n";
-#      key = "N";
-#      action = "Nzzzv";
-#      options.desc = "Go to previous search and center";
-#    }
-#    {
-#      mode = "n";
-#      key = "<Esc>";
-#      action = "<cmd>nohlsearch<CR>";
-#      options.desc = "Set nohlsearch";
-#    }
     {
       mode =  [ "n" "v" ];
       key = "k";
