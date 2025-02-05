@@ -33,30 +33,32 @@
     keyboards = {
       internalKeyboard = {
         devices = [
-          "pci-0000:00:14.0-usb-0:1:1.0-event-kbd"
-          "pci-0000:00:14.0-usbv2-0:1:1.0-event-kbd"
-          "pci-0000:04:00.1-usb-0:5:1.1-event-kbd"
-          "pci-0000:04:00.1-usbv2-0:5:1.1-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:1:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:04:00.1-usb-0:5:1.1-event-kbd"
+          "/dev/input/by-path/pci-0000:04:00.1-usbv2-0:5:1.1-event-kbd"
         ];
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
           (defsrc
-           caps tab d h j k l
+            a   s   d   f   j   k   l   ;
           )
           (defvar
-           tap-time 200
-           hold-time 200
+            tap-time 200
+            hold-time 150
           )
           (defalias
-           caps (tap-hold 200 200 esc lctl)
-           tab (tap-hold $tap-time $hold-time tab (layer-toggle arrow))
-           del del  ;; Alias for the true delete key action
+            a (tap-hold $tap-time $hold-time a lalt)
+            s (tap-hold $tap-time $hold-time s lmet)
+            d (tap-hold $tap-time $hold-time d lctl)
+            f (tap-hold $tap-time $hold-time f lsft)
+            j (tap-hold $tap-time $hold-time j rsft)
+            k (tap-hold $tap-time $hold-time k rctl)
+            l (tap-hold $tap-time $hold-time l rmet)
+            ; (tap-hold $tap-time $hold-time ; ralt)
           )
           (deflayer base
-           @caps @tab d h j k l
-          )
-          (deflayer arrow
-           _ _ @del left down up right
+            @a  @s  @d  @f  @j  @k  @l  @;
           )
         '';
       };
