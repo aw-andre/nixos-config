@@ -19,42 +19,45 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nixos-hardware,
-    nixpkgs,
-    home-manager,
-    ...
-  }:
-  let
-    inherit (self) outputs;
-  in {
-    nixosConfigurations.andreaw = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs outputs; };
-      modules = [
-        ./nixos/configuration.nix
-	nixos-hardware.nixosModules.apple-t2
-	nixos-hardware.nixosModules.common-cpu-intel
-	nixos-hardware.nixosModules.common-gpu-amd
-	nixos-hardware.nixosModules.common-pc-laptop
-	nixos-hardware.nixosModules.common-pc-laptop-ssd
+  outputs =
+    inputs@{
+      self,
+      nixos-hardware,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
+      inherit (self) outputs;
+    in
+    {
+      nixosConfigurations.andreaw = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs outputs; };
+        modules = [
+          ./nixos/configuration.nix
+          nixos-hardware.nixosModules.apple-t2
+          nixos-hardware.nixosModules.common-cpu-intel
+          nixos-hardware.nixosModules.common-gpu-amd
+          nixos-hardware.nixosModules.common-pc-laptop
+          nixos-hardware.nixosModules.common-pc-laptop-ssd
 
-        home-manager.nixosModules.home-manager {
-          # home-manager.useGlobalPkgs = true;
-	  home-manager = {
-            useUserPackages = true;
-            extraSpecialArgs = {
-	      inherit inputs;
-	    };
+          home-manager.nixosModules.home-manager
+          {
+            # home-manager.useGlobalPkgs = true;
+            home-manager = {
+              useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
 
-            users.andreaw = {
-              imports = [
-	        ./home-manager/home.nix
-	      ];
+              users.andreaw = {
+                imports = [
+                  ./home-manager/home.nix
+                ];
+              };
             };
-	  };
-        }
-      ];
+          }
+        ];
+      };
     };
-  };
 }
