@@ -1,62 +1,62 @@
 {
-    opts = {
-      # Line numbers
-      number = true;
-      relativenumber = true;
+  opts = {
+    # Line numbers
+    number = true;
+    relativenumber = true;
 
-      # Always show the signcolumn, otherwise text would be shifted when displaying error icons
-      signcolumn = "yes";
+    # Always show the signcolumn, otherwise text would be shifted when displaying error icons
+    signcolumn = "yes";
 
-      # Enable mouse
-      mouse = "a";
+    # Enable mouse
+    mouse = "a";
 
-      # Search
-      ignorecase = true;
-      smartcase = true;
-    
-      # Configure how new splits should be opened
-      splitright = true;
-      splitbelow = true;
+    # Search
+    ignorecase = true;
+    smartcase = true;
 
-      list = true;
-      # NOTE: .__raw here means that this field is raw lua code
-      listchars.__raw = "{ tab = '» ', trail = '·', nbsp = '␣' }";
+    # Configure how new splits should be opened
+    splitright = true;
+    splitbelow = true;
 
-      # Tab defaults (might get overwritten by an LSP server)
-      tabstop = 2;
-      shiftwidth = 2;
-      softtabstop = 0;
-      expandtab = true;
-      smarttab = true;
+    list = true;
+    # NOTE: .__raw here means that this field is raw lua code
+    listchars.__raw = "{ tab = '» ', trail = '·', nbsp = '␣' }";
 
-      # System clipboard support, needs xclip/wl-clipboard
-      clipboard.providers.wl-copy.enable = true; # Wayland 
+    # Tab defaults (might get overwritten by an LSP server)
+    tabstop = 2;
+    shiftwidth = 2;
+    softtabstop = 0;
+    expandtab = true;
+    smarttab = true;
 
-      # Save undo history
-      undofile = true;
+    # System clipboard support, needs xclip/wl-clipboard
+    clipboard.providers.wl-copy.enable = true; # Wayland
 
-      # Highlight the current line for cursor
-      cursorline = true;
+    # Save undo history
+    undofile = true;
 
-      # Show line and column when searching
-      ruler = true;
+    # Highlight the current line for cursor
+    cursorline = true;
 
-      # Global substitution by default
-      gdefault = true;
+    # Show line and column when searching
+    ruler = true;
 
-      # Start scrolling when the cursor is X lines away from the top/bottom
-      scrolloff = 5;
+    # Global substitution by default
+    gdefault = true;
 
-      #showmode = false;
-      hlsearch = true;
-      incsearch = true;
-      wrap = true;
-      breakindent = true;
-      linebreak = true;
-      virtualedit = "block";
-      timeoutlen = 300;
-#      fillchars = {
-#        eob = " ";
-#      };
-    };
-  }
+    # Start scrolling when the cursor is X lines away from the top/bottom
+    scrolloff = 5;
+
+    showmode = false;
+    hlsearch = true;
+    incsearch = true;
+    wrap = true;
+    breakindent = true;
+    linebreak = true;
+    virtualedit = "block";
+    timeoutlen = 300;
+    #      fillchars = {
+    #        eob = " ";
+    #      };
+  };
+}
