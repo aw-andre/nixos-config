@@ -286,7 +286,7 @@
 
       # Requires playerctl
       bindl = [
-        ", switch:off:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.5'"
+        # ", switch:off:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.5'"
         ", switch:on:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPause, exec, playerctl play-pause"
