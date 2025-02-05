@@ -4,7 +4,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./hyprland.nix
@@ -14,7 +15,7 @@
   ];
 
   nixpkgs = {
-    overlays = [];
+    overlays = [ ];
     config = {
       allowUnfree = true;
     };
@@ -35,7 +36,6 @@
     home-manager.enable = true;
     wofi.enable = true;
     qutebrowser.enable = true;
-    vim.enable = true;
     git.enable = true;
 
     kitty = {
