@@ -13,14 +13,6 @@
         "*" = [ "codespell" ];
         "_" = [ "trim_whitespace" ];
       };
-      formatters = {
-        shellharden.command = lib.getExe pkgs.shellharden;
-        clang-format.command = lib.getExe pkgs.llvmPackages_19.clang-unwrapped;
-        stylua.command = lib.getExe pkgs.stylua;
-        nixfmt.command = lib.getExe pkgs.nixfmt-rfc-style;
-        black.command = lib.getExe pkgs.black;
-        codespell.command = lib.getExe pkgs.codespell;
-      };
       format_after_save = # Lua
         ''
           function(bufnr)
@@ -33,6 +25,14 @@
         '';
     };
   };
+  extraPackages = with pkgs; [
+    shellharden
+    llvmPackages_19.clang-unwrapped
+    stylua
+    nixfmt-rfc-style
+    black
+    codespell
+  ];
   keymaps = [
     {
       mode = "n";
