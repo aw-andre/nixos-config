@@ -47,6 +47,7 @@
       "amdgpu"
     ];
 
+    plymouth.enable = true;
     loader = {
       efi = {
         efiSysMountPoint = "/boot/efi";
@@ -158,7 +159,6 @@
   };
 
   programs = {
-    plymouth.enable = true;
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
