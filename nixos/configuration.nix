@@ -8,6 +8,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./kanata.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
