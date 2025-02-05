@@ -55,6 +55,7 @@
     linebreak = true;
     virtualedit = "block";
     timeoutlen = 300;
+    shada = "'1000,<100000,s100,h";
     #      fillchars = {
     #        eob = " ";
     #      };
