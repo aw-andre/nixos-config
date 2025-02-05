@@ -11,6 +11,7 @@
     ./hyprland.nix
     ./sioyek.nix
     ./waybar.nix
+    ./zsh.nix
     ./nixvim
   ];
 
