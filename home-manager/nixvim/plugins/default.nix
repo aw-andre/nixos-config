@@ -13,6 +13,7 @@
     ./lualine.nix
   ];
   plugins = {
+    web-devicons.enable = true;
     which-key.enable = true;
     blink-cmp.enable = true;
     comment.enable = true;
