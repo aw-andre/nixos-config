@@ -4,13 +4,17 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   boot = {
     #kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
@@ -38,7 +42,10 @@
     ];
 
     consoleLogLevel = 3;
-    initrd.kernelModules = [ "i915" "amdgpu" ];
+    initrd.kernelModules = [
+      "i915"
+      "amdgpu"
+    ];
 
     loader = {
       efi = {
@@ -46,36 +53,36 @@
       };
 
       systemd-boot.enable = true;
-#      grub = {
-#        efiInstallAsRemovable = true;
-#        efiSupport = true;
-#        useOSProber = true;
-#        devices = [ "nodev" ];
-#
-#        extraEntries = ''
-#          menuentry "MacOS" {
-#            exit
-#          }
-#        '';
-#
-#	theme = pkgs.stdenv.mkDerivation {
-#	  pname = "distro-grub-themes";
-#	  version = "3.1";
-#	  src = pkgs.fetchFromGitHub {
-#	    owner = "AdisonCavani";
-#	    repo = "distro-grub-themes";
-#	    rev = "v3.1";
-#	    hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
-#	  };
-#	  installPhase = "cp -r customize/nixos $out";
-#	};
-#      };
+      #      grub = {
+      #        efiInstallAsRemovable = true;
+      #        efiSupport = true;
+      #        useOSProber = true;
+      #        devices = [ "nodev" ];
+      #
+      #        extraEntries = ''
+      #          menuentry "MacOS" {
+      #            exit
+      #          }
+      #        '';
+      #
+      #	theme = pkgs.stdenv.mkDerivation {
+      #	  pname = "distro-grub-themes";
+      #	  version = "3.1";
+      #	  src = pkgs.fetchFromGitHub {
+      #	    owner = "AdisonCavani";
+      #	    repo = "distro-grub-themes";
+      #	    rev = "v3.1";
+      #	    hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
+      #	  };
+      #	  installPhase = "cp -r customize/nixos $out";
+      #	};
+      #      };
     };
   };
 
   networking = {
     hostName = "nixos-mbp";
-    networkmanager.enable = true; 
+    networkmanager.enable = true;
   };
 
   hardware = {
@@ -118,25 +125,25 @@
 
     };
 
-#    displayManager.sddm = {
-#      enable = true;
-#      wayland.enable = true;
-#    };
-#
-#    xserver = {
-#      enable = true;
-#      desktopManager.plasma5.enable = true;
-#      xkb.layout = "us";
-#    };
-#
-#    libinput = {
-#      enable = true;
-#      touchpad = {
-#        naturalScrolling = true;
-#        disableWhileTyping = true;
-#      };
-#      mouse.naturalScrolling = true;
-#    };
+    #    displayManager.sddm = {
+    #      enable = true;
+    #      wayland.enable = true;
+    #    };
+    #
+    #    xserver = {
+    #      enable = true;
+    #      desktopManager.plasma5.enable = true;
+    #      xkb.layout = "us";
+    #    };
+    #
+    #    libinput = {
+    #      enable = true;
+    #      touchpad = {
+    #        naturalScrolling = true;
+    #        disableWhileTyping = true;
+    #      };
+    #      mouse.naturalScrolling = true;
+    #    };
 
     printing.enable = true;
 
@@ -150,9 +157,12 @@
     '';
   };
 
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  programs = {
+    zsh.enable = true;
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -165,12 +175,22 @@
     wl-clipboard
   ];
 
-  users.users = {
-    andreaw = {
-      initialPassword = "setyourpassword";
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [];
-      extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ];
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users = {
+      andreaw = {
+        initialPassword = "setyourpassword";
+        isNormalUser = true;
+        openssh.authorizedKeys.keys = [ ];
+        extraGroups = [
+          "wheel"
+          "video"
+          "audio"
+          "networkmanager"
+          "lp"
+          "scanner"
+        ];
+      };
     };
   };
 
