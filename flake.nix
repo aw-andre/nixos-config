@@ -12,6 +12,10 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     nixvim = {
       url = "github:nix-community/nixvim";
