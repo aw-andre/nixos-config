@@ -160,6 +160,7 @@
 
   programs = {
     zsh.enable = true;
+    thunar.enable = true;
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
