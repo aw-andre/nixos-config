@@ -127,6 +127,9 @@
 
       "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
       bind = [
+        "$mainMod, equal, exec, hyprshot -m window -o ~/temp"
+        "$mainMod, minus, exec, hyprshot -m region -o ~/temp"
+        "$mainMod SHIFT, L, exec, hyprlock"
         "$mainMod, Return, exec, $terminal"
         "$mainMod, D, killactive,"
         "$mainMod, Escape, exit,"
