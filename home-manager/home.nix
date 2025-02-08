@@ -14,6 +14,7 @@
     ./sioyek.nix
     ./waybar.nix
     ./qutebrowser.nix
+    ./wofi.nix
     ./zsh
     ./nixvim
   ];
@@ -42,7 +43,6 @@
 
   programs = {
     home-manager.enable = true;
-    wofi.enable = true;
     git.enable = true;
   };
 }
