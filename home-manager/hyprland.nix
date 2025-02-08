@@ -129,16 +129,15 @@
       bind = [
         "$mainMod, equal, exec, hyprshot -m window -o ~/temp"
         "$mainMod, minus, exec, hyprshot -m region -o ~/temp"
-        "$mainMod SHIFT, L, exec, hyprlock"
-        "$mainMod, Return, exec, $terminal"
-        "$mainMod, D, killactive,"
-        "$mainMod, Escape, exit,"
-        "$mainMod, F, exec, $fileManager"
-        "$mainMod, Semicolon, togglefloating,"
-        "$mainMod, Space, exec, $menu"
-
-        "$mainMod, P, pseudo,"
-        "$mainMod, Comma, togglesplit,"
+        "$mainMod, M, exec, hyprlock"
+        "$mainMod, T, exec, $terminal"
+        "$mainMod, P, exec, sioyek"
+        "$mainMod, B, exec, qutebrowser"
+        "$mainMod, K, killactive,"
+        "$mainMod, escape, exit,"
+        "$mainMod, semicolon, togglefloating,"
+        "$mainMod, space, exec, $menu"
+        "$mainMod, comma, togglesplit,"
 
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
@@ -170,9 +169,6 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
