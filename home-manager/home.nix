@@ -29,6 +29,9 @@
     username = "andreaw";
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
+    packages = with pkgs; [
+      hyprshot
+    ];
   };
 
   services = {
