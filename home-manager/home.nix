@@ -8,6 +8,7 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./hyprlock.nix
     ./kitty.nix
     ./hyprland.nix
     ./sioyek.nix

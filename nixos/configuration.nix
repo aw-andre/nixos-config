@@ -110,7 +110,7 @@
       };
     };
   };
-
+  security.pam.services.hyprlock = { };
   services = {
     blueman.enable = true;
 
@@ -165,6 +165,7 @@
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
+    hyprlock.enable = true;
   };
 
   fonts.packages = with pkgs; [
