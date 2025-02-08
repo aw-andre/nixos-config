@@ -213,17 +213,17 @@
       "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
-        "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
-        "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
-        "$mainMod, R, exec, $menu"
+        "$mainMod, Return, exec, $terminal"
+        "$mainMod, D, killactive,"
+        "$mainMod, Escape, exit,"
+        "$mainMod, F, exec, $fileManager"
+        "$mainMod, Semicolon, togglefloating,"
+        "$mainMod, Space, exec, $menu"
 
         # dwindl
         "$mainMod, P, pseudo,"
         # dwindl
-        "$mainMod, J, togglesplit,"
+        "$mainMod, Comma, togglesplit,"
 
         # Move focus with mainMod + arrow key
         "$mainMod, H, movefocus, l"
