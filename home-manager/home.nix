@@ -11,6 +11,7 @@
     ./hyprland.nix
     ./sioyek.nix
     ./waybar.nix
+    ./qutebrowser.nix
     ./zsh
     ./nixvim
   ];
@@ -36,7 +37,6 @@
   programs = {
     home-manager.enable = true;
     wofi.enable = true;
-    qutebrowser.enable = true;
     git.enable = true;
 
     kitty = {
