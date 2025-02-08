@@ -3,46 +3,17 @@
     enable = true;
     xwayland.enable = true;
     settings = {
-      # See https://wiki.hyprland.org/Configuring/Monitors/
       monitor = [
-        #"desc:Apple Computer Inc Color LCD, 3072x1920@60, 0x480, 0.8"
-        #"desc:Samsung Electric Company U32J59x HCJX601110, 3840x2160@60, 3072x0, 1.2"
         "desc:Apple Computer Inc Color LCD, preferred, auto, 1.5"
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2"
-        #"eDP-1, preferred, auto, 1.5"
-        #"eDP-2, preferred, auto, 1.5"
-        #", preferred, auto, 1.2"
         "desc: , disable"
       ];
 
-      ###################
-      ### MY PROGRAMS ###
-      ###################
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/
-
-      # Set programs that you use
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      #################
-      ### AUTOSTART ###
-      #################
-
-      # Autostart necessary processes (like notifications daemons, status bars, etc.)
-      # Or execute your favorite apps at launch like this:
-
-      # exec-once = $terminal
-      # exec-once = nm-applet &
-      # exec-once = waybar & hyprpaper & firefox
       "exec-once" = "waybar";
-
-      #############################
-      ### ENVIRONMENT VARIABLES ###
-      #############################
-
-      # See https://wiki.hyprland.org/Configuring/Environment-variables/
 
       env = [
         "XCURSOR_SIZE,24"
@@ -50,37 +21,25 @@
         "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
       ];
 
-      #####################
-      ### LOOK AND FEEL ###
-      #####################
-
-      # Refer to https://wiki.hyprland.org/Configuring/Variables/
-
-      # https://wiki.hyprland.org/Configuring/Variables/#general
       general = {
         "gaps_in" = "5";
         "gaps_out" = "20";
 
         "border_size" = "2";
 
-        # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
-        # Set to true enable resizing windows by clicking and dragging on borders and gaps
         "resize_on_border" = "false";
 
-        # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         "allow_tearing" = "false";
 
         "layout" = "dwindle";
       };
 
-      # https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
         "rounding" = "10";
 
-        # Change transparency of focused and unfocused windows
         "active_opacity" = "1.0";
         "inactive_opacity" = "1.0";
 
@@ -91,7 +50,6 @@
           "color" = "rgba(1a1a1aee)";
         };
 
-        # https://wiki.hyprland.org/Configuring/Variables/#blur
         blur = {
           "enabled" = "true";
           "size" = "3";
@@ -100,11 +58,8 @@
         };
       };
 
-      # https://wiki.hyprland.org/Configuring/Variables/#animations
       animations = {
         "enabled" = "yes, please :)";
-
-        # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
@@ -134,52 +89,25 @@
         ];
       };
 
-      # Ref https://wiki.hyprland.org/Configuring/Workspace-Rules/
-      # "Smart gaps" / "No gaps when only"
-      # uncomment all if you wish to use that.
-      # workspace = w[tv1], gapsout:0, gapsin:0
-      # workspace = f[1], gapsout:0, gapsin:0
-      # windowrulev2 = bordersize 0, floating:0, onworkspace:w[tv1]
-      # windowrulev2 = rounding 0, floating:0, onworkspace:w[tv1]
-      # windowrulev2 = bordersize 0, floating:0, onworkspace:f[1]
-      # windowrulev2 = rounding 0, floating:0, onworkspace:f[1]
-
-      # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle = {
-        # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         "pseudotile" = "true";
-        # You probably want this
         "preserve_split" = "true";
       };
 
-      # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
       master = {
         "new_status" = "master";
       };
 
-      # https://wiki.hyprland.org/Configuring/Variables/#misc
       misc = {
-        # Set to 0 or 1 to disable the anime mascot wallpapers
         "force_default_wallpaper" = "1";
-        # If true disables the random hyprland logo / anime girl background. :(
         "disable_hyprland_logo" = "false";
       };
 
-      #############
-      ### INPUT ###
-      #############
-
-      # https://wiki.hyprland.org/Configuring/Variables/#input
       input = {
         "kb_layout" = "us";
-        # kb_variant =
-        # kb_model =
-        # kb_options =
-        # kb_rules =
 
         "follow_mouse" = "1";
 
-        # -1.0 - 1.0, 0 means no modification.
         "sensitivity" = "0";
 
         "natural_scroll" = "true";
@@ -193,25 +121,11 @@
         };
       };
 
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
       gestures = {
         "workspace_swipe" = "false";
       };
 
-      # Example per-device config
-      # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
-      # device = {
-      #     "name" = "epic-mouse-v1";
-      #     "sensitivity" = "-0.5";
-      # };
-
-      ###################
-      ### KEYBINDINGS ###
-      ###################
-
-      # See https://wiki.hyprland.org/Configuring/Keywords/
       "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
-      # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
         "$mainMod, Return, exec, $terminal"
         "$mainMod, D, killactive,"
@@ -220,12 +134,9 @@
         "$mainMod, Semicolon, togglefloating,"
         "$mainMod, Space, exec, $menu"
 
-        # dwindl
         "$mainMod, P, pseudo,"
-        # dwindl
         "$mainMod, Comma, togglesplit,"
 
-        # Move focus with mainMod + arrow key
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"
@@ -235,7 +146,6 @@
         "$mainMod SHIFT, K, movewindow, u"
         "$mainMod SHIFT, J, movewindow, d"
 
-        # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -247,7 +157,6 @@
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
-        # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -259,22 +168,18 @@
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-        # Example special workspace (scratchpad
         "$mainMod, S, togglespecialworkspace, magic"
         "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
-        # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
       ];
 
-      # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      # Laptop multimedia keys for volume and LCD brightness
       bindel = [
         ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
@@ -284,9 +189,7 @@
         ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
       ];
 
-      # Requires playerctl
       bindl = [
-        # ", switch:off:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.5'"
         ", switch:on:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPause, exec, playerctl play-pause"
@@ -294,24 +197,9 @@
         ", XF86AudioPrev, exec, playerctl previous"
       ];
 
-      ##############################
-      ### WINDOWS AND WORKSPACES ###
-      ##############################
-
-      # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-      # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-
-      # Example windowrule v1
-      # windowrule = float, ^(kitty)$
-
-      # Example windowrule v2
-      # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-
-      # Ignore maximize requests from apps. You'll probably like this.
       windowrulev2 = [
         "suppressevent maximize, class:.*"
 
-        # Fix some dragging issues with XWaylan
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
     };
