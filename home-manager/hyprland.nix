@@ -129,7 +129,7 @@
       bind = [
         "$mainMod, equal, exec, hyprshot -m window -o ~/temp"
         "$mainMod, minus, exec, hyprshot -m region -o ~/temp"
-        "$mainMod, M, exec, hyprlock"
+        "$mainMod, Q, exec, hyprlock"
         "$mainMod, T, exec, $terminal"
         "$mainMod, P, exec, sioyek"
         "$mainMod, B, exec, qutebrowser"
