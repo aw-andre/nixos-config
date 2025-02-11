@@ -35,6 +35,12 @@
         devices = [
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-kbd"
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:1:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:2:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:2:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:3:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:3:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usb-0:4:1.0-event-kbd"
+          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:4:1.0-event-kbd"
           "/dev/input/by-path/pci-0000:04:00.1-usb-0:5:1.1-event-kbd"
           "/dev/input/by-path/pci-0000:04:00.1-usbv2-0:5:1.1-event-kbd"
         ];
