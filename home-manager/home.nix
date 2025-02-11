@@ -42,6 +42,13 @@
     blueman-applet.enable = true;
     network-manager-applet.enable = true;
     swaync.enable = true;
+    hyprpaper = {
+      enable = true;
+      settings = {
+        preload = [ "${./wallpaper.jpg}" ];
+        wallpaper = [ ",${./wallpaper.jpg}" ];
+      };
+    };
   };
 
   programs = {
