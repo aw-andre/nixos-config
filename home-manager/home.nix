@@ -31,6 +31,8 @@
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
     packages = with pkgs; [
+      bitwarden-cli
+      bitwarden-desktop
       hyprshot
       brightnessctl
       playerctl
