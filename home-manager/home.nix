@@ -31,6 +31,7 @@
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
     packages = with pkgs; [
+      keyutils
       bitwarden-cli
       bitwarden-desktop
       hyprshot

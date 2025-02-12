@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.qutebrowser = {
     enable = true;
@@ -10,6 +11,7 @@
     };
     keyBindings = {
       normal = {
+        "<Tab>" = "spawn --userscript qute-bitwarden";
         "<Ctrl-->" = "zoom-out";
         "<Ctrl-+>" = "zoom-in";
         "<Ctrl-0>" = "zoom";
@@ -31,4 +33,8 @@
       };
     };
   };
+  home.packages = with pkgs; [
+    rofi
+    keyutils
+  ];
 }

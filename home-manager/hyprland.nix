@@ -13,7 +13,10 @@
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      "exec-once" = "waybar & swaync";
+      "exec-once" = [
+        "waybar & swaync"
+        "keyctl link @u @s"
+      ];
 
       env = [
         "XCURSOR_SIZE,24"
