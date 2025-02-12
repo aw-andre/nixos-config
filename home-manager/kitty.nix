@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font.name = "JetBrains Mono";
-    font.size = 15;
+    font.size = 14;
     themeFile = "VSCode_Dark";
     extraConfig = ''
       modify_font cell_height 150%
