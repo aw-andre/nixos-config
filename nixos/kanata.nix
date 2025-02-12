@@ -50,8 +50,8 @@
             caps  a   s   d   f   j   k   l   ;
           )
           (defvar
-            tap-time 150
-            hold-time 200
+            tap-time 125
+            hold-time 125
           )
           (defalias
             caps esc
