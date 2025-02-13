@@ -21,8 +21,9 @@
       regex_search = "/";
     };
     config = {
-      font_size = "16";
+      font_size = "15";
       startup_commands = "toggle_dark_mode";
+      create_table_of_contents_if_not_exists = "1";
       collapsed_toc = "1";
       super_fast_search = "1";
     };
