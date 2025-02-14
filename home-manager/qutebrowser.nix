@@ -13,7 +13,7 @@
       normal = {
         "<Tab>" = "spawn --userscript qute-bitwarden";
         "<Ctrl-->" = "zoom-out";
-        "<Ctrl-+>" = "zoom-in";
+        "<Ctrl-=>" = "zoom-in";
         "<Ctrl-0>" = "zoom";
         "gt" = "tab-next";
         "gT" = "tab-prev";
