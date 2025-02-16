@@ -4,8 +4,8 @@
     xwayland.enable = true;
     settings = {
       monitor = [
-        "desc:Apple Computer Inc Color LCD, preferred, auto, 1.5"
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2"
+        "desc:Apple Computer Inc Color LCD, preferred, auto, 1.5"
         "desc: , disable"
       ];
 
@@ -22,6 +22,8 @@
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
         "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
+        "AQ_NO_ATOMIC,1"
+        # "AQ_NO_MODIFIERS,1"
       ];
 
       general = {
