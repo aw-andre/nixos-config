@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -21,7 +22,7 @@
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
-        "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
+        "AQ_DRM_DEVICES,${config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:03:00.0-card"}:${config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:00:02.0-card"}"
         "AQ_NO_ATOMIC,1"
         # "AQ_NO_MODIFIERS,1"
       ];
