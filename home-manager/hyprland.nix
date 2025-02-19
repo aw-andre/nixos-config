@@ -133,16 +133,18 @@
 
       "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
       bind = [
-        "$mainMod, equal, exec, hyprshot -m window -o ~/temp"
-        "$mainMod, minus, exec, hyprshot -m region -o ~/temp"
-        "$mainMod, Q, exec, hyprlock"
         "$mainMod, T, exec, $terminal"
         "$mainMod, P, exec, sioyek"
         "$mainMod, B, exec, qutebrowser"
-        "$mainMod, K, killactive,"
-        "$mainMod, escape, exit,"
-        "$mainMod, semicolon, togglefloating,"
+        "$mainMod, X, killactive,"
+        "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
+        "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.5'"
+        "$mainMod, escape, exec, hyprlock"
+        "$mainMod SHIFT, escape, exit,"
+        "$mainMod, S, exec, hyprshot -m region -o ~/temp"
+        "$mainMod SHIFT, S, exec, hyprshot -m window -o ~/temp"
         "$mainMod, space, exec, $menu"
+        "$mainMod, semicolon, togglefloating,"
         "$mainMod, comma, togglesplit,"
 
         "$mainMod, H, movefocus, l"
@@ -195,7 +197,6 @@
       ];
 
       bindl = [
-        ", switch:on:Lid Switch, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
@@ -204,7 +205,6 @@
 
       windowrulev2 = [
         "suppressevent maximize, class:.*"
-
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
     };
