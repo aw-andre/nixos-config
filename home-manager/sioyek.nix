@@ -18,7 +18,6 @@
       zoom_in = "<C-=>";
       fit_to_page_width = "<C-0>";
       zoom_out = "<C-->";
-      regex_search = "/";
     };
     config = {
       font_size = "15";
