@@ -3,6 +3,7 @@
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
+    initExtra = builtins.readFile ./zshrc.zsh;
     plugins = [
       {
         name = "nix-shell";
