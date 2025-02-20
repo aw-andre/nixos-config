@@ -2,7 +2,13 @@
 {
   programs.qutebrowser = {
     enable = true;
-    settings.colors.webpage.darkmode.enabled = true;
+    settings = {
+      colors.webpage.darkmode.enabled = true;
+      fonts = {
+        default_size = "16px";
+        default_family = "JetBrainsMono Nerd Font";
+      };
+    };
     keyMappings = {
       "<Ctrl-[>" = "<Escape>";
       "<Ctrl-m>" = "<Return>";
