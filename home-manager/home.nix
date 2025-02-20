@@ -1,22 +1,21 @@
 {
   inputs,
-  lib,
-  config,
   pkgs,
   ...
 }:
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./git.nix
+    ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
-    ./hyprland.nix
+    ./nixvim
+    ./qutebrowser.nix
     ./sioyek.nix
     ./waybar.nix
-    ./qutebrowser.nix
     ./wofi.nix
     ./zsh
-    ./nixvim
   ];
 
   nixpkgs = {
@@ -31,7 +30,6 @@
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
     packages = with pkgs; [
-      keyutils
       bitwarden-cli
       bitwarden-desktop
       hyprshot
@@ -54,16 +52,5 @@
     };
   };
 
-  programs = {
-    home-manager.enable = true;
-    git = {
-      enable = true;
-      userName = "aw-andre";
-      userEmail = "aw.andregerard@gmail.com";
-      extraConfig.core = {
-        editor = "nvim";
-        pager = "nvim +Man!";
-      };
-    };
-  };
+  programs.home-manager.enable = true;
 }
