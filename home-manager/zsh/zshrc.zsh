@@ -10,3 +10,5 @@ rebuild () (
   git commit -am "$gen"
   popd
 )
+
+cd ~/files
