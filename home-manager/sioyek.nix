@@ -20,7 +20,9 @@
       zoom_out = "<C-->";
     };
     config = {
-      font_size = "15";
+      ui_font = "JetBrainsMono Nerd Font";
+      font_size = "16";
+      status_bar_font_size = "16";
       startup_commands = "toggle_dark_mode";
       create_table_of_contents_if_not_exists = "1";
       collapsed_toc = "1";
