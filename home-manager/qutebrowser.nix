@@ -2,6 +2,7 @@
 {
   programs.qutebrowser = {
     enable = true;
+    searchEngines.DEFAULT = "https://google.com/search?hl=en&q={}";
     settings = {
       colors.webpage.darkmode.enabled = true;
       fonts = {
