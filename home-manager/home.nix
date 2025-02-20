@@ -60,7 +60,10 @@
       enable = true;
       userName = "aw-andre";
       userEmail = "aw.andregerard@gmail.com";
-      extraConfig.core.editor = "nvim";
+      extraConfig.core = {
+        editor = "nvim";
+        pager = "nvim +Man!";
+      };
     };
   };
 }
