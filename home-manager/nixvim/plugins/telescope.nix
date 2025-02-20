@@ -97,7 +97,7 @@
   autoCmd = [
     {
       event = [ "VimEnter" ];
-      callback.__raw = "function() if vim.fn.argc() == 0 and vim.fn.getline(1) == '' then require('telescope.builtin').find_files() end end";
+      callback.__raw = "function() if vim.fn.argc() == 0 and vim.fn.len(vim.fn.expand('%')) == 0 then require('telescope.builtin').find_files() end end";
     }
   ];
 }
