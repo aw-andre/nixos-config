@@ -11,4 +11,9 @@ rebuild () (
   popd &> /dev/null
 )
 
+run () {
+  "$@" &> /dev/null &
+  disown
+}
+
 cd ~/files
