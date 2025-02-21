@@ -20,6 +20,7 @@
       zoom_out = "<C-->";
     };
     config = {
+      should_launch_new_window = "1";
       ui_font = "JetBrainsMono Nerd Font";
       font_size = "16";
       status_bar_font_size = "16";
