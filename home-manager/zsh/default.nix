@@ -4,7 +4,7 @@
     enable = true;
     syntaxHighlighting.enable = true;
     sessionVariables = {
-      PAGER = "nvim -R";
+      PAGER = "nvim +Man!";
       MANPAGER = "nvim +Man!";
     };
     shellAliases = {
