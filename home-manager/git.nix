@@ -4,12 +4,12 @@
     userName = "aw-andre";
     userEmail = "aw.andregerard@gmail.com";
     aliases = {
-      rebasei = "rebase -i HEAD~10";
-      loga = "log --oneline --graph --all";
-      resets = "reset --soft";
-      reseth = "reset --hard";
-      pushm = "push origin master";
-      pushmf = "push --force origin master";
+      la = "log --oneline --graph --all";
+      pf = "push --force origin master";
+      ps = "push origin master";
+      rh = "reset --hard";
+      ri = "rebase -i HEAD~10";
+      rs = "reset --soft";
     };
     extraConfig.core = {
       editor = "nvim";
