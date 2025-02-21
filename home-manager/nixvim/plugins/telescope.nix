@@ -96,8 +96,12 @@
   ];
   autoCmd = [
     {
+      event = [ "StdinReadPost" ];
+      callback.__raw = "function() stdin = 1 end";
+    }
+    {
       event = [ "VimEnter" ];
-      callback.__raw = "function() if vim.fn.argc() == 0 and vim.fn.len(vim.fn.expand('%')) == 0 then require('telescope.builtin').find_files() end end";
+      callback.__raw = "function() if vim.fn.argc() == 0 and vim.fn.len(vim.fn.expand('%')) == 0 and stdin == nil then require('telescope.builtin').find_files() end end";
     }
   ];
 }
