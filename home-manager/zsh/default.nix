@@ -13,6 +13,7 @@
       cc = "cd ~/files/nixos-config/";
       cp = "cd ~/files/projects/";
       cs = "cd ~/files/school/";
+      ct = "cd ~/files/temp/";
     };
     initExtra = builtins.readFile ./zshrc.zsh;
     plugins = [
