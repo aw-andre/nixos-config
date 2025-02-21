@@ -3,6 +3,17 @@
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
+    sessionVariables = {
+      PAGER = "nvim -R";
+      MANPAGER = "nvim +Man!";
+    };
+    shellAliases = {
+      cf = "cd ~/files/";
+      cb = "cd ~/files/books/";
+      cc = "cd ~/files/nixos-config/";
+      cp = "cd ~/files/projects/";
+      cs = "cd ~/files/school/";
+    };
     initExtra = builtins.readFile ./zshrc.zsh;
     plugins = [
       {

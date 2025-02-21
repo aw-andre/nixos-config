@@ -1,6 +1,3 @@
-export PAGER="nvim -R"
-export MANPAGER="nvim +Man!"
-
 rebuild () (
   set -eK
   pushd ~/files/nixos-config/ &> /dev/null
