@@ -5,7 +5,7 @@
     font.size = 14;
     themeFile = "VSCode_Dark";
     settings.scrollback_pager = ''
-      nvim -c "autocmd TermOpen * normal G" -c "silent! write /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | bn | bd!"
+      nvim -c "silent! w! /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | exec 'norm G' | bn | bd!"
     '';
     extraConfig = ''
       modify_font cell_height 150%
