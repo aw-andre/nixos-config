@@ -6,6 +6,7 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./direnv.nix
     ./git.nix
     ./hyprland.nix
     ./hyprlock.nix
