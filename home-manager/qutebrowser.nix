@@ -5,6 +5,10 @@
     searchEngines.DEFAULT = "https://google.com/search?hl=en&q={}";
     settings = {
       colors.webpage.darkmode.enabled = true;
+      downloads.location = {
+        directory = "~/files/temp/";
+        prompt = false;
+      };
       fonts = {
         default_size = "16px";
         default_family = "JetBrainsMono Nerd Font";
