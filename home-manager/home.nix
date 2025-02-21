@@ -37,6 +37,7 @@
       hyprshot
       brightnessctl
       playerctl
+      unzip
       wireplumber
     ];
   };
