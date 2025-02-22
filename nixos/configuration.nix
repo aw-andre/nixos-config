@@ -192,6 +192,7 @@
           "networkmanager"
           "lp"
           "scanner"
+          "dialout"
         ];
       };
     };
