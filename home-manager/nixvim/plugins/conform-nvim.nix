@@ -5,7 +5,7 @@
     settings = {
       default_format_opts.quiet = true;
       formatters_by_ft = {
-        bash = [ "shellharden" ];
+        bash = [ "shfmt" ];
         c = [ "clang-format" ];
         lua = [ "stylua" ];
         nix = [ "nixfmt" ];
@@ -26,7 +26,7 @@
     };
   };
   extraPackages = with pkgs; [
-    shellharden
+    shfmt
     llvmPackages_19.clang-unwrapped
     stylua
     nixfmt-rfc-style
