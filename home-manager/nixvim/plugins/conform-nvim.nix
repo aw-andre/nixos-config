@@ -10,7 +10,6 @@
         lua = [ "stylua" ];
         nix = [ "nixfmt" ];
         python = [ "black" ];
-        "*" = [ "codespell" ];
         "_" = [ "trim_whitespace" ];
       };
       format_after_save = # Lua
@@ -31,7 +30,6 @@
     stylua
     nixfmt-rfc-style
     black
-    codespell
   ];
   keymaps = [
     {
