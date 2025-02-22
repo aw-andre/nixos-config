@@ -47,14 +47,13 @@
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
           (defsrc
-            caps  a   s   d   f   j   k   l   ;
+            a   s   d   f   j   k   l   ;
           )
           (defvar
             tap-time 150
             hold-time 150
           )
           (defalias
-            caps (tap-hold $tap-time $hold-time esc caps)
             a (tap-hold $tap-time $hold-time a lalt)
             s (tap-hold $tap-time $hold-time s lmet)
             d (tap-hold $tap-time $hold-time d lctl)
@@ -65,7 +64,7 @@
             ; (tap-hold $tap-time $hold-time ; ralt)
           )
           (deflayer base
-            @caps  @a  @s  @d  @f  @j  @k  @l  @;
+            @a  @s  @d  @f  @j  @k  @l  @;
           )
         '';
       };
