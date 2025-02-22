@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
+    (writeShellScriptBin "run" (builtins.readFile ./run.bash))
+  ];
+
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
