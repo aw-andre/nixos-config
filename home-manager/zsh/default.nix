@@ -8,12 +8,12 @@
       MANPAGER = "nvim +Man!";
     };
     shellAliases = {
-      cf = "cd ~/files/";
-      cb = "cd ~/files/books/";
-      cc = "cd ~/files/nixos-config/";
-      cp = "cd ~/files/projects/";
-      cs = "cd ~/files/school/";
-      ct = "cd ~/files/temp/";
+      cdf = "cd ~/files/";
+      cdb = "cd ~/files/books/";
+      cdc = "cd ~/files/nixos-config/";
+      cdp = "cd ~/files/projects/";
+      cds = "cd ~/files/school/";
+      cdt = "cd ~/files/temp/";
     };
     initExtra = builtins.readFile ./zshrc.zsh;
     plugins = [
