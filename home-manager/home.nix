@@ -14,10 +14,10 @@
     ./kitty.nix
     ./nixvim
     ./qutebrowser.nix
+    ./shell
     ./sioyek.nix
     ./waybar.nix
     ./wofi.nix
-    ./zsh
   ];
 
   nixpkgs = {
