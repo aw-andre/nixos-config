@@ -193,6 +193,7 @@
           "lp"
           "scanner"
           "dialout"
+          "uucp"
         ];
       };
     };
