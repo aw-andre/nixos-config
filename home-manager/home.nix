@@ -6,13 +6,12 @@
 }:
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
     ./direnv.nix
     ./git.nix
     ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
-    ./nixvim
+    # ./nixvim
     ./qutebrowser.nix
     ./shell
     ./sioyek.nix
@@ -31,14 +30,15 @@
     username = "andreaw";
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
-    packages = with pkgs; [
-      bitwarden-cli
-      bitwarden-desktop
-      hyprshot
-      brightnessctl
-      playerctl
-      unzip
-      wireplumber
+    packages = [
+      pkgs.bitwarden-cli
+      pkgs.bitwarden-desktop
+      pkgs.hyprshot
+      pkgs.brightnessctl
+      pkgs.playerctl
+      pkgs.unzip
+      pkgs.wireplumber
+      inputs.nixvim.packages.${pkgs.system}.default
     ];
   };
 
