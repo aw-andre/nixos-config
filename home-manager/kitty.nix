@@ -8,6 +8,7 @@
       nvim -c "silent! w! /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | exec 'norm G' | bn | bd!"
     '';
     extraConfig = ''
+      enable_audio_bell no
       modify_font cell_height 150%
       cursor_trail 1
       cursor_trail_decay 0.1 0.3
