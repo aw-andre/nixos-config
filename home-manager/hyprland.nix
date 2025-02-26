@@ -40,7 +40,9 @@
 
         "allow_tearing" = "false";
 
-        "layout" = "dwindle";
+        "layout" = "master";
+
+        "no_focus_fallback" = "true";
       };
 
       decoration = {
