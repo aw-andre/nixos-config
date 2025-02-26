@@ -151,6 +151,7 @@
     pipewire = {
       enable = true;
       pulse.enable = true;
+      audio.enable = true;
     };
 
     udev.extraRules = ''
