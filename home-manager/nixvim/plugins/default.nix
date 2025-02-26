@@ -11,11 +11,11 @@
     ./nvim-ufo.nix
     ./auto-hlsearch.nix
     ./lualine.nix
+    ./blink-cmp.nix
   ];
   plugins = {
     web-devicons.enable = true;
     which-key.enable = true;
-    blink-cmp.enable = true;
     comment.enable = true;
     treesitter.enable = true;
     markdown-preview.enable = true;
