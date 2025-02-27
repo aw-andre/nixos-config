@@ -54,11 +54,11 @@
         "nixpkgs-lib": "nixpkgs-lib"
       },
       "locked": {
-        "lastModified": 1736143030,
-        "narHash": "sha256-+hu54pAoLDEZT9pjHlqL9DNzWz0NbUn8NEAHP7PQPzU=",
+        "lastModified": 1738453229,
+        "narHash": "sha256-7H9XgNiGLKN1G1CgRh0vUL4AheZSYzPm+zmZ7vxbJdo=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "b905f6fc23a9051a6e1b741e1438dbfc0634c6de",
+        "rev": "32ea77a06711b758da0ad9bd6a844c5740a87abd",
         "type": "github"
       },
       "original": {
@@ -463,14 +463,14 @@
     },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1740596635,
-        "narHash": "sha256-CewEm1o2eVAnoqb6Ml+Qi9Gg/EfNAxbRx1lANGVyoLI=",
+        "lastModified": 1738452942,
+        "narHash": "sha256-vJzFZGaCpnmo7I6i416HaBLpC+hvcURh/BQwROcGIp8=",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/e9b51731911566bbf7e4895475a87fe06961de0b.tar.gz"
+        "url": "https://github.com/NixOS/nixpkgs/archive/072a6db25e947df2f31aab9eccd0ab75d5b2da11.tar.gz"
       },
       "original": {
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/e9b51731911566bbf7e4895475a87fe06961de0b.tar.gz"
+        "url": "https://github.com/NixOS/nixpkgs/archive/072a6db25e947df2f31aab9eccd0ab75d5b2da11.tar.gz"
       }
     },
     "nixpkgs_2": {
@@ -513,11 +513,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1740596092,
-        "narHash": "sha256-4RJ+QCULgU1+Fmlswm8fMNJPhjfNJDAyh8Zubnw/1BA=",
+        "lastModified": 1740687222,
+        "narHash": "sha256-41LL5bcHX2hs3bAj7cm8UFFA4oPb1dp/jsb6UriosF8=",
         "owner": "aw-andre",
         "repo": "nixvim",
-        "rev": "884b1b42b4740e37674e99a9f7c3d629a88fb91b",
+        "rev": "ae601871bfb815c2f9b017b72bd6893e81ece563",
         "type": "github"
       },
       "original": {
