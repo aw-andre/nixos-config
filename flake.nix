@@ -2,8 +2,14 @@
   description = "NixOS Flake for T2 Mac";
 
   nixConfig = {
-    extra-substituters = [ "https://cache.soopy.moe" ];
-    extra-trusted-public-keys = [ "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo=" ];
+    extra-substituters = [
+      "https://cache.soopy.moe"
+      "https://hyprland.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
   };
   inputs = {
 
