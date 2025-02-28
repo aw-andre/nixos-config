@@ -26,12 +26,21 @@
         "<Ctrl-->" = "zoom-out";
         "<Ctrl-=>" = "zoom-in";
         "<Ctrl-0>" = "zoom";
+        "-" = "nop";
+        "+" = "nop";
+        "=" = "nop";
         "gt" = "tab-next";
         "gT" = "tab-prev";
         "u" = "back";
         "<Ctrl-r>" = "forward";
+        "H" = "nop";
+        "J" = "nop";
+        "K" = "nop";
+        "L" = "nop";
         "x" = "tab-close";
         "X" = "tab-close -o";
+        "d" = "nop";
+        "D" = "nop";
       };
     };
     extraConfig = ''
