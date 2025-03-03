@@ -10,13 +10,13 @@
       "ctrl+shift+." = "show_last_command_output";
       "ctrl+shift+b" = "scroll_page_up";
       "ctrl+shift+f" = "scroll_page_down";
-      "ctrl+shift+^" = "scroll_home";
-      "ctrl+shift+$" = "scroll_end";
+      "ctrl+shift+[" = "scroll_home";
+      "ctrl+shift+]" = "scroll_end";
       "ctrl+shift+u" = "scroll_to_prompt -1";
       "ctrl+shift+d" = "scroll_to_prompt 1";
       "ctrl+shift+0" = "change_font_size current 14.0";
-      "ctrl+shift+minus" = "change_font_size current -1.0";
-      "ctrl+shift+equal" = "change_font_size current +1.0";
+      "ctrl+shift+minus" = "change_font_size current -0.5";
+      "ctrl+shift+equal" = "change_font_size current +0.5";
     };
     themeFile = "VSCode_Dark";
     settings.scrollback_pager = ''
