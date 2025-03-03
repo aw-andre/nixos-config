@@ -19,7 +19,9 @@
       "ctrl+shift+equal" = "change_font_size current +1.0";
     };
     themeFile = "VSCode_Dark";
-    settings.scrollback_pager = "vimp";
+    settings.scrollback_pager = ''
+      nvim -c "silent! w! /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | exec 'norm G' | bn | bd!"
+    '';
     extraConfig = ''
       enable_audio_bell no
       modify_font cell_height 150%

@@ -1,1 +1,1 @@
-nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | exec 'norm G' | bn | bd!"
+nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | bn | bd!"
