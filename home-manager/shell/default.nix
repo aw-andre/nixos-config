@@ -3,14 +3,15 @@
   home.packages = with pkgs; [
     (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
     (writeShellScriptBin "run" (builtins.readFile ./run.bash))
+    (writeShellScriptBin "vimp" (builtins.readFile ./vimp.bash))
   ];
 
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
     sessionVariables = {
-      PAGER = "nvim +Man!";
-      MANPAGER = "nvim +Man!";
+      PAGER = "vimp";
+      MANPAGER = "vimp";
     };
     shellAliases = {
       cdf = "cd ~/files/";

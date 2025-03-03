@@ -13,7 +13,7 @@
     };
     extraConfig.core = {
       editor = "nvim";
-      pager = "nvim +Man!";
+      pager = "vimp";
     };
   };
 }
