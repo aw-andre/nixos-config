@@ -6,12 +6,12 @@
 }:
 {
   imports = [
+    ./ripgrep.nix
     ./direnv.nix
     ./git.nix
     ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
-    # ./nixvim
     ./qutebrowser.nix
     ./shell
     ./sioyek.nix
@@ -31,6 +31,7 @@
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
     packages = [
+      pkgs.ripgrep-all
       pkgs.bitwarden-cli
       pkgs.bitwarden-desktop
       pkgs.hyprshot
