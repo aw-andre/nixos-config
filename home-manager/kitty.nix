@@ -4,8 +4,6 @@
     font.name = "JetBrains Mono";
     font.size = 14;
     keybindings = {
-      "ctrl+c" = "copy_or_interrupt";
-      "ctrl+v" = "paste_from_clipboard";
       "ctrl+shift+/" = "show_scrollback";
       "ctrl+shift+." = "show_last_command_output";
       "ctrl+shift+b" = "scroll_page_up";
