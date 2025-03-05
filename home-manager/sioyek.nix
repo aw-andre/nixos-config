@@ -6,6 +6,7 @@
       move_up_smooth = "k";
       move_left = "h";
       move_right = "l";
+      copy = "y";
       next_page = "<C-f>";
       previous_page = "<C-b>";
       screen_down = "<C-d>";
