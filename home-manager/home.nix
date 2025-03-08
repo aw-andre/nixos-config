@@ -56,7 +56,10 @@
     };
   };
 
-  programs.home-manager.enable = true;
+  programs = {
+    home-manager.enable = true;
+    firefox.enable = true;
+  };
 
   xdg.userDirs.download = "${config.home.homeDirectory}/files/temp";
 }
