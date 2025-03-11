@@ -11,7 +11,7 @@
     syntaxHighlighting.enable = true;
     sessionVariables = {
       PAGER = "vimp";
-      MANPAGER = "vimp";
+      MANPAGER = "nvim -c 'Man!'";
     };
     shellAliases = {
       cdf = "cd ~/files/";
