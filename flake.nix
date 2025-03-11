@@ -18,7 +18,7 @@
     };
 
     nixvim = {
-      url = "github:aw-andre/nixvim";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -27,6 +27,7 @@
     inputs@{
       self,
       nixos-hardware,
+      nixvim,
       nixpkgs,
       home-manager,
       ...
@@ -56,6 +57,7 @@
 
               users.andreaw = {
                 imports = [
+                  nixvim.homeManagerModules.nixvim
                   ./home-manager/home.nix
                 ];
               };

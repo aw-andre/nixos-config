@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./nixvim
     ./ripgrep.nix
     ./direnv.nix
     ./git.nix
@@ -30,16 +31,15 @@
     username = "andreaw";
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
-    packages = [
-      pkgs.ripgrep-all
-      pkgs.bitwarden-cli
-      pkgs.bitwarden-desktop
-      pkgs.hyprshot
-      pkgs.brightnessctl
-      pkgs.playerctl
-      pkgs.unzip
-      pkgs.wireplumber
-      inputs.nixvim.packages.${pkgs.system}.default
+    packages = with pkgs; [
+      ripgrep-all
+      bitwarden-cli
+      bitwarden-desktop
+      hyprshot
+      brightnessctl
+      playerctl
+      unzip
+      wireplumber
     ];
   };
 
