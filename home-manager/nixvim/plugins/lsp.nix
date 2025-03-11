@@ -95,10 +95,5 @@
         }
       ];
     };
-    servers = {
-      bashls.enable = true;
-      lua_ls.enable = true;
-      nixd.enable = true;
-    };
   };
 }
