@@ -1,6 +1,7 @@
 {
   imports = [
     ./luasnip.nix
+    ./none-ls.nix
     ./rainbow-delimiters.nix
     ./treesitter-context.nix
     ./nvim-surround.nix
