@@ -40,7 +40,7 @@
 
         "allow_tearing" = "false";
 
-        "layout" = "master";
+        "layout" = "dwindle";
 
         "no_focus_fallback" = "true";
       };
