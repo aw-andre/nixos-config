@@ -6,16 +6,6 @@
       desc = "Highlight when yanking text";
     }
     {
-      event = "BufWritePre";
-      callback.__raw = "function () vim.lsp.buf.format() end";
-      desc = "Format when writing text";
-    }
-    {
-      event = [ "TextChanged" "TextChangedI" "TextChangedP" "TextChangedT" ];
-      callback.__raw = "function () require('rainbow-delimiters').enable() end";
-      desc = "Color delimiters";
-    }
-    {
       event = "CursorMoved";
       callback.__raw = ''
         function ()

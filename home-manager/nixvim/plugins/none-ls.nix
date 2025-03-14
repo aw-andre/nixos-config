@@ -19,4 +19,11 @@
       };
     }
   ];
+  autoCmd = [
+    {
+      event = "BufWritePre";
+      callback.__raw = "function () vim.lsp.buf.format() end";
+      desc = "Format when writing text";
+    }
+  ];
 }
