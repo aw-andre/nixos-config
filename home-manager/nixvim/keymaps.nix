@@ -54,7 +54,7 @@
     {
       mode = "n";
       key = "J";
-      action = "mzJ`z";
+      action = "m`J``";
       options.desc = "Join lower line";
     }
     {
