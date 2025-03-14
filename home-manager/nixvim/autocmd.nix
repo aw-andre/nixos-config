@@ -13,7 +13,7 @@
     }
     {
       event = "BufWritePre";
-      callback.__raw = "function() vim.cmd('normal =<CMD>e<CR>') end";
+      callback.__raw = "function() vim.schedule(function () vim.lsp.buf.format() vim.cmd.edit() end) end";
       group = "write";
       desc = "Format when writing text";
     }
