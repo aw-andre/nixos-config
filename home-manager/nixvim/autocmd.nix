@@ -1,20 +1,13 @@
 {
-  autoGroups = {
-    highlight-yank.clear = true;
-    write.clear = true;
-    nohls.clear = true;
-  };
   autoCmd = [
     {
       event = "TextYankPost";
       callback.__raw = "function() vim.highlight.on_yank() end";
-      group = "highlight-yank";
       desc = "Highlight when yanking text";
     }
     {
       event = "BufWritePre";
       callback.__raw = "function() vim.schedule(function () vim.lsp.buf.format() require('rainbow-delimiters').enable() end) end";
-      group = "write";
       desc = "Format when writing text";
     }
     {
@@ -26,7 +19,6 @@
           end
         end
       '';
-      group = "nohls";
       desc = "Remove search highlight when cursor moves";
     }
   ];
