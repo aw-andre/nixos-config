@@ -14,13 +14,13 @@
     ./blink-cmp.nix
     ./copilot-chat.nix
     ./oil.nix
+    ./treesitter.nix
   ];
   plugins = {
     copilot-lua.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
     comment.enable = true;
-    treesitter.enable = true;
     markdown-preview.enable = true;
   };
 }
