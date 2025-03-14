@@ -2,6 +2,7 @@
   autoGroups = {
     highlight-yank.clear = true;
     write.clear = true;
+    nohls.clear = true;
   };
   autoCmd = [
     {
@@ -15,6 +16,18 @@
       callback.__raw = "function() vim.cmd('normal =<CMD>e<CR>') end";
       group = "write";
       desc = "Format when writing text";
+    }
+    {
+      event = "CursorMoved";
+      callback.__raw = ''
+        function ()
+          if vim.v.hlsearch == 1 and vim.fn.searchcount().exact_match == 0 then
+            vim.schedule(function () vim.cmd.nohlsearch() end)
+          end
+        end
+      '';
+      group = "nohls";
+      desc = "Remove search highlight when cursor moves";
     }
   ];
 }
