@@ -39,8 +39,14 @@
     }
     {
       mode = "n";
+      key = "<C-p>";
+      action = "<Plug>(YankyPreviousEntry)";
+      options.desc = "Cycle Last Put Item Backward";
+    }
+    {
+      mode = "n";
       key = "<C-n>";
-      action = "<Plug>(YankyCycleForward)";
+      action = "<Plug>(YankyNextEntry)";
       options.desc = "Cycle Last Put Item Forward";
     }
     {
