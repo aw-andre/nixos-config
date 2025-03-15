@@ -15,6 +15,7 @@
     ./copilot-chat.nix
     ./oil.nix
     ./treesitter.nix
+    ./yanky.nix
   ];
   plugins = {
     copilot-lua.enable = true;
