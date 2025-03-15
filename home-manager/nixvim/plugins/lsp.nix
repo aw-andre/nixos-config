@@ -81,12 +81,12 @@
           action.__raw = "vim.lsp.buf.code_action";
           options.desc = "Code [A]ction";
         }
-        {
-          mode = "n";
-          key = "K";
-          action.__raw = "vim.lsp.buf.hover";
-          options.desc = "Hover Documentation";
-        }
+        # {
+        #   mode = "n";
+        #   key = "K";
+        #   action.__raw = "vim.lsp.buf.hover";
+        #   options.desc = "Hover Documentation";
+        # }
         {
           mode = "n";
           key = "<leader>h";
