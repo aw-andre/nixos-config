@@ -1,7 +1,7 @@
 {
   plugins.neoscroll = {
     enable = true;
-    luaConfig.pre = "require('neoscroll').setup({ duration_multiplier = 0.3 })";
+    luaConfig.pre = "require('neoscroll').setup({ duration_multiplier = 0.2 })";
     settings = {
       cursor_scrolls_alone = true;
       easing_function = "sine";
