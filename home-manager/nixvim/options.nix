@@ -19,7 +19,6 @@
     splitbelow = true;
 
     list = true;
-    # NOTE: .__raw here means that this field is raw lua code
     listchars.__raw = "{ tab = '» ', trail = '·', nbsp = '␣' }";
 
     # Tab defaults (might get overwritten by an LSP server)
@@ -37,6 +36,7 @@
 
     # Highlight the current line for cursor
     cursorline = true;
+    cursorcolumn = true;
 
     # Show line and column when searching
     ruler = true;
