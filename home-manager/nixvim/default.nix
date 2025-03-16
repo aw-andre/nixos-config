@@ -20,6 +20,10 @@
       };
     };
     colorschemes.vscode.enable = true;
+    highlightOverride.Folded = {
+      fg = "#D4D4D4";
+      bg = "#1F1F1F";
+    };
     globals = {
       mapleader = " ";
       maplocalleader = " ";
