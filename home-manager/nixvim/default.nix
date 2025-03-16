@@ -19,6 +19,7 @@
         ];
       };
     };
+    luaLoader.enable = true;
     colorschemes.vscode.enable = true;
     highlightOverride.Folded = {
       fg = "#D4D4D4";
