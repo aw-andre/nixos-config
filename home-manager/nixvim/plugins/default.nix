@@ -16,7 +16,6 @@
     ./oil.nix
     ./treesitter.nix
     ./yanky.nix
-    ./neotest.nix
   ];
   plugins = {
     copilot-lua.enable = true;
@@ -24,5 +23,6 @@
     which-key.enable = true;
     comment.enable = true;
     markdown-preview.enable = true;
+    neotest.enable = true;
   };
 }

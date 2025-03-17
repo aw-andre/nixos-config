@@ -8,5 +8,6 @@
       installRustfmt = true;
       settings.check.command = "clippy";
     };
+    neotest.adapters.rust.enable = true;
   };
 }
