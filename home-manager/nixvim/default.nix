@@ -14,9 +14,7 @@
       };
       combinePlugins = {
         enable = true;
-        standalonePlugins = [
-          "copilot.lua"
-        ];
+        standalonePlugins = [ "copilot.lua" ];
       };
     };
     luaLoader.enable = true;
@@ -25,17 +23,15 @@
       fg = "#D4D4D4";
       bg = "#1F1F1F";
     };
+    clipboard = {
+      providers.wl-copy.enable = true; # Wayland
+      register = "unnamedplus";
+    };
     globals = {
       mapleader = " ";
       maplocalleader = " ";
       have_nerd_font = true;
     };
-    imports = [
-      ./keymaps.nix
-      ./options.nix
-      ./autocmd.nix
-      ./plugins
-      ./ft
-    ];
+    imports = [ ./keymaps.nix ./options.nix ./autocmd.nix ./plugins ./ft ];
   };
 }
