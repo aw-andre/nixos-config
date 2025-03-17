@@ -1,8 +1,7 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
+{ config
+, inputs
+, pkgs
+, ...
 }:
 {
   imports = [
@@ -32,6 +31,7 @@
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
     packages = with pkgs; [
+      obsidian
       ripgrep-all
       bitwarden-cli
       bitwarden-desktop
