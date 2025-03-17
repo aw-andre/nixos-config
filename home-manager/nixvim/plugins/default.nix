@@ -16,6 +16,7 @@
     ./oil.nix
     ./treesitter.nix
     ./yanky.nix
+    ./obsidian.nix
   ];
   plugins = {
     copilot-lua.enable = true;
