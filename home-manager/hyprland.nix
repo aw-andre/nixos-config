@@ -25,6 +25,7 @@
         "AQ_DRM_DEVICES,${config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:03:00.0-card"}:${config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:00:02.0-card"}"
         "AQ_NO_ATOMIC,1"
         # "AQ_NO_MODIFIERS,1"
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
 
       general = {

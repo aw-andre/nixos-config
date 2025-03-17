@@ -1,9 +1,8 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, lib
+, config
+, pkgs
+, ...
 }:
 {
   imports = [
@@ -174,10 +173,16 @@
     nerd-fonts.jetbrains-mono
   ];
 
-  environment.systemPackages = with pkgs; [
-    networkmanagerapplet
-    wl-clipboard
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      networkmanagerapplet
+      wl-clipboard
+    ];
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    };
+  };
 
   users = {
     defaultUserShell = pkgs.zsh;
