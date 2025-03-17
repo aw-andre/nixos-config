@@ -15,12 +15,17 @@
       "ctrl+shift+0" = "change_font_size current 14.0";
       "ctrl+shift+minus" = "change_font_size current -0.5";
       "ctrl+shift+equal" = "change_font_size current +0.5";
+      "ctrl+shift+h" = "previous_tab";
+      "ctrl+shift+l" = "next_tab";
+      "ctrl+shift+r" = "set_tab_title";
     };
     themeFile = "VSCode_Dark";
     settings.scrollback_pager = ''
       nvim -c "silent! w! /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | exec 'norm G' | bn | bd!"
     '';
     extraConfig = ''
+      tab_bar_edge top
+      tab_bar_style powerline
       enable_audio_bell no
       modify_font cell_height 150%
       cursor_trail 1
