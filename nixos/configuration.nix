@@ -87,7 +87,7 @@
 
   hardware = {
     graphics.enable = true;
-    apple-t2.enableAppleSetOsLoader = true;
+    apple-t2.enableIGPU = true;
     firmware = [
       (pkgs.stdenvNoCC.mkDerivation {
         name = "brcm-firmware";
