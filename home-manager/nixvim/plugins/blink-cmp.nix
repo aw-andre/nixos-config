@@ -3,12 +3,7 @@
     enable = true;
     setupLspCapabilities = true;
     settings.sources = {
-      default = [
-        "lsp"
-        "path"
-        "snippets"
-        "buffer"
-      ];
+      default = [ "lsp" "path" "snippets" "buffer" ];
       providers = {
         buffer = {
           enabled = true;
@@ -18,4 +13,9 @@
       };
     };
   };
+  keymaps = [{
+    mode = "c";
+    key = "<C-S-i>";
+    action.__raw = "require('blink.cmp').select_prev";
+  }];
 }

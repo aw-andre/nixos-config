@@ -52,7 +52,8 @@
     {
       mode = "n";
       key = "<leader>fy";
-      action.__raw = "require('telescope').extensions.yank_history.yank_history";
+      action.__raw =
+        "require('telescope').extensions.yank_history.yank_history";
       options.desc = "[F]ind in [Y]ank Ring";
     }
   ];

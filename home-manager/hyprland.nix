@@ -1,29 +1,32 @@
-{ config, ... }:
-{
+{ config, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     settings = {
       monitor = [
+        "desc: , disable"
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2"
         "desc:Apple Computer Inc Color LCD, preferred, auto, 1.5"
-        "desc: , disable"
+        ", preferred, auto, auto"
       ];
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      "exec-once" = [
-        "waybar & swaync"
-        "keyctl link @u @s"
-      ];
+      "exec-once" = [ "waybar & swaync" "keyctl link @u @s" ];
 
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
-        "AQ_DRM_DEVICES,${config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:03:00.0-card"}:${config.lib.file.mkOutOfStoreSymlink "/dev/dri/by-path/pci-0000:00:02.0-card"}"
-        "AQ_NO_ATOMIC,1"
+        "AQ_DRM_DEVICES,${
+          config.lib.file.mkOutOfStoreSymlink
+          "/dev/dri/by-path/pci-0000:03:00.0-card"
+        }:${
+          config.lib.file.mkOutOfStoreSymlink
+          "/dev/dri/by-path/pci-0000:00:02.0-card"
+        }"
+        # "AQ_NO_ATOMIC,1"
         # "AQ_NO_MODIFIERS,1"
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
@@ -103,9 +106,7 @@
         "preserve_split" = "true";
       };
 
-      master = {
-        "new_status" = "master";
-      };
+      master = { "new_status" = "master"; };
 
       misc = {
         "force_default_wallpaper" = "1";
@@ -130,9 +131,7 @@
         };
       };
 
-      gestures = {
-        "workspace_swipe" = "false";
-      };
+      gestures = { "workspace_swipe" = "false"; };
 
       "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
       bind = [
