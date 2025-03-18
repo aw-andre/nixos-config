@@ -14,7 +14,7 @@
       };
       combinePlugins = {
         enable = true;
-        standalonePlugins = [ "copilot.lua" ];
+        standalonePlugins = [ "copilot.lua" "oil.nvim" ];
       };
     };
     luaLoader.enable = true;
