@@ -6,6 +6,7 @@
     keybindings = {
       "ctrl+shift+/" = "show_scrollback";
       "ctrl+shift+." = "show_last_command_output";
+      "ctrl+shift+;" = "move_tab_forward";
       "ctrl+shift+b" = "scroll_page_up";
       "ctrl+shift+f" = "scroll_page_down";
       "ctrl+shift+[" = "scroll_home";
