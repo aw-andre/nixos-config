@@ -6,7 +6,10 @@
       installCargo = true;
       installRustc = true;
       installRustfmt = true;
-      settings.check.command = "clippy";
+      settings = {
+        cargo.buildScripts.enable = true;
+        check.command = "clippy";
+      };
     };
     neotest.adapters.rust.enable = true;
   };
