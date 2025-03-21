@@ -19,6 +19,7 @@
     ./obsidian.nix
   ];
   plugins = {
+    direnv.enable = true;
     copilot-lua.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
