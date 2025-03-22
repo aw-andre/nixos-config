@@ -1,0 +1,3 @@
+[submodule "nixvim"]
+	path = home-manager/nixvim
+	url = https://github.com/aw-andre/nixvim
