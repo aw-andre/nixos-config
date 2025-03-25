@@ -11,9 +11,12 @@
       ri = "rebase -i HEAD~10";
       rs = "reset --soft";
     };
-    extraConfig.core = {
-      editor = "nvim";
-      pager = "vimp";
+    extraConfig = {
+      core = {
+        editor = "nvim";
+        pager = "vimp";
+      };
+      pull.rebase = false;
     };
   };
 }
