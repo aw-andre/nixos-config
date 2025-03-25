@@ -2,7 +2,7 @@ set -e
 pushd ~/files/nixos-config/ &>/dev/null
 git submodule foreach git pull origin master
 git add .
-sudo nixos-rebuild switch --flake .#andreaw --show-trace
+sudo nixos-rebuild switch --flake '.?submodules=1#andreaw' --show-trace
 gen=$(nixos-rebuild list-generations | grep current)
 git commit -am "$gen"
 popd &>/dev/null
