@@ -1,20 +1,8 @@
-{ inputs
-, lib
-, config
-, pkgs
-, ...
-}:
-{
-  imports = [
-    ./hardware-configuration.nix
-    ./kanata.nix
-  ];
+{ inputs, lib, config, pkgs, ... }: {
+  imports = [ ./hardware-configuration.nix ./kanata.nix ];
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
     #kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
@@ -42,15 +30,10 @@
     ];
 
     consoleLogLevel = 3;
-    initrd.kernelModules = [
-      "i915"
-      "amdgpu"
-    ];
+    initrd.kernelModules = [ "i915" "amdgpu" ];
 
     loader = {
-      efi = {
-        efiSysMountPoint = "/boot/efi";
-      };
+      efi = { efiSysMountPoint = "/boot/efi"; };
 
       systemd-boot.enable = true;
       #      grub = {
@@ -104,12 +87,11 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
-      settings = {
-        General.FastConnectable = true;
-      };
+      settings = { General.FastConnectable = true; };
     };
   };
   security.pam.services.hyprlock = { };
+
   services = {
     blueman.enable = true;
 
@@ -123,6 +105,11 @@
         # PasswordAuthentication = false;
       };
 
+    };
+
+    mysql = {
+      enable = true;
+      package = pkgs.mariadb;
     };
 
     #    displayManager.sddm = {
@@ -168,16 +155,10 @@
     hyprlock.enable = true;
   };
 
-  fonts.packages = with pkgs; [
-    font-awesome
-    nerd-fonts.jetbrains-mono
-  ];
+  fonts.packages = with pkgs; [ font-awesome nerd-fonts.jetbrains-mono ];
 
   environment = {
-    systemPackages = with pkgs; [
-      networkmanagerapplet
-      wl-clipboard
-    ];
+    systemPackages = with pkgs; [ networkmanagerapplet wl-clipboard ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
