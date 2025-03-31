@@ -3,6 +3,7 @@
     (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
     (writeShellScriptBin "run" (builtins.readFile ./run.bash))
     (writeShellScriptBin "vimp" (builtins.readFile ./vimp.bash))
+    (writeShellScriptBin "vimt" (builtins.readFile ./vimt.bash))
   ];
 
   programs.zsh = {
