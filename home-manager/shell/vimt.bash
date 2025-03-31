@@ -1,1 +1,1 @@
-nvim -c "silent! w! /tmp/vimt | setlocal nowrap"
+nvim -c "silent! w! /tmp/vimt | set nowrap"
