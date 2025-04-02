@@ -14,8 +14,8 @@
       "ctrl+shift+u" = "scroll_to_prompt -1";
       "ctrl+shift+d" = "scroll_to_prompt 1";
       "ctrl+shift+0" = "change_font_size current 14.0";
-      "ctrl+shift+minus" = "change_font_size current -0.5";
-      "ctrl+shift+equal" = "change_font_size current +0.5";
+      "ctrl+shift+minus" = "change_font_size current -1";
+      "ctrl+shift+equal" = "change_font_size current +1";
       "ctrl+shift+h" = "previous_tab";
       "ctrl+shift+l" = "next_tab";
       "ctrl+shift+r" = "set_tab_title";
