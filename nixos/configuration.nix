@@ -110,7 +110,7 @@
     mysql = {
       enable = true;
       package = pkgs.mariadb;
-      initalScript = ./mysqlrc.sql;
+      initialScript = ./mysqlrc.sql;
     };
 
     #    displayManager.sddm = {
