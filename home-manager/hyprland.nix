@@ -139,8 +139,14 @@
         "$mainMod, P, exec, sioyek"
         "$mainMod, B, exec, qutebrowser"
         "$mainMod, X, killactive,"
+
         "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
         "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.5'"
+
+        "$mainMod, minus, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1'"
+        "$mainMod SHIFT, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.333333'"
+        "$mainMod, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2'"
+
         "$mainMod, escape, exec, hyprlock"
         "$mainMod SHIFT, escape, exit,"
         "$mainMod, S, exec, hyprshot -m region -o ~/files/temp"
