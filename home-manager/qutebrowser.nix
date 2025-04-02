@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.qutebrowser = {
     enable = true;
     searchEngines.DEFAULT = "https://google.com/search?hl=en&q={}";
@@ -23,20 +22,11 @@
     keyBindings = {
       normal = {
         "<Tab>" = "spawn --userscript qute-bitwarden";
-        "<Ctrl-->" = "zoom-out";
-        "<Ctrl-=>" = "zoom-in";
-        "<Ctrl-0>" = "zoom";
-        "-" = "nop";
-        "+" = "nop";
-        "=" = "nop";
+        "<Ctrl-0>" = "tab-focus 10";
         "gt" = "tab-next";
         "gT" = "tab-prev";
         "u" = "back";
         "<Ctrl-r>" = "forward";
-        "H" = "nop";
-        "J" = "nop";
-        "K" = "nop";
-        "L" = "nop";
         "x" = "tab-close";
         "X" = "tab-close -o";
         "d" = "nop";
@@ -46,10 +36,9 @@
     extraConfig = ''
       for i in range(1, 100):
         config.bind(f'{i}gt', f'tab-focus {i}')
+      for i in range(1, 10):
+        config.bind(f'<Ctrl-{i}>', f'tab-focus {i}')
     '';
   };
-  home.packages = with pkgs; [
-    rofi
-    keyutils
-  ];
+  home.packages = with pkgs; [ rofi keyutils ];
 }
