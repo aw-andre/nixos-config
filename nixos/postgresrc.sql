@@ -1,1 +1,1 @@
-\pset pager vimt;
+\pset pager on;

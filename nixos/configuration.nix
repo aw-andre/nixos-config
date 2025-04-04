@@ -109,6 +109,8 @@
 
     postgresql = {
       enable = true;
+      ensureUsers = [{ name = "andreaw"; }];
+      ensureDatabases = [ "andreaw" ];
       initialScript = ./postgresrc.sql;
     };
 
