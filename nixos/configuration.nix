@@ -109,7 +109,14 @@
 
     postgresql = {
       enable = true;
-      ensureUsers = [{ name = "andreaw"; }];
+      ensureUsers = [{
+        name = "andreaw";
+        ensureClauses = {
+          superuser = true;
+          createrole = true;
+          createdb = true;
+        };
+      }];
       ensureDatabases = [ "andreaw" ];
       initialScript = ./postgresrc.sql;
     };
