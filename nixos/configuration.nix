@@ -107,10 +107,9 @@
 
     };
 
-    mysql = {
+    postgresql = {
       enable = true;
-      package = pkgs.mariadb;
-      initialScript = ./mysqlrc.sql;
+      initialScript = ./postgresrc.sql;
     };
 
     #    displayManager.sddm = {
