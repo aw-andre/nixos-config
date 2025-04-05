@@ -1,9 +1,4 @@
-{ config
-, inputs
-, pkgs
-, ...
-}:
-{
+{ config, inputs, pkgs, ... }: {
   imports = [
     ./nixvim
     ./ripgrep.nix
@@ -21,9 +16,7 @@
 
   nixpkgs = {
     overlays = [ ];
-    config = {
-      allowUnfree = true;
-    };
+    config = { allowUnfree = true; };
   };
 
   home = {
@@ -31,6 +24,7 @@
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
     packages = with pkgs; [
+      vassal
       obsidian
       ripgrep-all
       bitwarden-cli
