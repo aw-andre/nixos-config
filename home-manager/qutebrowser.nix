@@ -25,8 +25,12 @@
         "<Ctrl-0>" = "tab-focus 10";
         "gt" = "tab-next";
         "gT" = "tab-prev";
+        "H" = "tab-prev";
+        "L" = "tab-next";
         "u" = "back";
         "<Ctrl-r>" = "forward";
+        "J" = "forward";
+        "K" = "back";
         "x" = "tab-close";
         "X" = "tab-close -o";
         "d" = "nop";
