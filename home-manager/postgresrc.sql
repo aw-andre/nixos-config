@@ -1,2 +1,2 @@
-\pset pager on;
-\setenv PAGER vimt;
+\pset pager on
+\setenv PAGER vimt
