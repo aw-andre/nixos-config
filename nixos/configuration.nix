@@ -124,7 +124,6 @@
         };
       }];
       ensureDatabases = [ "andreaw" ];
-      initialScript = ./postgresrc.sql;
     };
 
     #    displayManager.sddm = {

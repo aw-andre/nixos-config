@@ -35,6 +35,7 @@
       unzip
       wireplumber
     ];
+    file.".psqlrc".source = ./postgresrc.sql;
   };
 
   services = {
