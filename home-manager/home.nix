@@ -12,6 +12,7 @@
     ./sioyek.nix
     ./waybar.nix
     ./wofi.nix
+    ./fzf.nix
   ];
 
   nixpkgs = {
