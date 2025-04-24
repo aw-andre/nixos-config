@@ -53,6 +53,8 @@
   };
 
   programs = {
+    bat.enable = true;
+    fd.enable = true;
     home-manager.enable = true;
     firefox.enable = true;
   };
