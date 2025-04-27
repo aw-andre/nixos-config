@@ -13,10 +13,10 @@
       FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
       _fzf_compgen_path() {
-        fd --hidden --follow --exclude ".git" . "$1"
+        fd --type f --hidden --exclude .git
       }
       _fzf_compgen_dir() {
-        fd --type d --hidden --follow --exclude ".git" . "$1"
+        fd --type d --hidden --exclude .git
       }
     '';
   };
