@@ -147,6 +147,9 @@
         "$mainMod SHIFT, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.333333'"
         "$mainMod, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2'"
 
+        "$mainMod SHIFT, R, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2, transform, 0'"
+        "$mainMod, R, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2, transform, 3'"
+
         "$mainMod, escape, exec, hyprlock"
         "$mainMod SHIFT, escape, exit,"
         "$mainMod, S, exec, hyprshot -m region -o ~/files/temp"
