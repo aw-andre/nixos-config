@@ -21,9 +21,12 @@
       "ctrl+shift+r" = "set_tab_title";
     };
     themeFile = "VSCode_Dark";
-    settings.scrollback_pager = ''
-      nvim -c "silent! w! /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | exec 'norm G' | bn | bd!"
-    '';
+    settings = {
+      scrollback_lines = 10000;
+      scrollback_pager = ''
+        nvim -c "silent! w! /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | exec 'norm G' | bn | bd!"
+      '';
+    };
     extraConfig = ''
       tab_bar_edge top
       tab_bar_style powerline
