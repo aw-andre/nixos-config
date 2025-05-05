@@ -42,6 +42,7 @@
   services = {
     blueman-applet.enable = true;
     network-manager-applet.enable = true;
+    ssh-agent.enable = true;
     swaync.enable = true;
     hyprpaper = {
       enable = true;
@@ -53,6 +54,10 @@
   };
 
   programs = {
+    ssh = {
+      enable = true;
+      addKeysToAgent = "yes";
+    };
     bat.enable = true;
     fd.enable = true;
     home-manager.enable = true;
