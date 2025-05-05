@@ -26,7 +26,6 @@
     stateVersion = "25.05";
     packages = with pkgs; [
       vassal
-      obsidian
       ripgrep-all
       bitwarden-cli
       bitwarden-desktop
