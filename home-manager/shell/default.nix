@@ -20,7 +20,6 @@
       cdp = "cd ~/files/projects/";
       cds = "cd ~/files/school/";
       cdt = "cd ~/files/temp/";
-      cdv = "cd ~/files/obsidian/";
     };
     initExtra = builtins.readFile ./zshrc.zsh;
     plugins = [
