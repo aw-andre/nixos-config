@@ -22,6 +22,7 @@
     };
     themeFile = "VSCode_Dark";
     settings = {
+      term = "xterm-256color";
       scrollback_lines = 10000;
       scrollback_pager = ''
         nvim -c "silent! w! /tmp/kitty_scrollback_buffer | exec 'te cat /tmp/kitty_scrollback_buffer -' | exec 'norm G' | bn | bd!"
