@@ -16,7 +16,7 @@
     shellAliases = {
       cdf = "cd ~/files/";
       cdb = "cd ~/files/books/";
-      cdc = "cd ~/files/nixos-config/";
+      cdc = "cd ~/files/configs/laptop-config/";
       cdp = "cd ~/files/projects/";
       cds = "cd ~/files/school/";
       cdt = "cd ~/files/temp/";

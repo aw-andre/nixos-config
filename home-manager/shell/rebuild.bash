@@ -1,5 +1,5 @@
 set -e
-cd ~/files/nixos-config/
+cd ~/files/configs/laptop-config
 cd home-manager/nixvim && git fetch origin && git reset --hard origin/master
 cd -
 git add .
