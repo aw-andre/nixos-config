@@ -5,8 +5,8 @@
     settings = {
       monitor = [
         "desc: , disable"
-        "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1.2"
-        "desc:Apple Computer Inc Color LCD, preferred, auto, 1.5"
+        "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1.2, transform, 3"
+        "desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333"
         ", preferred, auto, auto"
       ];
 
@@ -141,7 +141,7 @@
         "$mainMod, X, killactive,"
 
         "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
-        "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.5'"
+        "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333'"
 
         "$mainMod, minus, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1'"
         "$mainMod SHIFT, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.333333'"
