@@ -53,6 +53,10 @@
   };
 
   programs = {
+    gh = {
+      enable = true;
+      gitCredentialHelper.enable = true;
+    };
     ssh = {
       enable = true;
       addKeysToAgent = "yes";
