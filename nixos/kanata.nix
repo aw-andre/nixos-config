@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, pkgs, ... }:
 
 {
   # Enable the uinput module
@@ -22,10 +17,7 @@
 
   # Add the Kanata service user to necessary groups
   systemd.services.kanata-internalKeyboard.serviceConfig = {
-    SupplementaryGroups = [
-      "input"
-      "uinput"
-    ];
+    SupplementaryGroups = [ "input" "uinput" ];
   };
 
   services.kanata = {
@@ -33,16 +25,8 @@
     keyboards = {
       internalKeyboard = {
         devices = [
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:1:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:2:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:2:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:3:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:3:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usb-0:4:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:4:1.0-event-kbd"
-          "/dev/input/by-path/pci-0000:04:00.1-usb-0:5:1.1-event-kbd"
-          "/dev/input/by-path/pci-0000:04:00.1-usbv2-0:5:1.1-event-kbd"
+          "/dev/input/by-id/usb-Apple_Inc._Apple_Internal_Keyboard___Trackpad_FM7945403UHHYYKA9+WTN-if01-event-kbd"
+          "/dev/input/by-id/usb-Keychron_K1_Machenike_K7-event-kbd"
         ];
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
