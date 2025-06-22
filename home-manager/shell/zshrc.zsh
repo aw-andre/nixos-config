@@ -5,4 +5,4 @@ PROJ=~/files/projects;
 SCHL=~/files/school;
 TEMP=~/files/temp;
 
-eval `ssh-agent`
+# eval `ssh-agent`
