@@ -169,7 +169,19 @@
     hyprlock.enable = true;
   };
 
-  fonts.packages = with pkgs; [ font-awesome nerd-fonts.jetbrains-mono ];
+  fonts.packages = with pkgs; [
+    font-awesome
+    nerd-fonts.jetbrains-mono
+    (pkgs.stdenv.mkDerivation {
+      pname = "my-fonts";
+      version = "1.0";
+      src = ./fonts;
+      installPhase = ''
+        mkdir -p $out/share/fonts/
+        cp *.otf $out/share/fonts/
+      '';
+    })
+  ];
 
   environment = {
     systemPackages = with pkgs; [ networkmanagerapplet wl-clipboard ];

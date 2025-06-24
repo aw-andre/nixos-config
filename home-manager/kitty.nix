@@ -1,7 +1,7 @@
 {
   programs.kitty = {
     enable = true;
-    font.name = "JetBrains Mono";
+    font.name = "Comic Code";
     font.size = 14;
     keybindings = {
       "ctrl+shift+/" = "show_scrollback";
@@ -20,7 +20,7 @@
       "ctrl+shift+l" = "next_tab";
       "ctrl+shift+r" = "set_tab_title";
     };
-    themeFile = "VSCode_Dark";
+    themeFile = "gruvbox-dark";
     settings = {
       term = "xterm-256color";
       scrollback_lines = 10000;
