@@ -189,10 +189,15 @@
       NIXOS_OZONE_WL = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
     };
-    etc."inputrc".text = ''
-      set editing-mode vi
-      set keymap vi-command
-    '';
+    etc = {
+      "inputrc".text = ''
+        set editing-mode vi
+        set keymap vi-command
+      '';
+      "editrc".text = ''
+        bind -v
+      '';
+    };
   };
 
   users = {
