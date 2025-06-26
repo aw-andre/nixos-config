@@ -1,8 +1,6 @@
 {
   programs.kitty = {
     enable = true;
-    font.name = "Comic Code";
-    font.size = 14;
     keybindings = {
       "ctrl+shift+/" = "show_scrollback";
       "ctrl+shift+." = "show_last_command_output";
@@ -29,6 +27,12 @@
       '';
     };
     extraConfig = ''
+      font_family Comic Code
+      bold_font Comic Code Bold
+      italic_font Comic Code Italic
+      bold_italic_font Comic Code Bold Italic
+      font_size 14.0
+      window_padding_width 10 5
       tab_bar_edge top
       tab_bar_style powerline
       enable_audio_bell no
