@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font.name = "Comic Code";
-    font.size = 15;
+    font.size = 14;
     keybindings = {
       "ctrl+shift+/" = "show_scrollback";
       "ctrl+shift+." = "show_last_command_output";
@@ -13,7 +13,7 @@
       "ctrl+shift+]" = "scroll_end";
       "ctrl+shift+u" = "scroll_to_prompt -1";
       "ctrl+shift+d" = "scroll_to_prompt 1";
-      "ctrl+shift+0" = "change_font_size current 15.0";
+      "ctrl+shift+0" = "change_font_size current 14.0";
       "ctrl+shift+minus" = "change_font_size current -1";
       "ctrl+shift+equal" = "change_font_size current +1";
       "ctrl+shift+h" = "previous_tab";
@@ -32,7 +32,7 @@
       tab_bar_edge top
       tab_bar_style powerline
       enable_audio_bell no
-      modify_font cell_height 175%
+      modify_font cell_height 150%
       background_opacity 0.5
       cursor_shape_unfocused unchanged
       cursor_trail 1
