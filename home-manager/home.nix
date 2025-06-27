@@ -62,7 +62,10 @@
       addKeysToAgent = "yes";
     };
     bat.enable = true;
-    fd.enable = true;
+    fd = {
+      enable = true;
+      hidden = true;
+    };
     home-manager.enable = true;
     firefox.enable = true;
     google-chrome.enable = true;
