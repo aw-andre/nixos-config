@@ -35,10 +35,14 @@
         "gT" = "tab-prev";
         "H" = "tab-prev";
         "L" = "tab-next";
+        "<Left>" = "tab-prev";
+        "<Right>" = "tab-next";
         "u" = "back";
         "<Ctrl-r>" = "forward";
         "J" = "forward";
         "K" = "back";
+        "<Down>" = "forward";
+        "<Up>" = "back";
         "x" = "tab-close";
         "X" = "tab-close -o";
         "d" = "nop";

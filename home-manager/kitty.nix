@@ -16,6 +16,8 @@
       "ctrl+shift+equal" = "change_font_size current +1";
       "ctrl+shift+h" = "previous_tab";
       "ctrl+shift+l" = "next_tab";
+      "ctrl+shift+left" = "previous_tab";
+      "ctrl+shift+right" = "next_tab";
       "ctrl+shift+r" = "set_tab_title";
     };
     themeFile = "gruvbox-dark";

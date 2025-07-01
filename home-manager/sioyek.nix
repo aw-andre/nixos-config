@@ -2,8 +2,6 @@
   programs.sioyek = {
     enable = true;
     bindings = {
-      move_down_smooth = "j";
-      move_up_smooth = "k";
       move_left = "h";
       move_right = "l";
       copy = "y";
