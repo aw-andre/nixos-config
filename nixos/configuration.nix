@@ -126,6 +126,8 @@
       ensureDatabases = [ "andreaw" ];
     };
 
+    redis.enable = true;
+
     #    displayManager.sddm = {
     #      enable = true;
     #      wayland.enable = true;
@@ -200,6 +202,8 @@
     };
   };
 
+  virtualisation.docker.enable = true;
+
   users = {
     defaultUserShell = pkgs.zsh;
     users = {
@@ -216,6 +220,7 @@
           "scanner"
           "dialout"
           "uucp"
+          "docker"
         ];
       };
     };
