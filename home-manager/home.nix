@@ -25,14 +25,15 @@
     homeDirectory = "/home/andreaw";
     stateVersion = "25.05";
     packages = with pkgs; [
-      vassal
-      ripgrep-all
       bitwarden-cli
       bitwarden-desktop
-      hyprshot
       brightnessctl
+      hyprshot
       playerctl
+      ripgrep-all
+      tree
       unzip
+      vassal
       wireplumber
     ];
     file.".psqlrc".source = ./postgresrc.sql;
