@@ -5,10 +5,11 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
-    #kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
       "splash"
+
+      # gpu
       "amdgpu.dc=1"
       "amdgpu.dpm=1"
       "amdgpu.runpm=0"
@@ -26,40 +27,15 @@
       "i915.enable_fbc=0"
       "i915.modeset=1"
       "i915.enable_guc=3"
-      #"video=DP-2:d"
     ];
 
-    consoleLogLevel = 3;
     initrd.kernelModules = [ "i915" "amdgpu" ];
+
+    consoleLogLevel = 3;
 
     loader = {
       efi = { efiSysMountPoint = "/boot/efi"; };
-
       systemd-boot.enable = true;
-      #      grub = {
-      #        efiInstallAsRemovable = true;
-      #        efiSupport = true;
-      #        useOSProber = true;
-      #        devices = [ "nodev" ];
-      #
-      #        extraEntries = ''
-      #          menuentry "MacOS" {
-      #            exit
-      #          }
-      #        '';
-      #
-      #	theme = pkgs.stdenv.mkDerivation {
-      #	  pname = "distro-grub-themes";
-      #	  version = "3.1";
-      #	  src = pkgs.fetchFromGitHub {
-      #	    owner = "AdisonCavani";
-      #	    repo = "distro-grub-themes";
-      #	    rev = "v3.1";
-      #	    hash = "sha256-ZcoGbbOMDDwjLhsvs77C7G7vINQnprdfI37a9ccrmPs=";
-      #	  };
-      #	  installPhase = "cp -r customize/nixos $out";
-      #	};
-      #      };
     };
   };
 
@@ -69,8 +45,11 @@
   };
 
   hardware = {
+    # gpu
     graphics.enable = true;
     apple-t2.enableIGPU = true;
+
+    # wifi/bluetooth
     firmware = [
       (pkgs.stdenvNoCC.mkDerivation {
         name = "brcm-firmware";
@@ -90,24 +69,20 @@
       settings = { General.FastConnectable = true; };
     };
   };
-  security.pam.services.hyprlock = { };
 
   services = {
-
     avahi = {
       enable = true;
       nssmdns4 = true;
       openFirewall = true;
     };
+
     blueman.enable = true;
 
     openssh = {
       enable = true;
       settings = {
-        # Opinionated: forbid root login through SSH.
         # PermitRootLogin = "no";
-        # Opinionated: use keys only.
-        # Remove if you want to SSH using passwords
         # PasswordAuthentication = false;
       };
 
@@ -126,28 +101,6 @@
       ensureDatabases = [ "andreaw" ];
     };
 
-    redis.enable = true;
-
-    #    displayManager.sddm = {
-    #      enable = true;
-    #      wayland.enable = true;
-    #    };
-    #
-    #    xserver = {
-    #      enable = true;
-    #      desktopManager.plasma5.enable = true;
-    #      xkb.layout = "us";
-    #    };
-    #
-    #    libinput = {
-    #      enable = true;
-    #      touchpad = {
-    #        naturalScrolling = true;
-    #        disableWhileTyping = true;
-    #      };
-    #      mouse.naturalScrolling = true;
-    #    };
-
     printing.enable = true;
 
     pipewire = {
@@ -160,6 +113,8 @@
       SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="low"
     '';
   };
+
+  security.pam.services.hyprlock = { };
 
   programs = {
     zsh.enable = true;
