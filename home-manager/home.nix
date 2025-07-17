@@ -28,6 +28,7 @@
       bitwarden-cli
       bitwarden-desktop
       brightnessctl
+      discord
       hyprshot
       playerctl
       ripgrep-all
