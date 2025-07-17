@@ -8,7 +8,7 @@
         "--preview 'bat --style=numbers --color=always --line-range=:500 {}'"
       ];
     };
-    zsh.initExtra = ''
+    zsh.initContent = ''
       FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git'
       FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
 
