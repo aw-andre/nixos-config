@@ -2,10 +2,8 @@
   description = "NixOS Flake for T2 Mac";
 
   nixConfig = {
-    extra-substituters = [
-      "https://cache.soopy.moe"
-      "https://hyprland.cachix.org"
-    ];
+    extra-substituters =
+      [ "https://cache.soopy.moe" "https://hyprland.cachix.org" ];
     extra-trusted-public-keys = [
       "cache.soopy.moe-1:0RZVsQeR+GOh0VQI9rvnHz55nVXkFardDqfm4+afjPo="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
@@ -27,25 +25,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs =
-    inputs@{
-      self,
-      nixos-hardware,
-      nixvim,
-      nixpkgs,
-      home-manager,
-      ...
-    }:
-    let
-      inherit (self) outputs;
-    in
-    {
+  outputs = inputs@{ self, nixos-hardware, nixvim, nixpkgs, home-manager, ... }:
+    let inherit (self) outputs;
+    in {
       nixosConfigurations.andreaw = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; };
         modules = [
@@ -61,15 +46,11 @@
             # home-manager.useGlobalPkgs = true;
             home-manager = {
               useUserPackages = true;
-              extraSpecialArgs = {
-                inherit inputs;
-              };
+              extraSpecialArgs = { inherit inputs; };
 
               users.andreaw = {
-                imports = [
-                  nixvim.homeManagerModules.nixvim
-                  ./home-manager/home.nix
-                ];
+                imports =
+                  [ nixvim.homeManagerModules.nixvim ./home-manager/home.nix ];
               };
             };
           }
