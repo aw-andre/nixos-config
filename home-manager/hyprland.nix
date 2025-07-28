@@ -133,11 +133,12 @@
 
       gestures = { "workspace_swipe" = "false"; };
 
-      "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
+      "$mainMod" = "SUPER";
       bind = [
         "$mainMod, T, exec, $terminal"
         "$mainMod, P, exec, sioyek"
         "$mainMod, B, exec, qutebrowser"
+        "$mainMod SHIFT, B, exec, firefox"
         "$mainMod, X, killactive,"
 
         "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
