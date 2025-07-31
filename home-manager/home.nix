@@ -28,6 +28,10 @@
       bitwarden-cli
       bitwarden-desktop
       brightnessctl
+      calibre
+      libmtp
+      simple-mtpfs
+      usbutils
       discord
       hyprshot
       playerctl
