@@ -40,6 +40,8 @@
       unzip
       vassal
       wireplumber
+      wineWow64Packages.waylandFull
+      winetricks
     ];
     file.".psqlrc".source = ./postgresrc.sql;
   };
