@@ -42,6 +42,12 @@
       wireplumber
       wineWow64Packages.waylandFull
       winetricks
+      (import (pkgs.fetchFromGitHub {
+        owner = "NixOS";
+        repo = "nixpkgs";
+        rev = "nixos-25.05"; # Try this stable release
+        sha256 = "sha256-+jkEZxs7bfOKfBIk430K+tK9IvXlwzqQQnppC2ZKFj4=";
+      }) { inherit system; }).k2pdfopt
     ];
     file.".psqlrc".source = ./postgresrc.sql;
   };
