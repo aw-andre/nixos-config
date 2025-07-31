@@ -168,6 +168,7 @@
         isNormalUser = true;
         openssh.authorizedKeys.keys = [ ];
         extraGroups = [
+          "plugdev"
           "wheel"
           "video"
           "audio"
