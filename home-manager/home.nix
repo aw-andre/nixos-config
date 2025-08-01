@@ -29,19 +29,20 @@
       bitwarden-desktop
       brightnessctl
       calibre
-      libmtp
-      simple-mtpfs
-      usbutils
       discord
       hyprshot
+      libmtp
       playerctl
+      python314FreeThreading
       ripgrep-all
+      simple-mtpfs
       tree
       unzip
+      usbutils
       vassal
-      wireplumber
       wineWow64Packages.waylandFull
       winetricks
+      wireplumber
       (import (pkgs.fetchFromGitHub {
         owner = "NixOS";
         repo = "nixpkgs";
@@ -49,6 +50,7 @@
         sha256 = "sha256-+jkEZxs7bfOKfBIk430K+tK9IvXlwzqQQnppC2ZKFj4=";
       }) { inherit system; }).k2pdfopt
     ];
+
     file.".psqlrc".source = ./postgresrc.sql;
   };
 
