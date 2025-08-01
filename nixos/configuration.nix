@@ -115,7 +115,12 @@
     '';
   };
 
-  security.pam.services.hyprlock = { };
+  security = {
+    pam.services.hyprlock = { };
+    sudo.extraConfig = ''
+      Defaults timestamp_timeout=60
+    '';
+  };
 
   programs = {
     zsh.enable = true;
