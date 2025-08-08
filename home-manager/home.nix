@@ -31,6 +31,7 @@
       calibre
       discord
       hyprshot
+      gemini-cli
       libmtp
       playerctl
       python314FreeThreading
