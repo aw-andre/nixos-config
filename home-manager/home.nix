@@ -38,6 +38,7 @@
       ripgrep-all
       simple-mtpfs
       tree
+      unoconv
       unzip
       usbutils
       vassal
