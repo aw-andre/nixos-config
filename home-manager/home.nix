@@ -35,7 +35,8 @@
       libmtp
       playerctl
       poppler-utils
-      python314FreeThreading
+      python313FreeThreading
+      python313Packages.ipython
       ripgrep-all
       simple-mtpfs
       tree
