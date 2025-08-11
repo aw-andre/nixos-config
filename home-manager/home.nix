@@ -34,6 +34,7 @@
       gemini-cli
       libmtp
       playerctl
+      poppler-utils
       python314FreeThreading
       ripgrep-all
       simple-mtpfs
