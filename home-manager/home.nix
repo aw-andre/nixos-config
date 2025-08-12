@@ -30,9 +30,11 @@
       brightnessctl
       calibre
       discord
-      hyprshot
       gemini-cli
+      hyprshot
+      jq
       libmtp
+      networkmanagerapplet
       playerctl
       poppler-utils
       python313FreeThreading
@@ -47,7 +49,6 @@
       wineWow64Packages.waylandFull
       winetricks
       wireplumber
-      networkmanagerapplet
       wl-clipboard
       (import (pkgs.fetchFromGitHub {
         owner = "NixOS";

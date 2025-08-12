@@ -4,6 +4,7 @@
     (writeShellScriptBin "run" (builtins.readFile ./run.bash))
     (writeShellScriptBin "vimp" (builtins.readFile ./vimp.bash))
     (writeShellScriptBin "vimt" (builtins.readFile ./vimt.bash))
+    (writeShellScriptBin "disable" (builtins.readFile ./disable.bash))
   ];
 
   programs.zsh = {

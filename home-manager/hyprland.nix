@@ -15,6 +15,7 @@
       "$menu" = "wofi --show drun";
 
       "exec-once" = [ "waybar & swaync" "keyctl link @u @s" ];
+      "exec" = [ "disable" ];
 
       env = [
         "XCURSOR_SIZE,24"
