@@ -47,6 +47,8 @@
       wineWow64Packages.waylandFull
       winetricks
       wireplumber
+      networkmanagerapplet
+      wl-clipboard
       (import (pkgs.fetchFromGitHub {
         owner = "NixOS";
         repo = "nixpkgs";
@@ -55,7 +57,30 @@
       }) { inherit system; }).k2pdfopt
     ];
 
-    file.".psqlrc".source = ./postgresrc.sql;
+    sessionVariables = {
+      PAGER = "vimp";
+      MANPAGER = "nvim -c 'Man!'";
+      NIXOS_OZONE_WL = "1";
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      QT_QUICK_BACKEND = "software";
+    };
+
+    file = {
+      ".psqlrc".text = ''
+        \pset pager on
+        \setenv PAGER vimt
+      '';
+      "ipython_config.py" = {
+        text = ''
+          c = get_config()
+          c.TerminalInteractiveShell.editing_mode = 'vi'
+          c.TerminalInteractiveShell.confirm_exit = False
+          c.TerminalInteractiveShell.autoindent = True
+          c.TerminalInteractiveShell.highlight_matching_brackets = True
+        '';
+        target = ".ipython/profile_default/ipython_config.py";
+      };
+    };
   };
 
   services = {

@@ -9,10 +9,6 @@
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
-    sessionVariables = {
-      PAGER = "vimp";
-      MANPAGER = "nvim -c 'Man!'";
-    };
     shellAliases = {
       cdf = "cd ~/files/";
       cdb = "cd ~/files/books/";

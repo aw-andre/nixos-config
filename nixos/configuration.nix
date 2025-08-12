@@ -147,18 +147,14 @@
   ];
 
   environment = {
-    systemPackages = with pkgs; [ networkmanagerapplet wl-clipboard ];
-    sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-      ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      QT_QUICK_BACKEND = "software";
-    };
+    sessionVariables = { EDITRC = "/etc/editrc"; };
     etc = {
       "inputrc".text = ''
         set editing-mode vi
         set keymap vi-command
       '';
       "editrc".text = ''
+        edit on
         bind -v
       '';
     };
