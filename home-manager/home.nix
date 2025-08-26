@@ -113,7 +113,7 @@
       hidden = true;
     };
     home-manager.enable = true;
-    firefox.enable = true;
+    google-chrome.enable = true;
   };
 
   xdg.userDirs.download = "${config.home.homeDirectory}/files/temp";
