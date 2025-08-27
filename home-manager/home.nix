@@ -37,6 +37,8 @@
       networkmanagerapplet
       playerctl
       poppler-utils
+      python313Packages.python
+      python313Packages.ipython
       ripgrep-all
       simple-mtpfs
       tree
