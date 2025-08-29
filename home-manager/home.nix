@@ -10,6 +10,7 @@
     ./qutebrowser.nix
     ./shell
     ./sioyek.nix
+    ./tmux.nix
     ./waybar.nix
     ./wofi.nix
     ./fzf.nix
