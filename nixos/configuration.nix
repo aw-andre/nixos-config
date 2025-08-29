@@ -132,6 +132,12 @@
     hyprlock.enable = true;
   };
 
+  documentation = {
+    dev.enable = true;
+    man.generateCaches = true;
+    nixos.includeAllModules = true;
+  };
+
   fonts.packages = with pkgs; [
     font-awesome
     nerd-fonts.jetbrains-mono
@@ -147,6 +153,8 @@
   ];
 
   environment = {
+    systemPackages = with pkgs; [ man-pages tldr ];
+
     sessionVariables = { EDITRC = "/etc/editrc"; };
     etc = {
       "inputrc".text = ''
