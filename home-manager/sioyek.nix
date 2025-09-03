@@ -14,7 +14,7 @@
       new_window = "<C-w>s";
       close_window = "<C-w>q";
       goto_toc = "t";
-      zoom_in = "<C-S-=>";
+      zoom_in = "<C-+>";
       fit_to_page_width = "<C-=>";
       zoom_out = "<C-->";
       regex_search = "/";
