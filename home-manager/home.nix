@@ -30,6 +30,7 @@
       bitwarden-desktop
       brightnessctl
       calibre
+      curl
       discord
       gemini-cli
       hyprshot
@@ -47,6 +48,7 @@
       unzip
       usbutils
       vassal
+      wget
       wineWow64Packages.waylandFull
       winetricks
       wireplumber
