@@ -78,6 +78,7 @@
     };
 
     blueman.enable = true;
+    # envfs.enable = true;
 
     openssh = {
       enable = true;
@@ -123,6 +124,16 @@
   };
 
   programs = {
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        stdenv.cc.cc.lib
+        glibc
+        clang
+        llvmPackages.libclang.lib
+        llvmPackages.llvm.lib
+      ];
+    };
     zsh.enable = true;
     thunar.enable = true;
     hyprland = {
