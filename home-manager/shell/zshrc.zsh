@@ -1,8 +1,9 @@
-FILE=~/files;
-BOOK=~/files/books;
-CONF=~/files/configs/nixos-config;
-PROJ=~/files/projects;
-SCHL=~/files/school;
-TEMP=~/files/temp;
+fl=~/files;
+bk=~/files/books;
+cf=~/files/configs/nixos-config;
+pj=~/files/projects;
+sl=~/files/school;
+tp=~/files/temp;
 
+setopt GLOB_DOTS
 # eval `ssh-agent`
