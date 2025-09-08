@@ -117,6 +117,7 @@
     };
     home-manager.enable = true;
     google-chrome.enable = true;
+    nix-index.enable = true;
   };
 
   xdg.userDirs.download = "${config.home.homeDirectory}/files/temp";
