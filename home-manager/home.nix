@@ -37,6 +37,7 @@
       jq
       libmtp
       networkmanagerapplet
+      neovide
       playerctl
       poppler-utils
       python313Packages.python
