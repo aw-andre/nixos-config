@@ -1,10 +1,16 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
-    (writeShellScriptBin "run" (builtins.readFile ./run.bash))
-    (writeShellScriptBin "vimp" (builtins.readFile ./vimp.bash))
-    (writeShellScriptBin "vimt" (builtins.readFile ./vimt.bash))
-    (writeShellScriptBin "disable" (builtins.readFile ./disable.bash))
+    (writeShellScriptBin "run" ''
+      "$@" &> /dev/null &
+      disown
+    '')
+    (writeShellScriptBin "vimp" ''
+      nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | bn | bd!"
+    '')
+    (writeShellScriptBin "vimt" ''
+      nvim -c "silent! w! /tmp/vimt | set nowrap"
+    '')
   ];
 
   programs.zsh = {
