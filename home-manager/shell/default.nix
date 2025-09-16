@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
-    (writeShellScriptBin "run" (builtins.readFile ./run.bash))
+    (writeShellScriptBin "fork" (builtins.readFile ./fork.bash))
     (writeShellScriptBin "vimp" ''
       nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | bn | bd!"
     '')
