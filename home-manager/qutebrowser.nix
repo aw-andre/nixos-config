@@ -48,6 +48,12 @@
         "d" = "nop";
         "D" = "nop";
       };
+      caret = {
+        "<Up>" = "move-to-prev-line";
+        "<Down>" = "move-to-next-line";
+        "<Left>" = "move-to-prev-char";
+        "<Right>" = "move-to-next-char";
+      };
     };
     extraConfig = ''
       for i in range(1, 100):
