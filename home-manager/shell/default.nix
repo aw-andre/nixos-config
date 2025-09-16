@@ -1,10 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
-    (writeShellScriptBin "run" ''
-      "$@" &> /dev/null &
-      disown
-    '')
+    (writeShellScriptBin "run" (builtins.readFile ./run.bash))
     (writeShellScriptBin "vimp" ''
       nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | bn | bd!"
     '')
