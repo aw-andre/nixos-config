@@ -15,9 +15,9 @@
       "$menu" = "wofi --show drun";
 
       "exec-once" = [
-        ''ftm -e zsh -ci "cd $pj/carbon/carbon-lang; fvd; fgm; exec zsh -i"''
-        "fqb https://cppreference.com"
-        "fgc https://youtube.com"
+        ''
+          ftm -e zsh -ci "cd $PROJ; fvd && fgm && fqb https://cppreference.com && fgc https://youtube.com && exec zsh -i" 
+        ''
         "swaync"
         "keyctl link @u @s"
       ];
