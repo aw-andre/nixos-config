@@ -8,12 +8,12 @@
     (writeShellScriptBin "vimt" ''
       nvim -c "silent! w! /tmp/vimt | set nowrap"
     '')
-    (writeShellScriptBin "ftm" "fork -w 1 kitty $@")
-    (writeShellScriptBin "fvm" "fork -w 2 vim $@")
-    (writeShellScriptBin "fvd" "fork -w 2 neovide $@")
-    (writeShellScriptBin "fgm" "fork -w 3 gemini $@")
-    (writeShellScriptBin "fqb" "fork -w 4 qutebrowser $@")
-    (writeShellScriptBin "fgc" "fork -w 7 google-chrome-stable $@")
+    (writeShellScriptBin "ftm" ''fork -w 1 kitty "$@"'')
+    (writeShellScriptBin "fvm" ''fork -w 2 vim "$@"'')
+    (writeShellScriptBin "fvd" ''fork -w 2 neovide "$@"'')
+    (writeShellScriptBin "fgm" ''fork -w 3 gemini "$@"'')
+    (writeShellScriptBin "fqb" ''fork -w 4 qutebrowser "$@"'')
+    (writeShellScriptBin "fgc" ''fork -w 7 google-chrome-stable "$@"'')
   ];
 
   programs.zsh = {

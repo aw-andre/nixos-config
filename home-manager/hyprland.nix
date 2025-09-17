@@ -14,7 +14,13 @@
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      "exec-once" = [ "swaync" "keyctl link @u @s" ];
+      "exec-once" = [
+        ''ftm -e zsh -ci "cd $pj/carbon/carbon-lang; fvd; fgm; exec zsh -i"''
+        "fqb https://cppreference.com"
+        "fgc https://youtube.com"
+        "swaync"
+        "keyctl link @u @s"
+      ];
       "exec" = [
         "pkill waybar; waybar"
         "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
