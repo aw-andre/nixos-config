@@ -14,6 +14,7 @@ fi
 
 ARGS+=("$@")
 BIN="${ARGS[0]}"
+CMD="$(printf '%q ' "${ARGS[@]}")"
 
 # Get existing windows before launch (for workspace moving)
 if [[ -v WINDOW ]]; then
@@ -22,9 +23,9 @@ fi
 
 # Launch command
 if [[ "${TUI[*]}" =~ $BIN ]]; then
-	kitty -e zsh -ci "${ARGS[@]}" &>/dev/null &
+	kitty -e zsh -ci "eval $CMD" &>/dev/null &
 else
-	"${ARGS[@]}" &>/dev/null &
+	eval "$CMD" &>/dev/null &
 fi
 disown
 
