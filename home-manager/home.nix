@@ -44,6 +44,7 @@
       python313Packages.ipython
       ripgrep-all
       simple-mtpfs
+      steam-run
       tree
       unoconv
       unzip
