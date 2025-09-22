@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
     (writeShellScriptBin "fork" (builtins.readFile ./fork.bash))
+    (writeShellScriptBin "gui" (builtins.readFile ./gui.bash))
     (writeShellScriptBin "vimp" ''
       nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | bn | bd!"
     '')
@@ -14,6 +15,7 @@
     (writeShellScriptBin "fgm" ''fork -w 3 gemini "$@"'')
     (writeShellScriptBin "fqb" ''fork -w 4 qutebrowser "$@"'')
     (writeShellScriptBin "fgc" ''fork -w 7 google-chrome-stable "$@"'')
+    (writeShellScriptBin "vid" ''gui -w 2 neovide "$@"'')
   ];
 
   programs.zsh = {
