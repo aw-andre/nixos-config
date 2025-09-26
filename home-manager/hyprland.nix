@@ -16,7 +16,8 @@
 
       "exec-once" = [
         ''
-          ftm -e zsh -ci "cd $PROJ; fgm && fqb && fgc https://youtube.com && vid && exec zsh -i" 
+          ftm -e zsh -ci "cd $PROJ; bgm && bqb && bgc https://youtube.com && exec zsh -i" 
+
         ''
         "swaync"
         "keyctl link @u @s"

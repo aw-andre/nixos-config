@@ -16,8 +16,10 @@ ARGS+=("$@")
 BIN="${ARGS[0]}"
 CMD="$(printf '%q ' "${ARGS[@]}")"
 
-PREV=$(hyprctl activeworkspace -j | jq -r '.id')
-hyprctl dispatch workspace "$WINDOW" &>/dev/null
+if [[ -v WINDOW ]]; then
+	PREV=$(hyprctl activeworkspace -j | jq -r '.id')
+	hyprctl dispatch workspace "$WINDOW" &>/dev/null
+fi
 
 # Launch command
 if [[ "${TUI[*]}" =~ $BIN ]]; then
@@ -26,4 +28,6 @@ else
 	eval "$CMD"
 fi
 
-hyprctl dispatch workspace "$PREV" &>/dev/null
+if [[ -v WINDOW ]]; then
+	hyprctl dispatch workspace "$PREV" &>/dev/null
+fi

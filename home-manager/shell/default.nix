@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
     (writeShellScriptBin "fork" (builtins.readFile ./fork.bash))
+    (writeShellScriptBin "bfork" (builtins.readFile ./bfork.bash))
     (writeShellScriptBin "gui" (builtins.readFile ./gui.bash))
     (writeShellScriptBin "vimp" ''
       nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | bn | bd!"
@@ -9,13 +10,22 @@
     (writeShellScriptBin "vimt" ''
       nvim -c "silent! w! /tmp/vimt | set nowrap"
     '')
+
     (writeShellScriptBin "ftm" ''fork -w 1 kitty "$@"'')
     (writeShellScriptBin "fvm" ''fork -w 2 vim "$@"'')
     (writeShellScriptBin "fvd" ''fork -w 2 neovide "$@"'')
     (writeShellScriptBin "fgm" ''fork -w 3 gemini "$@"'')
     (writeShellScriptBin "fqb" ''fork -w 4 qutebrowser "$@"'')
     (writeShellScriptBin "fgc" ''fork -w 7 google-chrome-stable "$@"'')
-    (writeShellScriptBin "vid" ''gui -w 2 neovide "$@"'')
+
+    (writeShellScriptBin "btm" ''bfork -w 1 kitty "$@"'')
+    (writeShellScriptBin "bvm" ''bfork -w 2 vim "$@"'')
+    (writeShellScriptBin "bvd" ''bfork -w 2 neovide "$@"'')
+    (writeShellScriptBin "bgm" ''bfork -w 3 gemini "$@"'')
+    (writeShellScriptBin "bqb" ''bfork -w 4 qutebrowser "$@"'')
+    (writeShellScriptBin "bgc" ''bfork -w 7 google-chrome-stable "$@"'')
+
+    (writeShellScriptBin "vid" ''fork -w 2 neovide "$@"'')
   ];
 
   programs.zsh = {
