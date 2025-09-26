@@ -74,10 +74,10 @@
       #   Gruvbox dark, hard scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
       bg0_hard = "#1d2021"
-      bg0_soft = '#32302f'
-      bg0_normal = '#282828'
+      bg0_soft = "#32302f"
+      bg0_normal = "#282828"
+      bg0_dark = "#15181a"
 
-      bg0 = bg0_hard
       bg1 = "#3c3836"
       bg2 = "#504945"
       bg3 = "#665c54"
@@ -114,16 +114,16 @@
       c.colors.completion.fg = [fg1, bright_aqua, bright_yellow]
 
       # Background color of the completion widget for odd rows.
-      c.colors.completion.odd.bg = bg0
+      c.colors.completion.odd.bg = bg0_hard
 
       # Background color of the completion widget for even rows.
-      c.colors.completion.even.bg = c.colors.completion.odd.bg
+      c.colors.completion.even.bg = bg0_normal
 
       # Foreground color of completion widget category headers.
       c.colors.completion.category.fg = bright_blue
 
       # Background color of the completion widget category headers.
-      c.colors.completion.category.bg = bg1
+      c.colors.completion.category.bg = bg0_dark
 
       # Top border color of the completion widget category headers.
       c.colors.completion.category.border.top = c.colors.completion.category.bg
@@ -164,7 +164,7 @@
       c.colors.contextmenu.disabled.fg = fg3
 
       # Background color of the context menu. If set to null, the Qt default is used.
-      c.colors.contextmenu.menu.bg = bg0
+      c.colors.contextmenu.menu.bg = bg0_hard
 
       # Foreground color of the context menu. If set to null, the Qt default is used.
       c.colors.contextmenu.menu.fg =  fg2
@@ -178,10 +178,10 @@
       ### Downloads
 
       # Background color for the download bar.
-      c.colors.downloads.bar.bg = bg0
+      c.colors.downloads.bar.bg = bg0_hard
 
       # Color gradient start for download text.
-      c.colors.downloads.start.fg = bg0
+      c.colors.downloads.start.fg = bg0_hard
 
       # Color gradient start for download backgrounds.
       c.colors.downloads.start.bg = bright_blue
@@ -198,7 +198,7 @@
       ### Hints
 
       # Font color for hints.
-      c.colors.hints.fg = bg0
+      c.colors.hints.fg = bg0_hard
 
       # Background color for hints.
       c.colors.hints.bg = 'rgba(250, 191, 47, 200)'  # bright_yellow
@@ -215,12 +215,12 @@
       c.colors.keyhint.suffix.fg = fg0
 
       # Background color of the keyhint widget.
-      c.colors.keyhint.bg = bg0
+      c.colors.keyhint.bg = bg0_hard
 
       ### Messages
 
       # Foreground color of an error message.
-      c.colors.messages.error.fg = bg0
+      c.colors.messages.error.fg = bg0_hard
 
       # Background color of an error message.
       c.colors.messages.error.bg = bright_red
@@ -229,7 +229,7 @@
       c.colors.messages.error.border = c.colors.messages.error.bg
 
       # Foreground color of a warning message.
-      c.colors.messages.warning.fg = bg0
+      c.colors.messages.warning.fg = bg0_hard
 
       # Background color of a warning message.
       c.colors.messages.warning.bg = bright_purple
@@ -241,7 +241,7 @@
       c.colors.messages.info.fg = fg2
 
       # Background color of an info message.
-      c.colors.messages.info.bg = bg0
+      c.colors.messages.info.bg = bg0_hard
 
       # Border color of an info message.
       c.colors.messages.info.border = c.colors.messages.info.bg
@@ -266,16 +266,16 @@
       c.colors.statusbar.normal.fg = fg0
 
       # Background color of the statusbar.
-      c.colors.statusbar.normal.bg = bg0
+      c.colors.statusbar.normal.bg = bg0_dark
 
       # Foreground color of the statusbar in insert mode.
-      c.colors.statusbar.insert.fg = bg0
+      c.colors.statusbar.insert.fg = bg0_dark
 
       # Background color of the statusbar in insert mode.
       c.colors.statusbar.insert.bg = dark_aqua
 
       # Foreground color of the statusbar in passthrough mode.
-      c.colors.statusbar.passthrough.fg = bg0
+      c.colors.statusbar.passthrough.fg = bg0_dark
 
       # Background color of the statusbar in passthrough mode.
       c.colors.statusbar.passthrough.bg = dark_blue
@@ -284,13 +284,13 @@
       c.colors.statusbar.private.fg = bright_purple
 
       # Background color of the statusbar in private browsing mode.
-      c.colors.statusbar.private.bg = bg0
+      c.colors.statusbar.private.bg = bg0_dark
 
       # Foreground color of the statusbar in command mode.
       c.colors.statusbar.command.fg = fg0
 
       # Background color of the statusbar in command mode.
-      c.colors.statusbar.command.bg = bg0
+      c.colors.statusbar.command.bg = bg0_dark
 
       # Foreground color of the statusbar in private browsing + command mode.
       c.colors.statusbar.command.private.fg = c.colors.statusbar.private.fg
@@ -299,7 +299,7 @@
       c.colors.statusbar.command.private.bg = c.colors.statusbar.command.bg
 
       # Foreground color of the statusbar in caret mode.
-      c.colors.statusbar.caret.fg = bg0
+      c.colors.statusbar.caret.fg = bg0_hard
 
       # Background color of the statusbar in caret mode.
       c.colors.statusbar.caret.bg = dark_purple
@@ -314,29 +314,29 @@
       c.colors.statusbar.progress.bg = bright_blue
 
       # Default foreground color of the URL in the statusbar.
-      c.colors.statusbar.url.fg = fg0
+      c.colors.statusbar.url.fg = bright_aqua
 
       # Foreground color of the URL in the statusbar on error.
       c.colors.statusbar.url.error.fg = dark_red
 
       # Foreground color of the URL in the statusbar for hovered links.
-      c.colors.statusbar.url.hover.fg = bright_orange
+      c.colors.statusbar.url.hover.fg = bright_purple
 
       # Foreground color of the URL in the statusbar on successful load
       # (http).
-      c.colors.statusbar.url.success.http.fg = bright_red
+      c.colors.statusbar.url.success.http.fg = bright_aqua
 
       # Foreground color of the URL in the statusbar on successful load
       # (https).
-      c.colors.statusbar.url.success.https.fg = fg0
+      c.colors.statusbar.url.success.https.fg = bright_aqua
 
       # Foreground color of the URL in the statusbar when there's a warning.
-      c.colors.statusbar.url.warn.fg = bright_purple
+      c.colors.statusbar.url.warn.fg = bright_orange
 
       ### tabs
 
       # Background color of the tab bar.
-      c.colors.tabs.bar.bg = bg0
+      c.colors.tabs.bar.bg = bg0_hard
 
       # Color gradient start for the tab indicator.
       c.colors.tabs.indicator.start = bright_blue
@@ -363,13 +363,13 @@
       c.colors.tabs.selected.odd.fg = fg2
 
       # Background color of selected odd tabs.
-      c.colors.tabs.selected.odd.bg = bg0
+      c.colors.tabs.selected.odd.bg = bg0_hard
 
       # Foreground color of selected even tabs.
       c.colors.tabs.selected.even.fg = c.colors.tabs.selected.odd.fg
 
       # Background color of selected even tabs.
-      c.colors.tabs.selected.even.bg = bg0
+      c.colors.tabs.selected.even.bg = bg0_hard
 
       # Background color of pinned unselected even tabs.
       c.colors.tabs.pinned.even.bg = bright_green
@@ -384,7 +384,7 @@
       c.colors.tabs.pinned.odd.fg = c.colors.tabs.pinned.even.fg
 
       # Background color of pinned selected even tabs.
-      c.colors.tabs.pinned.selected.even.bg = bg0
+      c.colors.tabs.pinned.selected.even.bg = bg0_hard
 
       # Foreground color of pinned selected even tabs.
       c.colors.tabs.pinned.selected.even.fg = c.colors.tabs.selected.odd.fg
