@@ -40,7 +40,7 @@
       tab_bar_style powerline
       enable_audio_bell no
       modify_font cell_height 150%
-      background_opacity 0.9
+      background_opacity 0.8
       cursor_shape_unfocused unchanged
       cursor_trail 1
       cursor_trail_decay 0.1 0.3
