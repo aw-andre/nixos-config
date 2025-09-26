@@ -66,11 +66,6 @@
       };
     };
     extraConfig = ''
-      for i in range(1, 100):
-        config.bind(f'{i}G', f'tab-focus {i}')
-      for i in range(1, 10):
-        config.bind(f'<Ctrl-{i}>', f'tab-focus {i}')
-
       # gruvbox dark hard qutebrowser theme by Florian Bruhin <me@the-compiler.org>
       #
       # Originally based on:
