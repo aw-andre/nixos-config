@@ -55,6 +55,7 @@
       winetricks
       wireplumber
       wl-clipboard
+      zip
       (import (pkgs.fetchFromGitHub {
         owner = "NixOS";
         repo = "nixpkgs";
