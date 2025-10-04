@@ -5,9 +5,22 @@
     settings = {
       monitor = [
         "desc: , disable"
-        "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1.2, transform, 3"
-        "desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333"
+        "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2, transform, 3"
+        "desc:Apple Computer Inc Color LCD, preferred, auto-center-left, 1.333333"
         ", preferred, auto, auto"
+      ];
+
+      workspace = [
+        "1, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "2, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "3, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "4, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "5, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "6, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "7, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "8, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "9, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "10, monitor:desc:Apple Computer Inc Color LCD"
       ];
 
       "$terminal" = "kitty";
@@ -16,15 +29,14 @@
 
       "exec-once" = [
         ''
-          ftm -e zsh -ci "cd $PROJ; bgm && bqb && bgc https://youtube.com && exec zsh -i" 
-
+          ftm -e zsh -ci "cd $cr; bgm && bqb && btd && bdc && bwa && but && byt; exec zsh -i" 
         ''
         "swaync"
         "keyctl link @u @s"
       ];
       "exec" = [
         "pkill waybar; waybar"
-        "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
+        # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
       ];
 
       env = [

@@ -14,18 +14,39 @@
     (writeShellScriptBin "ftm" ''fork -w 1 kitty "$@"'')
     (writeShellScriptBin "fvm" ''fork -w 2 vim "$@"'')
     (writeShellScriptBin "fvd" ''fork -w 2 neovide "$@"'')
-    (writeShellScriptBin "fgm" ''fork -w 3 gemini "$@"'')
-    (writeShellScriptBin "fqb" ''fork -w 4 qutebrowser "$@"'')
-    (writeShellScriptBin "fgc" ''fork -w 7 google-chrome-stable "$@"'')
+    (writeShellScriptBin "flb" ''fork -w 3 lldb "$@"'')
+    (writeShellScriptBin "fgm" ''fork -w 4 gemini "$@"'')
+    (writeShellScriptBin "fqb" ''fork -w 5 qutebrowser "$@"'')
+    (writeShellScriptBin "ftd" ''
+      fork -w 6 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
+    (writeShellScriptBin "fdc"
+      ''fork -w 7 google-chrome-stable --new-window "discord.com/app"'')
+    (writeShellScriptBin "fwa"
+      ''fork -w 8 google-chrome-stable --new-window "web.whatsapp.com"'')
+    (writeShellScriptBin "fut"
+      ''fork -w 9 google-chrome-stable --new-window "utoronto.ca"'')
+    (writeShellScriptBin "fyt"
+      ''fork -w 10 google-chrome-stable --new-window "youtube.com"'')
 
     (writeShellScriptBin "btm" ''bfork -w 1 kitty "$@"'')
     (writeShellScriptBin "bvm" ''bfork -w 2 vim "$@"'')
     (writeShellScriptBin "bvd" ''bfork -w 2 neovide "$@"'')
-    (writeShellScriptBin "bgm" ''bfork -w 3 gemini "$@"'')
-    (writeShellScriptBin "bqb" ''bfork -w 4 qutebrowser "$@"'')
-    (writeShellScriptBin "bgc" ''bfork -w 7 google-chrome-stable "$@"'')
+    (writeShellScriptBin "blb" ''bfork -w 3 lldb "$@"'')
+    (writeShellScriptBin "bgm" ''bfork -w 4 gemini "$@"'')
+    (writeShellScriptBin "bqb" ''bfork -w 5 qutebrowser "$@"'')
+    (writeShellScriptBin "btd" ''
+      bfork -w 6 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
+    (writeShellScriptBin "bdc"
+      ''bfork -w 7 google-chrome-stable --new-window "discord.com/app"'')
+    (writeShellScriptBin "bwa"
+      ''bfork -w 8 google-chrome-stable --new-window "web.whatsapp.com"'')
+    (writeShellScriptBin "but"
+      ''bfork -w 9 google-chrome-stable --new-window "utoronto.ca"'')
+    (writeShellScriptBin "byt"
+      ''bfork -w 10 google-chrome-stable --new-window "youtube.com"'')
 
     (writeShellScriptBin "vid" ''fork -w 2 neovide "$@"'')
+    (writeShellScriptBin "kit" ''fork -w 3 kitty "$@"'')
   ];
 
   programs.zsh = {
@@ -38,6 +59,7 @@
       cdp = "cd ~/files/projects/";
       cds = "cd ~/files/school/";
       cdt = "cd ~/files/temp/";
+      cdr = "cd ~/files/projects/carbon/carbon-lang/";
     };
     initExtra = builtins.readFile ./zshrc.zsh;
     plugins = [

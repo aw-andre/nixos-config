@@ -31,7 +31,6 @@
       brightnessctl
       calibre
       curl
-      discord
       gemini-cli
       hyprshot
       jq
@@ -71,7 +70,7 @@
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       QT_QUICK_BACKEND = "software";
       EDITRC = "/etc/editrc";
-      PROJ = "/home/andreaw/files/projects/carbon/carbon-lang";
+      cr = "/home/andreaw/files/projects/carbon/carbon-lang";
       fl = "/home/andreaw/files";
       bk = "/home/andreaw/files/books";
       cf = "/home/andreaw/files/configs/nixos-config";

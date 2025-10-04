@@ -3,11 +3,6 @@ ARGS=()
 
 # Read options
 if [[ "$1" == "-w" ]]; then
-	if [[ ! "$2" =~ ^[0-9]$ ]]; then
-		echo "Must pass a digit!"
-		exit 1
-	fi
-
 	WINDOW="$2"
 	shift 2
 fi
