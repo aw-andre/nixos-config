@@ -154,8 +154,6 @@
         };
       };
 
-      gestures = { "workspace_swipe" = "false"; };
-
       "$mainMod" = "SUPER";
       bind = [
         "$mainMod, T, exec, $terminal"
