@@ -159,7 +159,7 @@
         "$mainMod, T, exec, $terminal"
         "$mainMod, P, exec, sioyek"
         "$mainMod, B, exec, qutebrowser"
-        "$mainMod SHIFT, B, exec, google-chrome-stable"
+        "$mainMod SHIFT, B, exec, google-chrome-stable --new-window 'google.com'"
         "$mainMod, X, killactive,"
 
         "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
