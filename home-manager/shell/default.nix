@@ -51,7 +51,18 @@
 
   programs.zsh = {
     enable = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      styles = {
+        "single-hyphen-option" = "fg=cyan";
+        "double-hyphen-option" = "fg=cyan";
+        # "path" = "fg=blue";
+        # "path_pathseparator" = "fg=15";
+        # "path_prefix" = "fg=blue";
+        # "path_prefix_pathseparator" = "fg=15";
+        # "history-expansion" = "fg=magenta";
+      };
+    };
     shellAliases = {
       cdf = "cd ~/files/";
       cdb = "cd ~/files/books/";
