@@ -134,6 +134,11 @@
     home-manager.enable = true;
     google-chrome.enable = true;
     nix-index.enable = true;
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      options = [ "--no-cmd" "--cmd cd" ];
+    };
   };
 
   xdg.userDirs.download = "${config.home.homeDirectory}/files/temp";
