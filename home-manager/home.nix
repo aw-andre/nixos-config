@@ -29,6 +29,7 @@
       bitwarden-cli
       bitwarden-desktop
       brightnessctl
+      btop
       # calibre
       curl
       # discord
