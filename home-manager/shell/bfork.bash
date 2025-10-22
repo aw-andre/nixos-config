@@ -15,7 +15,6 @@ CMD="$(printf '%q ' "${ARGS[@]}")"
 if [[ -v WINDOW ]]; then
 	EXISTING_WINDOWS=$(hyprctl clients -j | jq -r '.[].address')
 	PREV=$(hyprctl activeworkspace -j | jq -r '.id')
-	hyprctl dispatch workspace "$WINDOW" &>/dev/null
 fi
 
 # Launch command
@@ -36,6 +35,7 @@ disown
 if [[ -v WINDOW ]]; then
 	# Wait for any new window to appear
 	until NEW_WINDOW=$(hyprctl clients -j | jq -r '.[].address' | grep -v -F "$EXISTING_WINDOWS" | head -1) && [[ -n "$NEW_WINDOW" ]]; do
-		sleep 0.1
+		sleep 0.05
 	done
+	hyprctl dispatch movetoworkspacesilent "$WINDOW",address:"$NEW_WINDOW" &>/dev/null
 fi

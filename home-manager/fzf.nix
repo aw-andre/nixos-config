@@ -9,15 +9,17 @@
       ];
     };
     zsh.initContent = ''
-      FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git'
-      FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
+      FZF_CTRL_T_COMMAND='fd --type f --hidden --exclude .git .'
+      FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git .'
 
       _fzf_compgen_path() {
-        fd --type f --hidden --exclude .git
+        fd --type f --hidden --exclude .git . "$1"
       }
       _fzf_compgen_dir() {
-        fd --type d --hidden --exclude .git
+        fd --type d --hidden --exclude .git . "$1"
       }
+
+
     '';
   };
 }

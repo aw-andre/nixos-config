@@ -166,7 +166,6 @@
   environment = {
     systemPackages = with pkgs; [ man-pages tldr ];
 
-    sessionVariables = { EDITRC = "/etc/editrc"; };
     etc = {
       "inputrc".text = ''
         set editing-mode vi

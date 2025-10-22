@@ -44,6 +44,7 @@
       python313Packages.ipython
       ripgrep-all
       simple-mtpfs
+      steam-run
       tree
       unoconv
       unzip
@@ -54,6 +55,7 @@
       winetricks
       wireplumber
       wl-clipboard
+      zip
       (import (pkgs.fetchFromGitHub {
         owner = "NixOS";
         repo = "nixpkgs";
@@ -116,9 +118,20 @@
       enable = true;
       hidden = true;
     };
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 7d";
+      flake = "/home/andreaw/files/configs/laptop-config/";
+    };
     home-manager.enable = true;
     google-chrome.enable = true;
     nix-index.enable = true;
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      options = [ "--no-cmd" "--cmd cd" ];
+    };
   };
 
   xdg.userDirs.download = "${config.home.homeDirectory}/files/temp";

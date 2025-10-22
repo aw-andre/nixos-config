@@ -10,6 +10,19 @@
         ", preferred, auto, auto"
       ];
 
+      workspace = [
+        "1, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "2, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "3, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "4, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "5, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "6, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "7, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "8, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "9, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+        "10, monitor:desc:Apple Computer Inc Color LCD"
+      ];
+
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
@@ -141,8 +154,6 @@
           "tap-to-click" = false;
         };
       };
-
-      gestures = { "workspace_swipe" = "false"; };
 
       "$mainMod" = "SUPER";
       bind = [

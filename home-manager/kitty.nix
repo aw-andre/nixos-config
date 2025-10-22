@@ -35,11 +35,12 @@
       bold_italic_font Comic Code Bold Italic
       font_size 14.0
       window_padding_width 2 0
+      background #000000
       tab_bar_edge top
       tab_bar_style powerline
       enable_audio_bell no
       modify_font cell_height 150%
-      background_opacity 0.5
+      background_opacity 0.7
       cursor_shape_unfocused unchanged
       cursor_trail 1
       cursor_trail_decay 0.1 0.3
