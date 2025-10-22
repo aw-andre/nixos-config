@@ -28,41 +28,32 @@
     packages = with pkgs; [
       bitwarden-cli
       bitwarden-desktop
-      brightnessctl
+
       btop
-      # calibre
-      curl
-      # discord
-      gemini-cli
-      hyprshot
-      jq
-      libmtp
-      networkmanagerapplet
-      neovide
+      brightnessctl
       playerctl
-      poppler-utils
+      wireplumber
+      networkmanagerapplet
+      usbutils
+      wl-clipboard
+
+      curl
+      wget
+
+      neovide
+      gemini-cli
       python313Packages.python
       python313Packages.ipython
-      ripgrep-all
-      simple-mtpfs
-      steam-run
       tree
+      jq
+      steam-run
+
+      hyprshot
+      poppler-utils
       unoconv
       unzip
-      usbutils
-      vassal
-      wget
-      wineWow64Packages.waylandFull
-      winetricks
-      wireplumber
-      wl-clipboard
       zip
-      (import (pkgs.fetchFromGitHub {
-        owner = "NixOS";
-        repo = "nixpkgs";
-        rev = "nixos-25.05"; # Try this stable release
-        sha256 = "sha256-+jkEZxs7bfOKfBIk430K+tK9IvXlwzqQQnppC2ZKFj4=";
-      }) { inherit system; }).k2pdfopt
+      ripgrep-all
     ];
 
     sessionVariables = {
@@ -121,7 +112,6 @@
       enable = true;
       addKeysToAgent = "yes";
     };
-    bat.enable = true;
     fd = {
       enable = true;
       hidden = true;
