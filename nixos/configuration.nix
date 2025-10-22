@@ -1,5 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ./kanata.nix ./keyboard.nix ];
+  imports = [ ./hardware-configuration.nix ./keyboard.nix ];
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -34,7 +34,7 @@
     consoleLogLevel = 3;
 
     loader = {
-      efi.efiSysMountPoint = "/boot/efi"; };
+      efi.efiSysMountPoint = "/boot";
       systemd-boot.enable = true;
     };
   };

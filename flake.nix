@@ -49,8 +49,7 @@
               extraSpecialArgs = { inherit inputs; };
 
               users.andreaw = {
-                imports =
-                  [ nixvim.homeManagerModules.nixvim ./home-manager/home.nix ];
+                imports = [ nixvim.homeModules.nixvim ./home-manager/home.nix ];
               };
             };
           }

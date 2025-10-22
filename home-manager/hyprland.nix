@@ -10,32 +10,29 @@
         ", preferred, auto, auto"
       ];
 
-      workspace = [
-        "1, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "2, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "3, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "4, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "5, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "6, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "7, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "8, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "9, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-        "10, monitor:desc:Apple Computer Inc Color LCD"
-      ];
+      # workspace = [
+      #   "1, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "2, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "3, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "4, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "5, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "6, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "7, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "8, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "9, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
+      #   "10, monitor:desc:Apple Computer Inc Color LCD"
+      # ];
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
       "exec-once" = [
-        # ''ftm -e zsh -ci "cd $pj/carbon/carbon-lang; fvd; fgm; exec zsh -i"''
-        # "fqb https://cppreference.com"
-        # "fgc https://youtube.com"
         "swaync"
+        "waybar"
         # "keyctl link @u @s"
       ];
       "exec" = [
-        "waybar"
         # "pkill waybar; waybar"
         # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
       ];

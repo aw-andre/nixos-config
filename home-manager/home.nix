@@ -8,7 +8,7 @@
     ./hyprlock.nix
     ./kitty.nix
     ./qutebrowser.nix
-    ./shell
+    ./shell/default.nix
     ./sioyek.nix
     ./tmux.nix
     ./waybar.nix
@@ -70,6 +70,13 @@
       # NIXOS_OZONE_WL = "1";
       # ELECTRON_OZONE_PLATFORM_HINT = "auto";
       # QT_QUICK_BACKEND = "software";
+      cr = "/home/andreaw/files/projects/carbon/carbon-lang";
+      fl = "/home/andreaw/files";
+      bk = "/home/andreaw/files/books";
+      cf = "/home/andreaw/files/configs/nixos-config";
+      pj = "/home/andreaw/files/projects";
+      sl = "/home/andreaw/files/school";
+      tp = "/home/andreaw/files/temp";
     };
 
     file = {

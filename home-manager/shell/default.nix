@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    (writeShellScriptBin "rebuild" (builtins.readFile ./rebuild.bash))
     (writeShellScriptBin "fork" (builtins.readFile ./fork.bash))
     (writeShellScriptBin "bfork" (builtins.readFile ./bfork.bash))
     (writeShellScriptBin "gui" (builtins.readFile ./gui.bash))
@@ -66,13 +65,13 @@
     shellAliases = {
       cdf = "cd ~/files/";
       cdb = "cd ~/files/books/";
-      cdc = "cd ~/files/configs/laptop-config/";
+      cdc = "cd ~/files/config/";
       cdp = "cd ~/files/projects/";
       cds = "cd ~/files/school/";
       cdt = "cd ~/files/temp/";
       cdr = "cd ~/files/projects/carbon/carbon-lang/";
     };
-    initExtra = builtins.readFile ./zshrc.zsh;
+    initContent = builtins.readFile ./zshrc.zsh;
     plugins = [
       {
         name = "nix-shell";
