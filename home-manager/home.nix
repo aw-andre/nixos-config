@@ -29,9 +29,9 @@
       bitwarden-cli
       bitwarden-desktop
       brightnessctl
-      calibre
+      # calibre
       curl
-      discord
+      # discord
       gemini-cli
       hyprshot
       jq
@@ -65,9 +65,9 @@
     sessionVariables = {
       PAGER = "vimp";
       MANPAGER = "nvim -c 'Man!'";
-      NIXOS_OZONE_WL = "1";
-      ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      QT_QUICK_BACKEND = "software";
+      # NIXOS_OZONE_WL = "1";
+      # ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      # QT_QUICK_BACKEND = "software";
     };
 
     file = {

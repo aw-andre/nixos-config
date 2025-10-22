@@ -29,7 +29,7 @@
     };
     keyBindings = {
       normal = {
-        "<Tab>" = "spawn --userscript qute-bitwarden";
+        # "<Tab>" = "spawn --userscript qute-bitwarden";
         "<Ctrl-0>" = "tab-focus 10";
         "gt" = "tab-next";
         "gT" = "tab-prev";
@@ -62,5 +62,5 @@
         config.bind(f'<Ctrl-{i}>', f'tab-focus {i}')
     '';
   };
-  home.packages = with pkgs; [ rofi keyutils ];
+  # home.packages = with pkgs; [ rofi keyutils ];
 }

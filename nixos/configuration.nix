@@ -10,31 +10,31 @@
       "splash"
 
       # gpu
-      "amdgpu.dc=1"
-      "amdgpu.dpm=1"
-      "amdgpu.runpm=0"
-      "amdgpu.bapm=0"
-      "amdgpu.audio=0"
-      "amdgpu.ppfeaturemask=0xffffffff"
-      "amdgpu.modeset=1"
-      "amdgpu_iommu=on"
-      "intel_iommu=on"
-      "iommu=pt"
-      "pci=noaer"
-      "pcie_ports=compat"
-      "i915.force_probe=*"
-      "i915.enable_psr=0"
-      "i915.enable_fbc=0"
-      "i915.modeset=1"
-      "i915.enable_guc=3"
+      # "amdgpu.dc=1"
+      # "amdgpu.dpm=1"
+      # "amdgpu.runpm=0"
+      # "amdgpu.bapm=0"
+      # "amdgpu.audio=0"
+      # "amdgpu.ppfeaturemask=0xffffffff"
+      # "amdgpu.modeset=1"
+      # "amdgpu_iommu=on"
+      # "intel_iommu=on"
+      # "iommu=pt"
+      # "pci=noaer"
+      # "pcie_ports=compat"
+      # "i915.force_probe=*"
+      # "i915.enable_psr=0"
+      # "i915.enable_fbc=0"
+      # "i915.modeset=1"
+      # "i915.enable_guc=3"
     ];
 
-    initrd.kernelModules = [ "i915" "amdgpu" ];
+    # initrd.kernelModules = [ "i915" "amdgpu" ];
 
     consoleLogLevel = 3;
 
     loader = {
-      efi = { efiSysMountPoint = "/boot/efi"; };
+      efi.efiSysMountPoint = "/boot/efi"; };
       systemd-boot.enable = true;
     };
   };
@@ -47,26 +47,26 @@
   hardware = {
     # gpu
     graphics.enable = true;
-    apple-t2.enableIGPU = true;
+    # apple-t2.enableIGPU = true;
 
     # wifi/bluetooth
     firmware = [
-      (pkgs.stdenvNoCC.mkDerivation {
-        name = "brcm-firmware";
-        src = ./firmware/brcm;
-        buildCommand = ''
-          dir="$out/lib/firmware"
-          mkdir -p "$dir"
-          cp -r ${./firmware}/* "$dir"
-        '';
-      })
+      # (pkgs.stdenvNoCC.mkDerivation {
+      #   name = "brcm-firmware";
+      #   src = ./firmware/brcm;
+      #   buildCommand = ''
+      #     dir="$out/lib/firmware"
+      #     mkdir -p "$dir"
+      #     cp -r ${./firmware}/* "$dir"
+      #   '';
+      # })
       pkgs.linux-firmware
     ];
 
     bluetooth = {
       enable = true;
       powerOnBoot = true;
-      settings = { General.FastConnectable = true; };
+      settings.General.FastConnectable = true;
     };
   };
 
@@ -89,18 +89,18 @@
 
     };
 
-    postgresql = {
-      enable = true;
-      ensureUsers = [{
-        name = "andreaw";
-        ensureClauses = {
-          superuser = true;
-          createrole = true;
-          createdb = true;
-        };
-      }];
-      ensureDatabases = [ "andreaw" ];
-    };
+    # postgresql = {
+    #   enable = true;
+    #   ensureUsers = [{
+    #     name = "andreaw";
+    #     ensureClauses = {
+    #       superuser = true;
+    #       createrole = true;
+    #       createdb = true;
+    #     };
+    #   }];
+    #   ensureDatabases = [ "andreaw" ];
+    # };
 
     printing.enable = true;
 
@@ -110,10 +110,10 @@
       audio.enable = true;
     };
 
-    udev.extraRules = ''
-      SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="low"
-      SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="9981", MODE="0666", GROUP="plugdev"
-    '';
+    # udev.extraRules = ''
+    #   SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="low"
+    #   SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="9981", MODE="0666", GROUP="plugdev"
+    # '';
   };
 
   security = {
@@ -124,16 +124,16 @@
   };
 
   programs = {
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [
-        stdenv.cc.cc.lib
-        glibc
-        clang
-        llvmPackages.libclang.lib
-        llvmPackages.llvm.lib
-      ];
-    };
+    # nix-ld = {
+    #   enable = true;
+    #   libraries = with pkgs; [
+    #     stdenv.cc.cc.lib
+    #     glibc
+    #     clang
+    #     llvmPackages.libclang.lib
+    #     llvmPackages.llvm.lib
+    #   ];
+    # };
     zsh.enable = true;
     thunar.enable = true;
     hyprland = {
@@ -153,7 +153,7 @@
     font-awesome
     nerd-fonts.jetbrains-mono
     (pkgs.stdenv.mkDerivation {
-      pname = "my-fonts";
+      pname = "comic-code";
       version = "1.0";
       src = ./fonts;
       installPhase = ''
@@ -179,7 +179,7 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   users = {
     defaultUserShell = pkgs.zsh;
@@ -198,7 +198,7 @@
           "scanner"
           "dialout"
           "uucp"
-          "docker"
+          # "docker"
         ];
       };
     };

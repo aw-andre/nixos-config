@@ -4,9 +4,9 @@
     xwayland.enable = true;
     settings = {
       monitor = [
-        "desc: , disable"
+        # "desc: , disable"
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1.2, transform, 3"
-        "desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333"
+        # "desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333"
         ", preferred, auto, auto"
       ];
 
@@ -15,30 +15,31 @@
       "$menu" = "wofi --show drun";
 
       "exec-once" = [
-        ''ftm -e zsh -ci "cd $pj/carbon/carbon-lang; fvd; fgm; exec zsh -i"''
-        "fqb https://cppreference.com"
-        "fgc https://youtube.com"
+        # ''ftm -e zsh -ci "cd $pj/carbon/carbon-lang; fvd; fgm; exec zsh -i"''
+        # "fqb https://cppreference.com"
+        # "fgc https://youtube.com"
         "swaync"
-        "keyctl link @u @s"
+        # "keyctl link @u @s"
       ];
       "exec" = [
-        "pkill waybar; waybar"
-        "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
+        "waybar"
+        # "pkill waybar; waybar"
+        # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
       ];
 
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
-        "AQ_DRM_DEVICES,${
-          config.lib.file.mkOutOfStoreSymlink
-          "/dev/dri/by-path/pci-0000:03:00.0-card"
-        }:${
-          config.lib.file.mkOutOfStoreSymlink
-          "/dev/dri/by-path/pci-0000:00:02.0-card"
-        }"
+        # "AQ_DRM_DEVICES,${
+        #   config.lib.file.mkOutOfStoreSymlink
+        #   "/dev/dri/by-path/pci-0000:03:00.0-card"
+        # }:${
+        #   config.lib.file.mkOutOfStoreSymlink
+        #   "/dev/dri/by-path/pci-0000:00:02.0-card"
+        # }"
         # "AQ_NO_ATOMIC,1"
         # "AQ_NO_MODIFIERS,1"
-        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+        # "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
 
       general = {
@@ -132,12 +133,12 @@
 
         "natural_scroll" = "true";
         touchpad = {
-          disable_while_typing = true;
+          "disable_while_typing" = true;
           "natural_scroll" = "true";
-          scroll_factor = 0.5;
-          middle_button_emulation = true;
-          clickfinger_behavior = true;
-          tap-to-click = false;
+          "scroll_factor" = 0.5;
+          "middle_button_emulation" = true;
+          "clickfinger_behavior" = true;
+          "tap-to-click" = false;
         };
       };
 
@@ -148,15 +149,15 @@
         "$mainMod, T, exec, $terminal"
         "$mainMod, P, exec, sioyek"
         "$mainMod, B, exec, qutebrowser"
-        "$mainMod SHIFT, B, exec, google-chrome-stable"
+        "$mainMod SHIFT, B, exec, google-chrome-stable --new-window"
         "$mainMod, X, killactive,"
 
-        "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
-        "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333'"
+        # "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
+        # "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333'"
 
-        "$mainMod, minus, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1'"
-        "$mainMod SHIFT, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.333333'"
-        "$mainMod, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2'"
+        # "$mainMod, minus, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1'"
+        # "$mainMod SHIFT, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.333333'"
+        # "$mainMod, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2'"
 
         "$mainMod SHIFT, R, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2, transform, 0'"
         "$mainMod, R, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2, transform, 3'"
