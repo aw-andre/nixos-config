@@ -24,10 +24,10 @@
         prompt = false;
       };
       fonts = {
-        default_size = "20px";
+        default_size = "24px";
         default_family = "JetBrainsMono Nerd Font";
       };
-      zoom.default = "125%";
+      zoom.default = "150%";
     };
     keyMappings = {
       "<Ctrl-[>" = "<Escape>";
@@ -38,9 +38,6 @@
     keyBindings = {
       normal = {
         # "<Tab>" = "spawn --userscript qute-bitwarden";
-        "<Ctrl-0>" = "tab-focus 10";
-        # "gt" = "tab-next";
-        # "gT" = "tab-prev";
         "H" = "tab-prev";
         "L" = "tab-next";
         "<Shift-Left>" = "tab-prev";

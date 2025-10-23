@@ -11,7 +11,7 @@
       "ctrl+shift+]" = "scroll_end";
       "ctrl+shift+u" = "scroll_to_prompt -1";
       "ctrl+shift+d" = "scroll_to_prompt 1";
-      "ctrl+shift+0" = "change_font_size current 14.0";
+      "ctrl+shift+0" = "change_font_size current 17.0";
       "ctrl+shift+minus" = "change_font_size current -1";
       "ctrl+shift+equal" = "change_font_size current +1";
       "ctrl+shift+h" = "previous_tab";
@@ -33,7 +33,7 @@
       bold_font Comic Code Bold
       italic_font Comic Code Italic
       bold_italic_font Comic Code Bold Italic
-      font_size 14.0
+      font_size 17.0
       window_padding_width 2 0
       background #000000
       tab_bar_edge top

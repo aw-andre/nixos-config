@@ -3,60 +3,60 @@
     enable = true;
     style = ''
       * {
-      	 min-height: 10px;
+      	 min-height: 15.0px;
       	 font-family: "Noto Sans";
-      	 font-size: 12px;
+      	 font-size: 18.0px;
       	 border: none;
-      	 border-radius: 3px;
+      	 border-radius: 4.5px;
       }
 
       window#waybar {
       	background-color:transparent;
-      	border-top: 8px transparent;
-      	border-radius: 8px;
+      	border-top: 12.0px transparent;
+      	border-radius: 12.0px;
       	color: #ffffff;
-      	margin: 16px 16px;
+      	margin: 24.0px 24.0px;
       	transition-property: background-color;
       	transition-duration: 5s;
       }
 
       window#waybar.hidden {
       	opacity: 0.2;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       }
       #window {
       	background: transparent;
       	color: transparent;
-      	margin-top: 4px;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       	transition: none;
       }
       #tags {
       	background: #161320;
-      	font-size: 4px;
-      	margin-top: 4px;
-      	margin-bottom: 0px;
-      	margin-left: 12px;
+      	font-size: 6.0px;
+      	margin-top: 6.0px;
+      	margin-bottom: 0.0px;
+      	margin-left: 18.0px;
       	transition: none;
       }
       #tags button {
       	background: transparent;
-      	border-radius: 2px;
+      	border-radius: 3.0px;
       	color: #b5e8e0;
-      	font-size: 16px;
+      	font-size: 24.0px;
       	transition: none;
       }
       #tags button.occupied {
       	background: transparent;
       	color: #f28fad;
-      	font-size: 4px;
+      	font-size: 6.0px;
       	transition: none;
       }
       #tags button.focused {
-      	border-bottom: 2px solid #abe9b3;
-      	border-top: 2px solid #abe9b3;
+      	border-bottom: 3.0px solid #abe9b3;
+      	border-top: 3.0px solid #abe9b3;
       	color: #abe9b3;
       }
       #tags button:hover {
@@ -71,43 +71,43 @@
       	background-color: #1e2021;
       	color: #b5e8e0;
       	font-family: feather;
-      	font-size: 10px;
-      	margin: 4px 2px 0 2px;
-      	min-width: 32px;
-      	padding: 2px 0 0 0;
+      	font-size: 15.0px;
+      	margin: 6.0px 3.0px 0 3.0px;
+      	min-width: 48.0px;
+      	padding: 3.0px 0 0 0;
       }
       #workspaces button.active{
       	background: linear-gradient(220deg, rgba(248,189,150,1) 0%, rgba(181,232,224,1) 49%, rgba(0,212,255,1) 100%);
       	color: #1e2021;
       	font-family: feather;
-      	font-size: 10px;
-      	margin: 4px 2px 0 2px;
-      	min-width: 32px;
-      	padding: 2px 0 0 0;
+      	font-size: 15.0px;
+      	margin: 6.0px 3.0px 0 3.0px;
+      	min-width: 48.0px;
+      	padding: 3.0px 0 0 0;
       }
       #workspaces button:hover {
       	color: #b4befe;
       	font-family: feather;
-      	font-size: 10px;
+      	font-size: 15.0px;
 
       }
       #workspaces button.focused {
               background-color: #bbccdd;
               color: #1e2021;
       	font-family: feather;
-      	font-size: 10px;
+      	font-size: 15.0px;
       }
       #workspaces button.urgent {
               background-color: #fae3b0;
       	font-family: feather;
-      	font-size: 10px;
+      	font-size: 15.0px;
       }
 
       #window,
       #workspaces {
       	font-family: feather;
-      	font-size: 10px;
-              margin: 0 4px;
+      	font-size: 15.0px;
+              margin: 0 6.0px;
       }
 
       .modules-left > widget:first-child > #workspaces {
@@ -120,37 +120,37 @@
 
       #network {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #bd93f9;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       	transition: none;
       }
 
       #pulseaudio {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #fae3b0;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       	transition: none;
       }
 
       #battery {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #b5e8e0;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 7px;
-      	padding-right: 5px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 10.5px;
+      	padding-right: 7.5px;
       	transition: none;
       }
 
@@ -166,88 +166,88 @@
 
       #backlight {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #f8bd96;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       	transition: none;
       }
 
       #clock {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #abe9b3;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 7px;
-      	padding-right: 5px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 10.5px;
+      	padding-right: 7.5px;
       	transition: none;
       }
 
       #memory {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #ddb6f2;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       	transition: none;
       }
 
       #temperature {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #f8bd96;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       	transition: none;
       }
 
       #cpu {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #96cdfb;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 10px;
-      	padding-right: 10px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+      	padding-right: 15.0px;
       	transition: none;
       }
 
       #custom-launcher {
           	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
           	color: #fae3b0;
-      	font-size: 15px;
-      	margin-left: 4px;
-      	margin-top: 4px;
-      	padding-left: 11px;
-      	padding-right: 3px;
+      	font-size: 22.5px;
+      	margin-left: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 16.5px;
+      	padding-right: 4.5px;
       	transition: none;
       }
 
       #custom-power {
       	background: #1e2021;
-      	border-radius: 3px;
+      	border-radius: 4.5px;
       	color: #f28fad;
-      	font-size: 10px;
-      	margin-bottom: 0px;
-      	margin-left: 4px;
-      	margin-right: 4px;
-      	margin-top: 4px;
-      	padding-left: 10px;
-          	padding-right: 10px;
-      	padding-top: 2px;
+      	font-size: 15.0px;
+      	margin-bottom: 0.0px;
+      	margin-left: 6.0px;
+      	margin-right: 6.0px;
+      	margin-top: 6.0px;
+      	padding-left: 15.0px;
+          	padding-right: 15.0px;
+      	padding-top: 3.0px;
       	transition: none;
       }
     '';
@@ -256,16 +256,12 @@
       mainBar = {
         #    // "layer"= "top"; // Waybar at top layer
         #    // "position"= "bottom"; // Waybar position (top|bottom|left|right)
-        "height" = 40;
+        "height" = 60;
         #    // "width"= 1280; // Waybar width
-        "spacing" = 4;
+        "spacing" = 6;
         #    // Choose the order of the modules
-        "modules-left" = [
-          "hyprland/workspaces"
-        ];
-        "modules-center" = [
-          "hyprland/window"
-        ];
+        "modules-left" = [ "hyprland/workspaces" ];
+        "modules-center" = [ "hyprland/window" ];
         "modules-right" = [
           "mpd"
           "idle_inhibitor"
@@ -308,16 +304,11 @@
             "unlocked" = "";
           };
         };
-        "sway/mode" = {
-          "format" = "<span style=\"italic\">{}</span>";
-        };
+        "sway/mode" = { "format" = ''<span style="italic">{}</span>''; };
         "sway/scratchpad" = {
           "format" = "{icon} {count}";
           "show-empty" = false;
-          "format-icons" = [
-            ""
-            ""
-          ];
+          "format-icons" = [ "" "" ];
           "tooltip" = true;
           "tooltip-format" = "{app}: {title}";
         };
@@ -325,22 +316,17 @@
           "format" =
             "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
           "format-disconnected" = "Disconnected ";
-          "format-stopped" = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
+          "format-stopped" =
+            "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
           "unknown-tag" = "N/A";
           "interval" = 5;
-          "consume-icons" = {
-            "on" = " ";
-          };
+          "consume-icons" = { "on" = " "; };
           "random-icons" = {
-            "off" = "<span color=\"#f53c3c\"></span> ";
+            "off" = ''<span color="#f53c3c"></span> '';
             "on" = " ";
           };
-          "repeat-icons" = {
-            "on" = " ";
-          };
-          "single-icons" = {
-            "on" = "1 ";
-          };
+          "repeat-icons" = { "on" = " "; };
+          "single-icons" = { "on" = "1 "; };
           "state-icons" = {
             "paused" = "";
             "playing" = "";
@@ -361,42 +347,28 @@
         };
         "clock" = {
           #        // "timezone"= "America/New_York";
-          "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          "tooltip-format" = ''
+            <big>{:%Y %B}</big>
+            <tt><small>{calendar}</small></tt>'';
           "format-alt" = "{:%Y-%m-%d}";
         };
         "cpu" = {
           "format" = "{usage}% ";
           "tooltip" = false;
         };
-        "memory" = {
-          "format" = "{}% ";
-        };
+        "memory" = { "format" = "{}% "; };
         "temperature" = {
           #        // "thermal-zone"= 2;
           #        // "hwmon-path"= "/sys/class/hwmon/hwmon2/temp1_input";
           "critical-threshold" = 80;
           #        // "format-critical"= "{temperatureC}°C {icon}";
           "format" = "{temperatureC}°C {icon}";
-          "format-icons" = [
-            ""
-            ""
-            ""
-          ];
+          "format-icons" = [ "" "" "" ];
         };
         "backlight" = {
           #        // "device"= "acpi_video1";
           "format" = "{percent}% {icon}";
-          "format-icons" = [
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
+          "format-icons" = [ "" "" "" "" "" "" "" "" "" ];
         };
         "battery" = {
           "states" = {
@@ -411,20 +383,14 @@
           "format-alt" = "{time} {icon}";
           #        // "format-good"= ""; // An empty format will hide the module
           #        // "format-full"= "";
-          "format-icons" = [
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
+          "format-icons" = [ "" "" "" "" "" ];
         };
-        "battery#bat2" = {
-          "bat" = "BAT2";
-        };
+        "battery#bat2" = { "bat" = "BAT2"; };
         "power-profiles-daemon" = {
           "format" = "{icon}";
-          "tooltip-format" = "Power profile: {profile}\nDriver: {driver}";
+          "tooltip-format" = ''
+            Power profile: {profile}
+            Driver: {driver}'';
           "tooltip" = true;
           "format-icons" = {
             "default" = "";
@@ -457,11 +423,7 @@
             "phone" = "";
             "portable" = "";
             "car" = "";
-            "default" = [
-              ""
-              ""
-              ""
-            ];
+            "default" = [ "" "" "" ];
           };
           "on-click" = "pavucontrol";
         };
