@@ -135,16 +135,7 @@
   };
 
   programs = {
-    # nix-ld = {
-    #   enable = true;
-    #   libraries = with pkgs; [
-    #     stdenv.cc.cc.lib
-    #     glibc
-    #     clang
-    #     llvmPackages.libclang.lib
-    #     llvmPackages.llvm.lib
-    #   ];
-    # };
+    nix-ld.enable = true;
     zsh.enable = true;
     thunar.enable = true;
     hyprland = {
