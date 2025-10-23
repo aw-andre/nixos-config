@@ -135,6 +135,7 @@
   };
 
   programs = {
+    steam.enable = true;
     nix-ld.enable = true;
     zsh.enable = true;
     thunar.enable = true;
