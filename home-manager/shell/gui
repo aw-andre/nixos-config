@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 TUI=("vim" "nvim" "gemini" "lldb" "gdb")
 ARGS=()
 
