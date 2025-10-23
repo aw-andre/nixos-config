@@ -1,8 +1,5 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    (writeShellScriptBin "fork" (builtins.readFile ./fork.bash))
-    (writeShellScriptBin "bfork" (builtins.readFile ./bfork.bash))
-    (writeShellScriptBin "gui" (builtins.readFile ./gui.bash))
     (writeShellScriptBin "vimp" ''
       nvim -c "silent! w! /tmp/vimp | exec 'te cat /tmp/vimp -' | bn | bd!"
     '')
@@ -17,15 +14,15 @@
     (writeShellScriptBin "fgm" ''fork -w 4 gemini "$@"'')
     (writeShellScriptBin "fqb" ''fork -w 5 qutebrowser "$@"'')
     (writeShellScriptBin "ftd" ''
-      fork -w 6 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
+      fork -w 7 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
     (writeShellScriptBin "fdc"
-      ''fork -w 7 google-chrome-stable --new-window "discord.com/app"'')
-    (writeShellScriptBin "fwa"
-      ''fork -w 8 google-chrome-stable --new-window "web.whatsapp.com"'')
-    (writeShellScriptBin "fut"
-      ''fork -w 9 google-chrome-stable --new-window "utoronto.ca"'')
+      ''fork -w 8 google-chrome-stable --new-window "discord.com/app"'')
     (writeShellScriptBin "fyt"
       ''fork -w 10 google-chrome-stable --new-window "youtube.com"'')
+    (writeShellScriptBin "fut"
+      ''fork -w 4 google-chrome-stable --new-window "utoronto.ca"'')
+    (writeShellScriptBin "fwa"
+      ''fork -w 10 google-chrome-stable --new-window "web.whatsapp.com"'')
 
     (writeShellScriptBin "btm" ''bfork -w 1 kitty "$@"'')
     (writeShellScriptBin "bvm" ''bfork -w 2 vim "$@"'')
@@ -34,15 +31,15 @@
     (writeShellScriptBin "bgm" ''bfork -w 4 gemini "$@"'')
     (writeShellScriptBin "bqb" ''bfork -w 5 qutebrowser "$@"'')
     (writeShellScriptBin "btd" ''
-      bfork -w 6 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
+      bfork -w 7 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
     (writeShellScriptBin "bdc"
-      ''bfork -w 7 google-chrome-stable --new-window "discord.com/app"'')
-    (writeShellScriptBin "bwa"
-      ''bfork -w 8 google-chrome-stable --new-window "web.whatsapp.com"'')
-    (writeShellScriptBin "but"
-      ''bfork -w 9 google-chrome-stable --new-window "utoronto.ca"'')
+      ''bfork -w 8 google-chrome-stable --new-window "discord.com/app"'')
     (writeShellScriptBin "byt"
       ''bfork -w 10 google-chrome-stable --new-window "youtube.com"'')
+    (writeShellScriptBin "but"
+      ''bfork -w 4 google-chrome-stable --new-window "utoronto.ca"'')
+    (writeShellScriptBin "bwa"
+      ''bfork -w 10 google-chrome-stable --new-window "web.whatsapp.com"'')
 
     (writeShellScriptBin "vid" ''fork -w 2 neovide "$@"'')
     (writeShellScriptBin "kit" ''fork -w 3 kitty "$@"'')
@@ -69,6 +66,7 @@
       cdp = "cd ~/files/projects/";
       cds = "cd ~/files/school/";
       cdt = "cd ~/files/temp/";
+      cgm = "cd ~/files/games/";
       cdr = "cd ~/files/projects/carbon/carbon-lang/";
     };
     initContent = builtins.readFile ./zshrc.zsh;
@@ -88,7 +86,7 @@
       {
         name = "powerlevel10k-config";
         src = ./.;
-        file = "p10k.zsh";
+        file = "p10kconfig.zsh";
       }
       {
         name = "zsh-powerlevel10k";
