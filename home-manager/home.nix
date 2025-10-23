@@ -64,7 +64,7 @@
       # QT_QUICK_BACKEND = "software";
       fl = "/home/andreaw/files";
       bk = "/home/andreaw/files/books";
-      cf = "/home/andreaw/files/configs/nixos-config";
+      cf = "/home/andreaw/files/config";
       pj = "/home/andreaw/files/projects";
       sl = "/home/andreaw/files/school";
       tp = "/home/andreaw/files/temp";
