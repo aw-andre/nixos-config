@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+nvim -c "silent! w! /tmp/vimt | set nowrap"
