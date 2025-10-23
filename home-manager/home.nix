@@ -8,7 +8,7 @@
     ./hyprlock.nix
     ./kitty.nix
     ./qutebrowser.nix
-    ./shell/default.nix
+    ./shell
     ./sioyek.nix
     ./tmux.nix
     ./waybar.nix
