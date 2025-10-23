@@ -1,10 +1,8 @@
 {
   programs.git = {
     enable = true;
-    user = {
-      name = "aw-andre";
-      email = "aw.andregerard@gmail.com";
-    };
+    userName = "aw-andre";
+    userEmail = "aw.andregerard@gmail.com";
     settings = {
       alias = {
         la = "log --oneline --graph --all";
