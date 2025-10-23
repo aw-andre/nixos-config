@@ -28,9 +28,10 @@
       "$menu" = "wofi --show drun";
 
       "exec-once" = [
+        "hyprlock"
         "swaync"
         "waybar"
-        "hyprlock"
+        "fork -w 1 kitty"
         # "keyctl link @u @s"
       ];
       "exec" = [
