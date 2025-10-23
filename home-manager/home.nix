@@ -36,6 +36,7 @@
       networkmanagerapplet
       usbutils
       wl-clipboard
+      dualsensectl
 
       curl
       wget
