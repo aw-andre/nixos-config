@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 rotate
-(winreset && zsh -ci '
+hyprctl dispatch exec "zsh -ci '
+  winreset
   cdr
   maintty
   bfork -w 4 gemini
   bfork -w 7 qutebrowser
-  bfork -w 8 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"
-  bfork -w 9 google-chrome-stable --new-window "discord.com"
-  bfork -w 10 google-chrome-stable --new-window "youtube.com"
-') &>/dev/null &
+  bfork -w 8 google-chrome-stable --new-window \"https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg\"
+  bfork -w 9 google-chrome-stable --new-window \"discord.com\"
+  bfork -w 10 google-chrome-stable --new-window \"youtube.com\"
+'"

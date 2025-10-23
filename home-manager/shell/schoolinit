@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 rotate
-(winreset && zsh -ci '
+hyprctl dispatch exec "zsh -ci '
+  winreset 
   cds
   maintty
-  bfork -w 4 google-chrome-stable --new-window "utoronto.ca"
-  bfork -w 10 google-chrome-stable --new-window "youtube.com"
-') &>/dev/null &
+  bfork -w 4 google-chrome-stable --new-window \"utoronto.ca\"
+  bfork -w 10 google-chrome-stable --new-window \"youtube.com\"
+'"
