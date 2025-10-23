@@ -69,6 +69,7 @@
       sl = "/home/andreaw/files/school";
       tp = "/home/andreaw/files/temp";
       gm = "/home/andreaw/files/games";
+      ds = "/home/andreaw/files/devshells/";
       cr = "/home/andreaw/files/projects/carbon/carbon-lang";
     };
 

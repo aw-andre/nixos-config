@@ -67,6 +67,7 @@
       cds = "cd ~/files/school/";
       cdt = "cd ~/files/temp/";
       cdg = "cd ~/files/games/";
+      cdd = "cd ~/files/devshells/";
       cdr = "cd ~/files/projects/carbon/carbon-lang/";
     };
     initContent = builtins.readFile ./zshrc.zsh;
