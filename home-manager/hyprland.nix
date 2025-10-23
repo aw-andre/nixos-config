@@ -30,6 +30,7 @@
       "exec-once" = [
         "swaync"
         "waybar"
+        "hyprlock"
         # "keyctl link @u @s"
       ];
       "exec" = [
