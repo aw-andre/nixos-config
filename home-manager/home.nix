@@ -116,6 +116,7 @@
       enable = true;
       hidden = true;
     };
+    bat.enable = true;
     nh = {
       enable = true;
       clean.enable = true;
