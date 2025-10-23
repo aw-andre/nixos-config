@@ -51,7 +51,7 @@
         # }"
         # "AQ_NO_ATOMIC,1"
         # "AQ_NO_MODIFIERS,1"
-        # "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
 
       general = {
