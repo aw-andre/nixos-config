@@ -34,7 +34,6 @@
       italic_font Comic Code Italic
       bold_italic_font Comic Code Bold Italic
       font_size 17.0
-      window_padding_width 2 0
       background #000000
       tab_bar_edge top
       tab_bar_style powerline
