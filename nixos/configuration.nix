@@ -123,10 +123,9 @@
 
     # getty.autologinUser = "andreaw";
 
-    # udev.extraRules = ''
-    #   SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{device/power_dpm_force_performance_level}="low"
-    #   SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="9981", MODE="0666", GROUP="plugdev"
-    # '';
+    udev.extraRules = ''
+      SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="9981", MODE="0666", GROUP="plugdev"
+    '';
   };
 
   security = {
