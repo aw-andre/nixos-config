@@ -71,7 +71,7 @@
       tp = "/home/andreaw/files/temp";
       gm = "/home/andreaw/files/games";
       ds = "/home/andreaw/files/devshells/";
-      cr = "/home/andreaw/files/projects/carbon/carbon-lang";
+      cr = "/home/andreaw/files/projects/carbon/";
     };
 
     file = {

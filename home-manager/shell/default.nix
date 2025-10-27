@@ -68,7 +68,7 @@
       cdt = "cd ~/files/temp/";
       cdg = "cd ~/files/games/";
       cdd = "cd ~/files/devshells/";
-      cdr = "cd ~/files/projects/carbon/carbon-lang/";
+      cdr = "cd ~/files/projects/carbon/";
     };
     initContent = builtins.readFile ./zshrc.zsh;
     plugins = [
