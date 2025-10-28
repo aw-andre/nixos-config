@@ -123,6 +123,8 @@
 
     # getty.autologinUser = "andreaw";
 
+    spice-vdagentd.enable = true;
+
     udev.extraRules = ''
       SUBSYSTEM=="usb", ATTR{idVendor}=="1949", ATTR{idProduct}=="9981", MODE="0666", GROUP="plugdev"
     '';
@@ -143,6 +145,7 @@
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
     hyprlock.enable = true;
+    dconf.enable = true;
   };
 
   documentation = {
@@ -166,7 +169,18 @@
   ];
 
   environment = {
-    systemPackages = with pkgs; [ man-pages tldr ];
+    systemPackages = with pkgs; [
+      man-pages
+      tldr
+      virt-manager
+      virt-viewer
+      spice
+      spice-gtk
+      spice-protocol
+      win-virtio
+      win-spice
+      adwaita-icon-theme
+    ];
 
     etc = {
       "inputrc".text = ''
@@ -180,7 +194,13 @@
     };
   };
 
-  # virtualisation.docker.enable = true;
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu.swtpm.enable = true;
+    };
+    spiceUSBRedirection.enable = true;
+  };
 
   users = {
     defaultUserShell = pkgs.zsh;
@@ -199,6 +219,7 @@
           "scanner"
           "dialout"
           "uucp"
+          "libvirtd"
           # "docker"
         ];
       };
