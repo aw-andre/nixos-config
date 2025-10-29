@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 unrotate
-CUR="$(winreset)"
+CUR=$(winreset)
 zsh -ci 'cdg && maintty'
 close "$CUR"
