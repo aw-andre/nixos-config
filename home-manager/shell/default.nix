@@ -8,14 +8,16 @@
     # '')
 
     # (writeShellScriptBin "ftm" ''fork -w 1 kitty "$@"'')
+    # (writeShellScriptBin "fvm" ''fork -w 2 vim "$@"'')
     # (writeShellScriptBin "fvd" ''fork -w 2 neovide "$@"'')
     # (writeShellScriptBin "flb" ''fork -w 3 lldb "$@"'')
     # (writeShellScriptBin "fgm" ''fork -w 4 gemini "$@"'')
-    # (writeShellScriptBin "fqb" ''fork -w 5 qutebrowser "$@"'')
+    # (writeShellScriptBin "fqb" ''fork -w 7 qutebrowser "$@"'')
     # (writeShellScriptBin "ftd" ''
-    #   fork -w 7 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
+    #   fork -w 8 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"
+    # '')
     # (writeShellScriptBin "fdc"
-    #   ''fork -w 8 google-chrome-stable --new-window "discord.com/app"'')
+    #   ''fork -w 9 google-chrome-stable --new-window "discord.com/app"'')
     # (writeShellScriptBin "fyt"
     #   ''fork -w 10 google-chrome-stable --new-window "youtube.com"'')
     # (writeShellScriptBin "fut"
@@ -28,17 +30,30 @@
     # (writeShellScriptBin "bvd" ''bfork -w 2 neovide "$@"'')
     # (writeShellScriptBin "blb" ''bfork -w 3 lldb "$@"'')
     # (writeShellScriptBin "bgm" ''bfork -w 4 gemini "$@"'')
-    # (writeShellScriptBin "bqb" ''bfork -w 5 qutebrowser "$@"'')
+    # (writeShellScriptBin "bqb" ''bfork -w 7 qutebrowser "$@"'')
     # (writeShellScriptBin "btd" ''
-    #   bfork -w 7 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"'')
+    #   bfork -w 8 google-chrome-stable --new-window "https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg"
+    # '')
     # (writeShellScriptBin "bdc"
-    #   ''bfork -w 8 google-chrome-stable --new-window "discord.com/app"'')
+    #   ''bfork -w 9 google-chrome-stable --new-window "discord.com/app"'')
     # (writeShellScriptBin "byt"
     #   ''bfork -w 10 google-chrome-stable --new-window "youtube.com"'')
     # (writeShellScriptBin "but"
     #   ''bfork -w 4 google-chrome-stable --new-window "utoronto.ca"'')
     # (writeShellScriptBin "bwa"
     #   ''bfork -w 10 google-chrome-stable --new-window "web.whatsapp.com"'')
+
+    (writeShellScriptBin "fork" (builtins.readFile ./fork))
+    (writeShellScriptBin "bfork" (builtins.readFile ./bfork))
+    (writeShellScriptBin "gui" (builtins.readFile ./gui))
+    (writeShellScriptBin "gameinit" (builtins.readFile ./gameinit))
+    (writeShellScriptBin "projinit" (builtins.readFile ./projinit))
+    (writeShellScriptBin "schoolinit" (builtins.readFile ./schoolinit))
+    (writeShellScriptBin "rotate" (builtins.readFile ./rotate))
+    (writeShellScriptBin "unrotate" (builtins.readFile ./unrotate))
+    (writeShellScriptBin "vimp" (builtins.readFile ./vimp))
+    (writeShellScriptBin "vimt" (builtins.readFile ./vimt))
+    (writeShellScriptBin "winreset" (builtins.readFile ./winreset))
 
     (writeShellScriptBin "maintty" ''fork -w 1 kitty "$@"'')
     (writeShellScriptBin "alttty" ''fork -w 3 kitty "$@"'')
@@ -87,7 +102,7 @@
       }
       {
         name = "powerlevel10k-config";
-        src = ./.;
+        src = ./p10kconfig;
         file = "p10kconfig.zsh";
       }
       {
