@@ -34,6 +34,10 @@ in {
           eol = "gcA";
         };
       };
+      # luaConfig.post = ''
+      #   vim.keymap.del("o", "gc")
+      #   vim.keymap.del("o", "gC")
+      # '';
     };
     markdown-preview.enable = true;
     lz-n.enable = true;
