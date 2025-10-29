@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# Get the address of the currently active window
+active_addr=$(hyprctl activewindow -j | jq -r '.address')
+
+# Get all window addresses
 hyprctl clients -j | jq -r '.[].address' | while read -r addr; do
-  hyprctl dispatch closewindow address:"$addr"
+  if [ "$addr" != "$active_addr" ]; then
+    hyprctl dispatch closewindow address:"$addr"
+  fi
 done
+
+# Return the address of the currently active window
+echo "$active_addr"

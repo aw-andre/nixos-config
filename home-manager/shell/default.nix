@@ -54,6 +54,7 @@
     (writeShellScriptBin "vimp" (builtins.readFile ./vimp))
     (writeShellScriptBin "vimt" (builtins.readFile ./vimt))
     (writeShellScriptBin "winreset" (builtins.readFile ./winreset))
+    (writeShellScriptBin "close" (builtins.readFile ./close))
 
     (writeShellScriptBin "maintty" ''fork -w 1 kitty "$@"'')
     (writeShellScriptBin "alttty" ''fork -w 3 kitty "$@"'')

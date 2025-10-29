@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 unrotate
-hyprctl dispatch exec "zsh -ci 'winreset && cdg && maintty'"
+CUR="$(winreset)"
+zsh -ci 'cdg && maintty'
+close "$CUR"
