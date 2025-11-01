@@ -84,6 +84,7 @@
     # cursorline = true;
     ls = 0;
     statusline = "%{repeat('─',winwidth('.'))}";
+    winborder = "rounded";
 
     # Show line and column when searching
     # ruler = true;
