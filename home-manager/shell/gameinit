@@ -2,5 +2,5 @@
 
 unrotate
 CUR=$(winreset)
-zsh -ci 'cdg && maintty'
+zsh -ci 'cdg && bfork -w 1 kitty'
 close "$CUR"
