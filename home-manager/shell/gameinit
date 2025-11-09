@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-unrotate
 CUR=$(winreset)
+unrotate
 zsh -ci 'cdg && bfork -w 1 kitty'
 close "$CUR"

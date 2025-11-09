@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-rotate
 CUR=$(winreset)
+rotate
 zsh -ci 'cds && bfork -w 1 kitty'
 bfork -w 4 google-chrome-stable --new-window 'utoronto.ca'
 bfork -w 10 google-chrome-stable --new-window 'youtube.com'

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-rotate
 CUR=$(winreset)
+rotate
 zsh -ci 'cdr && bfork -w 1 kitty'
 bfork -w 7 qutebrowser
 bfork -w 8 google-chrome-stable --new-window 'https://docs.google.com/document/d/1O2rcDO70BamTERrKhJRLODarNCQOHQWUweNdSfLw-So/edit?usp=sharing&resourcekey=0-gWJkSd-tlpCmk2lok1UcPg'
