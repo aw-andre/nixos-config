@@ -58,7 +58,7 @@
 
     (writeShellScriptBin "maintty" ''fork -w 1 kitty "$@"'')
     (writeShellScriptBin "alttty" ''fork -w 3 kitty "$@"'')
-    (writeShellScriptBin "vid" ''fork -w 2 neovide "$@"'')
+    (writeShellScriptBin "vid" ''fork -w 2 neovide --no-tabs "$@"'')
     (writeShellScriptBin "gem" ''fork -w 4 gemini "$@"'')
   ];
 
