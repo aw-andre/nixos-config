@@ -40,7 +40,8 @@
       };
       combinePlugins = {
         enable = true;
-        standalonePlugins = [ "rustaceanvim" "copilot.lua" "blink.cmp" ];
+        standalonePlugins =
+          [ "nvim-jdtls" "rustaceanvim" "copilot.lua" "blink.cmp" ];
       };
     };
     luaLoader.enable = true;
