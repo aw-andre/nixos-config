@@ -55,6 +55,9 @@
       unzip
       zip
       ripgrep-all
+      ffmpeg
+      calibre
+      wineWow64Packages.waylandFull
     ];
 
     sessionVariables = {
