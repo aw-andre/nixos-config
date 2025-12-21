@@ -7,6 +7,7 @@
       view_options.show_hidden = true;
     };
   };
+
   keymaps = [{
     mode = "n";
     key = "-";

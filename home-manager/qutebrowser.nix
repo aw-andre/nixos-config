@@ -7,6 +7,7 @@
       "text/html" = [ "org.qutebrowser.qutebrowser.desktop" ];
     };
   };
+
   programs.qutebrowser = {
     enable = true;
     searchEngines.DEFAULT = "https://google.com/search?hl=en&q={}";
@@ -62,14 +63,8 @@
         "<Right>" = "move-to-next-char";
       };
     };
-    extraConfig = ''
-      # gruvbox dark hard qutebrowser theme by Florian Bruhin <me@the-compiler.org>
-      #
-      # Originally based on:
-      #   base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
-      #   Base16 qutebrowser template by theova and Daniel Mulford
-      #   Gruvbox dark, hard scheme by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
 
+    extraConfig = ''
       bg0_hard = "#1d2021"
       bg0_soft = "#32302f"
       bg0_normal = "#282828"

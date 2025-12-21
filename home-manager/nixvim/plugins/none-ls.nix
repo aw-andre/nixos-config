@@ -4,6 +4,7 @@
     # enableLspFormat = true;
     settings.updateInInsert = false;
   };
+
   keymaps = [{
     mode = [ "n" "v" ];
     key = "=";
@@ -13,6 +14,7 @@
       desc = "Format Buffer";
     };
   }];
+
   autoCmd = [{
     event = "BufWritePre";
     callback.__raw = "function () vim.lsp.buf.format() end";

@@ -37,12 +37,14 @@
       '';
     };
   };
+
   opts = {
     foldcolumn = "0";
     foldlevel = 99;
     foldlevelstart = 99;
     foldenable = true;
   };
+
   keymaps = [
     {
       mode = "n";

@@ -30,36 +30,6 @@
           action.__raw = "vim.diagnostic.setloclist";
           options.desc = "Open diagnostic [Q]uickfix list";
         }
-        # {
-        #   mode = "n";
-        #   key = "gd";
-        #   action.__raw = "require('telescope.builtin').lsp_definitions";
-        #   options.desc = "[G]oto [D]efinition";
-        # }
-        # {
-        #   mode = "n";
-        #   key = "gD";
-        #   action.__raw = "vim.lsp.buf.declaration";
-        #   options.desc = "[G]oto [D]eclaration";
-        # }
-        # {
-        #   mode = "n";
-        #   key = "gr";
-        #   action.__raw = "require('telescope.builtin').lsp_references";
-        #   options.desc = "[G]oto [R]eferences";
-        # }
-        # {
-        #   mode = "n";
-        #   key = "gI";
-        #   action.__raw = "require('telescope.builtin').lsp_implementations";
-        #   options.desc = "[G]oto [I]mplementation";
-        # }
-        # {
-        #   mode = "n";
-        #   key = "gy";
-        #   action.__raw = "require('telescope.builtin').lsp_type_definitions";
-        #   options.desc = "[G]oto T[y]pe";
-        # }
         {
           mode = "n";
           key = "<leader>fs";

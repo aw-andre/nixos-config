@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -10,31 +10,18 @@
         ", preferred, auto, auto"
       ];
 
-      # workspace = [
-      #   "1, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "2, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "3, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "4, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "5, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "6, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "7, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "8, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "9, monitor:desc:Samsung Electric Company U32J59x HCJX601110"
-      #   "10, monitor:desc:Apple Computer Inc Color LCD"
-      # ];
-
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      "exec-once" = [
+      exec-once = [
         "hyprlock"
         "swaync"
         "waybar"
         "fork -w 1 kitty"
         # "keyctl link @u @s"
       ];
-      "exec" = [
+      exec = [
         # "pkill waybar; waybar"
         # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
       ];
@@ -42,6 +29,8 @@
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+
         # "AQ_DRM_DEVICES,${
         #   config.lib.file.mkOutOfStoreSymlink
         #   "/dev/dri/by-path/pci-0000:03:00.0-card"
@@ -51,50 +40,45 @@
         # }"
         # "AQ_NO_ATOMIC,1"
         # "AQ_NO_MODIFIERS,1"
-        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ];
 
       general = {
-        "gaps_in" = "5";
-        "gaps_out" = "20";
-
-        "border_size" = "2";
+        gaps_in = "5";
+        gaps_out = "20";
+        border_size = "2";
 
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
-        "resize_on_border" = "false";
-
-        "allow_tearing" = "false";
-
-        "layout" = "dwindle";
-
-        "no_focus_fallback" = "true";
+        resize_on_border = "false";
+        allow_tearing = "false";
+        layout = "dwindle";
+        no_focus_fallback = "true";
       };
 
       decoration = {
-        "rounding" = "10";
+        rounding = "10";
 
-        "active_opacity" = "1.0";
-        "inactive_opacity" = "1.0";
+        active_opacity = "1.0";
+        inactive_opacity = "1.0";
 
         shadow = {
-          "enabled" = "true";
-          "range" = "4";
-          "render_power" = "3";
-          "color" = "rgba(1a1a1aee)";
+          enabled = "true";
+          range = "4";
+          render_power = "3";
+          color = "rgba(1a1a1aee)";
         };
 
         blur = {
-          "enabled" = "true";
-          "size" = "3";
-          "passes" = "1";
-          "vibrancy" = "0.1696";
+          enabled = "true";
+          size = "3";
+          passes = "1";
+          vibrancy = "0.1696";
         };
       };
 
       animations = {
-        "enabled" = "yes, please :)";
+        enabled = "yes, please :)";
 
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
@@ -125,32 +109,30 @@
       };
 
       dwindle = {
-        "pseudotile" = "true";
-        "preserve_split" = "true";
+        pseudotile = "true";
+        preserve_split = "true";
       };
 
-      master = { "new_status" = "master"; };
+      master.new_status = "master";
 
       misc = {
-        "force_default_wallpaper" = "1";
-        "disable_hyprland_logo" = "false";
+        force_default_wallpaper = "1";
+        disable_hyprland_logo = "false";
       };
 
       input = {
-        "kb_layout" = "us";
+        kb_layout = "us";
 
-        "follow_mouse" = "1";
-
-        "sensitivity" = "0";
-
-        "natural_scroll" = "true";
+        follow_mouse = "1";
+        sensitivity = "0";
+        natural_scroll = "true";
         touchpad = {
-          "disable_while_typing" = true;
-          "natural_scroll" = "true";
-          "scroll_factor" = 0.5;
-          "middle_button_emulation" = true;
-          "clickfinger_behavior" = true;
-          "tap-to-click" = false;
+          disable_while_typing = true;
+          natural_scroll = "true";
+          scroll_factor = 0.5;
+          middle_button_emulation = true;
+          clickfinger_behavior = true;
+          tap-to-click = false;
         };
       };
 

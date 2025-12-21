@@ -1,22 +1,21 @@
 {
   plugins = {
-    # blink-cmp-copilot.enable = true;
     blink-cmp-dictionary.enable = true;
     blink-cmp-git.enable = true;
-    # blink-cmp-spell.enable = true;
     blink-compat.enable = true;
     blink-copilot.enable = true;
     blink-emoji.enable = true;
-    # blink-ripgrep.enable = true;
     blink-cmp = {
       enable = true;
       setupLspCapabilities = true;
+
       settings = {
         enabled.__raw = ''
           function()
             return vim.bo.filetype ~= "copilot-chat"
           end
         '';
+
         completion = {
           accept.auto_brackets.enabled = false;
           menu = {
@@ -29,10 +28,12 @@
             window.border = "rounded";
           };
         };
+
         signature = {
           enabled = true;
           window.border = "rounded";
         };
+
         sources = {
           default = [
             "lsp"
@@ -41,22 +42,23 @@
             "buffer"
             "dictionary"
             "git"
-            # "spell"
             "copilot"
             "emoji"
             "dadbod"
-            # "ripgrep"
           ];
+
           providers = {
             buffer = {
               enabled = true;
               score_offset = 0;
             };
+
             lsp = {
               name = "LSP";
               enabled = true;
               score_offset = 10;
             };
+
             dictionary = {
               module = "blink-cmp-dictionary";
               name = "Dict";
@@ -67,9 +69,8 @@
               '';
               score_offset = 50;
               min_keyword_length = 3;
-              # Optional configurations
-              opts = { };
             };
+
             git = {
               module = "blink-cmp-git";
               name = "Git";
@@ -79,23 +80,14 @@
                 end
               '';
               score_offset = 100;
-              opts = {
-                commit = { };
-                git_centers = { git_hub = { }; };
-              };
+              opts.git_centers.git_hub = { };
             };
-            # spell = {
-            #   module = "blink-cmp-spell";
-            #   name = "Spell";
-            #   score_offset = -60;
-            #   opts = { };
-            # };
+
             copilot = {
               async = true;
               module = "blink-copilot";
               name = "Copilot";
               score_offset = -10;
-              # Optional configurations
               opts = {
                 max_completions = 3;
                 max_attempts = 4;
@@ -107,6 +99,7 @@
                 };
               };
             };
+
             emoji = {
               module = "blink-emoji";
               name = "Emoji";
@@ -116,28 +109,9 @@
                 end
               '';
               score_offset = -100;
-              # Optional configurations
-              opts = { insert = true; };
+              opts.insert = true;
             };
-            # ripgrep = {
-            #   async = true;
-            #   module = "blink-ripgrep";
-            #   name = "Ripgrep";
-            #   score_offset = -20;
-            #   opts = {
-            #     prefix_min_len = 3;
-            #     context_size = 5;
-            #     max_filesize = "1M";
-            #     project_root_marker = ".git";
-            #     project_root_fallback = true;
-            #     search_casing = "--ignore-case";
-            #     additional_rg_options = { };
-            #     fallback_to_regex_highlighting = true;
-            #     ignore_paths = { };
-            #     additional_paths = { };
-            #     debug = false;
-            #   };
-            # };
+
             dadbod = {
               name = "Dadbod";
               module = "vim_dadbod_completion.blink";
@@ -153,9 +127,4 @@
       };
     };
   };
-  keymaps = [{
-    mode = "c";
-    key = "<C-S-i>";
-    action.__raw = "require('blink.cmp').select_prev";
-  }];
 }

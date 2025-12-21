@@ -35,15 +35,15 @@
         specialArgs = { inherit inputs outputs; };
         modules = [
           ./nixos/configuration.nix
+          nixos-hardware.nixosModules.common-gpu-amd
+
           nixos-hardware.nixosModules.apple-t2
           nixos-hardware.nixosModules.common-cpu-intel
-          nixos-hardware.nixosModules.common-gpu-amd
           nixos-hardware.nixosModules.common-pc-laptop
           nixos-hardware.nixosModules.common-pc-laptop-ssd
 
           home-manager.nixosModules.home-manager
           {
-            # home-manager.useGlobalPkgs = true;
             home-manager = {
               useUserPackages = true;
               extraSpecialArgs = { inherit inputs; };

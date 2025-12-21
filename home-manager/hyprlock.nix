@@ -8,15 +8,12 @@
 
       background {
           monitor =
-      	path = screenshot   # screenshot of your desktop
-      	#path = $HOME/.config/hypr/wallpaper_effects/.wallpaper_modified   # NOTE only png supported for now
-          #color = $color7
+          path = screenshot
 
-          # all these options are taken from hyprland, see https://wiki.hyprland.org/Configuring/Variables/#blur for explanations
           blur_size = 5
-          blur_passes = 1 # 0 disables blurring
+          blur_passes = 1
           noise = 0.0117
-          contrast = 1.3000 # Vibrant!!!
+          contrast = 1.3000
           brightness = 0.8000
           vibrancy = 0.2100
           vibrancy_darkness = 0.0
@@ -26,16 +23,16 @@
           monitor =
           size = 250, 50
           outline_thickness = 3
-          dots_size = 0.33 # Scale of input-field height, 0.2 - 0.8
-          dots_spacing = 0.15 # Scale of dots' absolute size, 0.0 - 1.0
+          dots_size = 0.33
+          dots_spacing = 0.15
           dots_center = true
           outer_color = $color5
           inner_color = $color0
           font_color = $color12
-          #fade_on_empty = true
-          placeholder_text = <i>Password...</i> # Text rendered in the input box when it's empty.
+          # fade_on_empty = true
+          placeholder_text = <i>Password...</i>
           hide_input = false
-          
+
           position = 0, 200
           halign = center
           valign = bottom
@@ -69,7 +66,7 @@
       # Time
       label {
           monitor =
-          #text = cmd[update:1000] echo "<b><big> $(date +"%I:%M:%S %p") </big></b>" # AM/PM
+          # text = cmd[update:1000] echo "<b><big> $(date +"%I:%M:%S %p") </big></b>" # AM/PM
           text = cmd[update:1000] echo "<b><big> $(date +"%H:%M:%S") </big></b>" # 24H
           color = $color15
           font_size = 94
@@ -93,7 +90,7 @@
           valign = bottom
       }
 
-      # uptime
+      # Uptime
       label {
           monitor =
           text = cmd[update:60000] echo "<b> "$(uptime -p || $Scripts/UptimeNixOS.sh)" </b>"
@@ -105,7 +102,7 @@
           valign = bottom
       }
 
-      # weather edit specific location. Note, this cause a 2-4 seconds delay in locking
+      # Weather edit specific location. Note, this cause a 2-4 seconds delay in locking
       label {
           monitor =
           text = cmd[update:3600000] [ -f ~/.cache/.weather_cache ] && cat  ~/.cache/.weather_cache

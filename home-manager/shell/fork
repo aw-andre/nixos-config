@@ -5,8 +5,8 @@ ARGS=()
 
 # Read options
 if [[ "$1" == "-w" ]]; then
-	WINDOW="$2"
-	shift 2
+  WINDOW="$2"
+  shift 2
 fi
 
 ARGS+=("$@")
@@ -15,29 +15,29 @@ CMD="$(printf '%q ' "${ARGS[@]}")"
 
 # Get existing windows before launch (for workspace moving)
 if [[ -v WINDOW ]]; then
-	EXISTING_WINDOWS=$(hyprctl clients -j | jq -r '.[].address')
-	PREV=$(hyprctl activeworkspace -j | jq -r '.id')
-	hyprctl dispatch workspace "$WINDOW" &>/dev/null
+  EXISTING_WINDOWS=$(hyprctl clients -j | jq -r '.[].address')
+  PREV=$(hyprctl activeworkspace -j | jq -r '.id')
+  hyprctl dispatch workspace "$WINDOW" &>/dev/null
 fi
 
 # Launch command
 (
-	if [[ "${TUI[*]}" =~ $BIN ]]; then
-		kitty -e zsh -ci "eval $CMD"
-	else
-		eval "$CMD"
-	fi
+  if [[ "${TUI[*]}" =~ $BIN ]]; then
+    kitty -e zsh -ci "eval $CMD"
+  else
+    eval "$CMD"
+  fi
 
-	if [[ -v WINDOW ]]; then
-		hyprctl dispatch workspace "$PREV"
-	fi
+  if [[ -v WINDOW ]]; then
+    hyprctl dispatch workspace "$PREV"
+  fi
 ) &>/dev/null &
 disown
 
 # Move to workspace if specified
 if [[ -v WINDOW ]]; then
-	# Wait for any new window to appear
-	until NEW_WINDOW=$(hyprctl clients -j | jq -r '.[].address' | grep -v -F "$EXISTING_WINDOWS" | head -1) && [[ -n "$NEW_WINDOW" ]]; do
-		sleep 0.1
-	done
+  # Wait for any new window to appear
+  until NEW_WINDOW=$(hyprctl clients -j | jq -r '.[].address' | grep -v -F "$EXISTING_WINDOWS" | head -1) && [[ -n "$NEW_WINDOW" ]]; do
+    sleep 0.1
+  done
 fi

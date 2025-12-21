@@ -6,6 +6,7 @@
       on_yank = false;
     };
   };
+
   keymaps = [
     {
       mode = [ "n" "v" ];

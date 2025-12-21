@@ -1,12 +1,14 @@
 {
   plugins.telescope = {
     enable = true;
+
     extensions = {
       fzf-native.enable = true;
       live-grep-args.enable = true;
       ui-select.enable = true;
       undo.enable = true;
     };
+
     settings.defaults = {
       layout_strategy.__raw = ''
         string.find(
@@ -20,6 +22,7 @@
       '';
     };
   };
+
   keymaps = [
     {
       mode = "n";
@@ -107,6 +110,7 @@
       options.desc = "[G]rep in [O]pen Files";
     }
   ];
+
   autoCmd = [
     {
       event = [ "StdinReadPost" ];

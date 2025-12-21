@@ -1,5 +1,12 @@
-{ inputs, lib, config, pkgs, ... }: {
-  imports = [ ./hardware-configuration.nix ./keyboard.nix ];
+let
+  files = builtins.readDir ./.;
+
+  nixFiles = map (name: ./. + "/${name}") (builtins.filter (name:
+    name != builtins.baseNameOf
+    (builtins.unsafeGetAttrPos "dummy" { dummy = null; }).file
+    && builtins.match ".*\\.nix" name != null) (builtins.attrNames files));
+in { inputs, pkgs, ... }: {
+  imports = nixFiles;
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -169,18 +176,7 @@
   ];
 
   environment = {
-    systemPackages = with pkgs; [
-      man-pages
-      tldr
-      virt-manager
-      virt-viewer
-      spice
-      spice-gtk
-      spice-protocol
-      virtio-win
-      win-spice
-      adwaita-icon-theme
-    ];
+    systemPackages = with pkgs; [ man-pages tldr ];
 
     etc = {
       "inputrc".text = ''
@@ -192,14 +188,6 @@
         bind -v
       '';
     };
-  };
-
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      qemu.swtpm.enable = true;
-    };
-    spiceUSBRedirection.enable = true;
   };
 
   users = {
@@ -219,8 +207,6 @@
           "scanner"
           "dialout"
           "uucp"
-          "libvirtd"
-          # "docker"
         ];
       };
     };
