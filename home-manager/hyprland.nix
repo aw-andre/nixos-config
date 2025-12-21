@@ -6,7 +6,7 @@
       monitor = [
         "desc: , disable"
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2, transform, 3"
-        "desc:Apple Computer Inc Color LCD, preferred, auto-center-left, 1.333333"
+        "desc:Apple Computer Inc Color LCD, preferred, auto-center-left, 2"
         ", preferred, auto, auto"
       ];
 
@@ -28,9 +28,9 @@
       "$menu" = "wofi --show drun";
 
       "exec-once" = [
-        ''
-          ftm -e zsh -ci "cd $cr; bgm && bqb && btd && bdc && bwa && but && byt; exec zsh -i" 
-        ''
+        # ''
+        #   ftm -e zsh -ci "cd $cr; bgm && bqb && btd && bdc && bwa && but && byt; exec zsh -i" 
+        # ''
         "swaync"
         "keyctl link @u @s"
       ];
