@@ -46,10 +46,7 @@ in { inputs, pkgs, ... }: {
     };
   };
 
-  networking = {
-    hostName = "nixos-mbp";
-    networkmanager.enable = true;
-  };
+  networking.networkmanager.enable = true;
 
   hardware = {
     # gpu
