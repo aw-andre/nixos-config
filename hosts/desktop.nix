@@ -1,1 +1,4 @@
-{ ... }: { networking.hostName = "desktop"; }
+{ ... }: {
+  networking.hostName = "desktop";
+  boot.loader.efi.efiSysMountPoint = "/boot";
+}

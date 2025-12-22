@@ -40,10 +40,7 @@ in { inputs, pkgs, ... }: {
 
     consoleLogLevel = 3;
 
-    loader = {
-      efi.efiSysMountPoint = "/boot";
-      systemd-boot.enable = true;
-    };
+    loader.systemd-boot.enable = true;
   };
 
   networking.networkmanager.enable = true;
