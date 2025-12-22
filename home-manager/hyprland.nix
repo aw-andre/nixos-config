@@ -1,45 +1,42 @@
-{
+{ config, lib, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     settings = {
       monitor = [
-        # "desc: , disable"
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1, transform, 3"
-        # "desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333"
         ", preferred, auto, auto"
+      ] ++ lib.optionals (config.networking.hostName == "mbp") [
+        "desc: , disable"
+        "desc:Apple Computer Inc Color LCD, preferred, auto, 1"
       ];
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      exec-once = [
-        "hyprlock"
-        "swaync"
-        "waybar"
-        "fork -w 1 kitty"
-        # "keyctl link @u @s"
-      ];
+      exec-once =
+        [ "hyprlock" "swaync" "waybar" "keyctl link @u @s" "fork -w 1 kitty" ];
+
       exec = [
-        # "pkill waybar; waybar"
-        # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
+        "pkill waybar; waybar"
+        "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
       ];
 
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
-
-        # "AQ_DRM_DEVICES,${
-        #   config.lib.file.mkOutOfStoreSymlink
-        #   "/dev/dri/by-path/pci-0000:03:00.0-card"
-        # }:${
-        #   config.lib.file.mkOutOfStoreSymlink
-        #   "/dev/dri/by-path/pci-0000:00:02.0-card"
-        # }"
-        # "AQ_NO_ATOMIC,1"
-        # "AQ_NO_MODIFIERS,1"
+      ] ++ lib.optionals (config.networking.hostName == "mbp") [
+        "AQ_DRM_DEVICES,${
+          config.lib.file.mkOutOfStoreSymlink
+          "/dev/dri/by-path/pci-0000:03:00.0-card"
+        }:${
+          config.lib.file.mkOutOfStoreSymlink
+          "/dev/dri/by-path/pci-0000:00:02.0-card"
+        }"
+        "AQ_NO_ATOMIC,1"
+        "AQ_NO_MODIFIERS,1"
       ];
 
       general = {
@@ -144,13 +141,6 @@
         "$mainMod SHIFT, B, exec, google-chrome-stable --new-window"
         "$mainMod, X, killactive,"
 
-        # "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
-        # "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333'"
-
-        # "$mainMod, minus, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1'"
-        # "$mainMod SHIFT, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.333333'"
-        # "$mainMod, equal, exec, hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1.2'"
-
         "$mainMod SHIFT, R, exec, unrotate"
         "$mainMod, R, exec, rotate"
 
@@ -203,6 +193,9 @@
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+      ] ++ lib.optionals (config.networking.hostName == "mbp") [
+        "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
+        "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333'"
       ];
 
       bindm = [

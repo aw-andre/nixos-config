@@ -12,31 +12,7 @@ in { inputs, pkgs, ... }: {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
-    kernelParams = [
-      "quiet"
-      "splash"
-
-      # gpu
-      # "amdgpu.dc=1"
-      # "amdgpu.dpm=1"
-      # "amdgpu.runpm=0"
-      # "amdgpu.bapm=0"
-      # "amdgpu.audio=0"
-      # "amdgpu.ppfeaturemask=0xffffffff"
-      # "amdgpu.modeset=1"
-      # "amdgpu_iommu=on"
-      # "intel_iommu=on"
-      # "iommu=pt"
-      # "pci=noaer"
-      # "pcie_ports=compat"
-      # "i915.force_probe=*"
-      # "i915.enable_psr=0"
-      # "i915.enable_fbc=0"
-      # "i915.modeset=1"
-      # "i915.enable_guc=3"
-    ];
-
-    # initrd.kernelModules = [ "i915" "amdgpu" ];
+    kernelParams = [ "quiet" "splash" ];
 
     consoleLogLevel = 3;
 
@@ -48,21 +24,9 @@ in { inputs, pkgs, ... }: {
   hardware = {
     # gpu
     graphics.enable = true;
-    # apple-t2.enableIGPU = true;
 
     # wifi/bluetooth
-    firmware = [
-      # (pkgs.stdenvNoCC.mkDerivation {
-      #   name = "brcm-firmware";
-      #   src = ./firmware/brcm;
-      #   buildCommand = ''
-      #     dir="$out/lib/firmware"
-      #     mkdir -p "$dir"
-      #     cp -r ${./firmware}/* "$dir"
-      #   '';
-      # })
-      pkgs.linux-firmware
-    ];
+    firmware = [ pkgs.linux-firmware ];
 
     bluetooth = {
       enable = true;
