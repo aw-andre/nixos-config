@@ -35,6 +35,7 @@
         mbp = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+            ./hosts/mbp.nix
             ./nixos/configuration.nix
 
             nixos-hardware.nixosModules.apple-t2
@@ -60,6 +61,7 @@
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+            ./hosts/desktop.nix
             ./nixos/configuration.nix
 
             home-manager.nixosModules.home-manager
