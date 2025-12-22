@@ -29,15 +29,15 @@
       };
     };
     shellAliases = {
-      cdf = "cd ~/files/";
-      cdb = "cd ~/files/books/";
-      cdc = "cd ~/files/config/";
-      cdp = "cd ~/files/projects/";
-      cds = "cd ~/files/school/";
-      cdt = "cd ~/files/temp/";
-      cdg = "cd ~/files/games/";
-      cdd = "cd ~/files/devshells/";
-      cdr = "cd ~/files/projects/carbon/";
+      cdf = "cd $fl";
+      cdb = "cd $bk";
+      cdc = "cd $cf";
+      cdp = "cd $pj";
+      cds = "cd $sl";
+      cdt = "cd $tp";
+      cdg = "cd $gm";
+      cdd = "cd $ds";
+      cdm = "cd $ms";
     };
     initContent = builtins.readFile ./zshrc.zsh;
     plugins = [
