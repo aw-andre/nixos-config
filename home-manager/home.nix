@@ -18,9 +18,9 @@ in { config, pkgs, ... }: {
     sessionVariables = {
       PAGER = "vimp";
       MANPAGER = "nvim -c 'Man!'";
-      # NIXOS_OZONE_WL = "1";
-      # ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      # QT_QUICK_BACKEND = "software";
+      NIXOS_OZONE_WL = "1";
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      QT_QUICK_BACKEND = "software";
       fl = "/home/andreaw/files";
       bk = "/home/andreaw/files/books";
       cf = "/home/andreaw/files/config";

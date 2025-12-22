@@ -19,8 +19,8 @@
         [ "hyprlock" "swaync" "waybar" "keyctl link @u @s" "fork -w 1 kitty" ];
 
       exec = [
-        "pkill waybar; waybar"
-        "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
+        # "pkill waybar; waybar"
+        # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
       ];
 
       env = [
@@ -35,8 +35,8 @@
           config.lib.file.mkOutOfStoreSymlink
           "/dev/dri/by-path/pci-0000:00:02.0-card"
         }"
-        "AQ_NO_ATOMIC,1"
-        "AQ_NO_MODIFIERS,1"
+        # "AQ_NO_ATOMIC,1"
+        # "AQ_NO_MODIFIERS,1"
       ];
 
       general = {
