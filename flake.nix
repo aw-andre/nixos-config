@@ -45,17 +45,20 @@
             nixos-hardware.nixosModules.common-pc-laptop-ssd
 
             home-manager.nixosModules.home-manager
-            {
+            ({ config, ... }: {
               home-manager = {
                 useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = {
+                  inherit inputs;
+                  inherit (config.networking) hostName;
+                };
 
                 users.andreaw = {
                   imports =
                     [ nixvim.homeModules.nixvim ./home-manager/home.nix ];
                 };
               };
-            }
+            })
           ];
         };
         desktop = nixpkgs.lib.nixosSystem {
@@ -64,18 +67,20 @@
             ./hosts/desktop.nix
             ./nixos/configuration.nix
 
-            home-manager.nixosModules.home-manager
-            {
+            ({ config, ... }: {
               home-manager = {
                 useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = {
+                  inherit inputs;
+                  inherit (config.networking) hostName;
+                };
 
                 users.andreaw = {
                   imports =
                     [ nixvim.homeModules.nixvim ./home-manager/home.nix ];
                 };
               };
-            }
+            })
           ];
         };
       };

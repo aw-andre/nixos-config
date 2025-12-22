@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ config, lib, hostName, ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -6,7 +6,7 @@
       monitor = [
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1, transform, 3"
         ", preferred, auto, auto"
-      ] ++ lib.optionals (config.networking.hostName == "mbp") [
+      ] ++ lib.optionals (hostName == "mbp") [
         "desc: , disable"
         "desc:Apple Computer Inc Color LCD, preferred, auto, 1"
       ];
@@ -27,7 +27,7 @@
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
-      ] ++ lib.optionals (config.networking.hostName == "mbp") [
+      ] ++ lib.optionals (hostName == "mbp") [
         "AQ_DRM_DEVICES,${
           config.lib.file.mkOutOfStoreSymlink
           "/dev/dri/by-path/pci-0000:03:00.0-card"
@@ -193,7 +193,7 @@
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
-      ] ++ lib.optionals (config.networking.hostName == "mbp") [
+      ] ++ lib.optionals (hostName == "mbp") [
         "$mainMod, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'"
         "$mainMod SHIFT, D, exec, hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, preferred, auto, 1.333333'"
       ];
