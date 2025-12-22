@@ -105,7 +105,7 @@ in { config, pkgs, ... }: {
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 7d";
-      flake = "/home/andreaw/files/configs/laptop-config/";
+      flake = "/home/andreaw/files/config";
     };
     nix-index.enable = true;
     ssh = {
