@@ -22,8 +22,8 @@
     config = {
       should_launch_new_window = "1";
       ui_font = "JetBrainsMono Nerd Font";
-      font_size = "16";
-      status_bar_font_size = "16";
+      font_size = "17";
+      status_bar_font_size = "17";
       startup_commands = "toggle_dark_mode";
       create_table_of_contents_if_not_exists = "1";
       collapsed_toc = "1";
