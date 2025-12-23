@@ -61,12 +61,14 @@
             })
           ];
         };
+
         desktop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/desktop.nix
             ./nixos/configuration.nix
 
+            home-manager.nixosModules.home-manager
             ({ config, ... }: {
               home-manager = {
                 useUserPackages = true;
