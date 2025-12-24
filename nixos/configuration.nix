@@ -101,7 +101,11 @@ in { inputs, pkgs, ... }: {
   };
 
   programs = {
-    steam.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+    };
     nix-ld.enable = true;
     zsh.enable = true;
     thunar.enable = true;
