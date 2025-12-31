@@ -16,16 +16,21 @@ in { pkgs, ... }: {
     ports = [ 10000 ];
   };
 
-  systemd.timers.duckdns-update = {
-    description = "DuckDNS updater";
-    timerConfig = {
-      OnBootSec = "1min";
-      OnUnitActiveSec = "5min";
+  systemd = {
+    timers.duckdns-update = {
+      description = "DuckDNS updater timer";
+      timerConfig = {
+        OnBootSec = "1min";
+        OnUnitActiveSec = "5min";
+      };
     };
-    serviceConfig = {
-      ExecStart = ''
-        ${pkgs.curl}/bin/curl -s "https://www.duckdns.org/update?domains=${domain}&token=${token}&ip="'';
-      Type = "oneshot";
+    services.duckdns-update = {
+      description = "DuckDNS updater";
+      serviceConfig = {
+        ExecStart = ''
+          ${pkgs.curl}/bin/curl -s "https://www.duckdns.org/update?domains=${domain}&token=${token}&ip="'';
+        Type = "oneshot";
+      };
     };
   };
 }

@@ -5,27 +5,32 @@ let
 in { pkgs, ... }: {
   networking.hostName = "mbp";
 
-  systemd.timers.duckdns-update = {
-    description = "DuckDNS updater";
-    timerConfig = {
-      OnBootSec = "1min";
-      OnUnitActiveSec = "5min";
+  systemd = {
+    timers.duckdns-update = {
+      description = "DuckDNS updater timer";
+      timerConfig = {
+        OnBootSec = "1min";
+        OnUnitActiveSec = "5min";
+      };
     };
-    serviceConfig = {
-      ExecStart = ''
-        ${pkgs.curl}/bin/curl -s "https://www.duckdns.org/update?domains=${domain}&token=${token}&ip="'';
-      Type = "oneshot";
+    services.duckdns-update = {
+      description = "DuckDNS updater";
+      serviceConfig = {
+        ExecStart = ''
+          ${pkgs.curl}/bin/curl -s "https://www.duckdns.org/update?domains=${domain}&token=${token}&ip="'';
+        Type = "oneshot";
+      };
     };
   };
 
   users.users.andreaw.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGkL74Zu5o9EJkDfLaiu59nEvYuyFWPuglvVceQ4Ny5y andreaw@desktop"
   ];
-  networking.firewall.allowedTCPPorts = [ 10001 ];
+  networking.firewall.allowedTCPPorts = [ 11000 ];
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
-    ports = [ 10001 ];
+    ports = [ 11000 ];
   };
 
   boot = {
