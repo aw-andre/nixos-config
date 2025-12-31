@@ -45,15 +45,6 @@ in { inputs, pkgs, ... }: {
     blueman.enable = true;
     # envfs.enable = true;
 
-    openssh = {
-      enable = true;
-      settings = {
-        # PermitRootLogin = "no";
-        # PasswordAuthentication = false;
-      };
-
-    };
-
     # postgresql = {
     #   enable = true;
     #   ensureUsers = [{
@@ -158,7 +149,6 @@ in { inputs, pkgs, ... }: {
       andreaw = {
         initialPassword = "setyourpassword";
         isNormalUser = true;
-        openssh.authorizedKeys.keys = [ ];
         extraGroups = [
           "plugdev"
           "wheel"
