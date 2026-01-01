@@ -79,8 +79,6 @@ in { inputs, pkgs, ... }: {
 
     # getty.autologinUser = "andreaw";
 
-    spice-vdagentd.enable = true;
-
     udev.extraRules = ''
       KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", ATTRS{idVendor}=="55d4", ATTRS{idProduct}=="0461", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
     '';
@@ -92,20 +90,37 @@ in { inputs, pkgs, ... }: {
   };
 
   programs = {
+    ssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+      extraConfig = ''
+        Host desktop
+          HostName andreaw-home.duckdns.org
+          User andreaw
+          Port 10000
+          IdentityFile ~/files/ssh/desktop
+
+        Host mbp-home
+          HostName andreaw-home.duckdns.org
+          User andreaw
+          Port 11000
+          IdentityFile ~/files/ssh/mbp
+      '';
+    };
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
     nix-ld.enable = true;
-    zsh.enable = true;
     thunar.enable = true;
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
-    hyprlock.enable = true;
     dconf.enable = true;
+    hyprlock.enable = true;
+    zsh.enable = true;
   };
 
   documentation = {
