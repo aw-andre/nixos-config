@@ -9,7 +9,10 @@ in { pkgs, ... }: {
   users.users.andreaw.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBRjAP//SG64jLi0HZ2Pep2Zu0NtmYYZGHLDQ2w1sg+u andreaw@mbp"
   ];
-  networking.firewall.allowedTCPPorts = [ 10000 ];
+  networking.firewall = {
+    allowedTCPPorts = [ 10000 ];
+    allowedUDPPorts = [ 10000 ];
+  };
   services.openssh.ports = [ 10000 ];
 
   systemd = {

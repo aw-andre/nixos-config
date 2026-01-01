@@ -5,7 +5,7 @@ let
     name != builtins.baseNameOf
     (builtins.unsafeGetAttrPos "dummy" { dummy = null; }).file
     && builtins.match ".*\\.nix" name != null) (builtins.attrNames files));
-in { inputs, pkgs, ... }: {
+in { inputs, pkgs, lib, ... }: {
   imports = nixFiles;
 
   nixpkgs.config.allowUnfree = true;
@@ -44,6 +44,11 @@ in { inputs, pkgs, ... }: {
 
     blueman.enable = true;
     # envfs.enable = true;
+
+    openssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+    };
 
     # postgresql = {
     #   enable = true;
@@ -90,23 +95,23 @@ in { inputs, pkgs, ... }: {
   };
 
   programs = {
-    ssh = {
+    mosh = {
       enable = true;
-      settings.PasswordAuthentication = false;
-      extraConfig = ''
-        Host desktop
-          HostName andreaw-home.duckdns.org
-          User andreaw
-          Port 10000
-          IdentityFile ~/files/ssh/desktop
-
-        Host mbp-home
-          HostName andreaw-home.duckdns.org
-          User andreaw
-          Port 11000
-          IdentityFile ~/files/ssh/mbp
-      '';
+      openFirewall = false;
     };
+    ssh.extraConfig = ''
+      Host desktop
+        HostName andreaw-home.duckdns.org
+        User andreaw
+        Port 10000
+        IdentityFile ~/files/ssh/desktop
+
+      Host mbp-home
+        HostName andreaw-home.duckdns.org
+        User andreaw
+        Port 11000
+        IdentityFile ~/files/ssh/mbp
+    '';
     steam = {
       enable = true;
       remotePlay.openFirewall = true;

@@ -26,7 +26,10 @@ in { pkgs, ... }: {
   users.users.andreaw.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGkL74Zu5o9EJkDfLaiu59nEvYuyFWPuglvVceQ4Ny5y andreaw@desktop"
   ];
-  networking.firewall.allowedTCPPorts = [ 11000 ];
+  networking.firewall = {
+    allowedTCPPorts = [ 11000 ];
+    allowedUDPPorts = [ 11000 ];
+  };
   services.openssh.ports = [ 11000 ];
 
   boot = {
