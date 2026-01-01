@@ -53,6 +53,7 @@ in { config, pkgs, ... }: {
       neovide
       steam-run
       tree
+      waypipe
 
       calibre
       ffmpeg
