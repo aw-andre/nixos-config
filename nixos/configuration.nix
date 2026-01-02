@@ -107,7 +107,7 @@ in { inputs, pkgs, ... }: {
     };
     ssh.extraConfig = ''
       Host desktop
-        HostName andreaw-home.dynv6.net
+        HostName andreaw-desktop.dynv6.net
         User andreaw
         Port 10000
         IdentityFile ~/files/ssh/desktop
