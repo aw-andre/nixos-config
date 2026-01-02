@@ -5,11 +5,17 @@ let
     name != builtins.baseNameOf
     (builtins.unsafeGetAttrPos "dummy" { dummy = null; }).file
     && builtins.match ".*\\.nix" name != null) (builtins.attrNames files));
-in { inputs, pkgs, lib, ... }: {
+in { inputs, pkgs, ... }: {
   imports = nixFiles;
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    distributedBuilds = true;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = [ "root" "andreaw" ];
+    };
+  };
 
   boot = {
     kernelParams = [ "quiet" "splash" ];
