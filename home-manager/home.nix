@@ -66,10 +66,16 @@ in { config, pkgs, ... }: {
       zip
     ];
 
-    file.".psqlrc".text = ''
-      \pset pager on
-      \setenv PAGER vimt
-    '';
+    file = {
+      ".psqlrc".text = ''
+        \pset pager on
+        \setenv PAGER vimt
+      '';
+      ".icons/macos-cursors" = {
+        recursive = true;
+        source = ./macos-cursors;
+      };
+    };
   };
 
   services = {

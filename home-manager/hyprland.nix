@@ -24,8 +24,8 @@
       ];
 
       env = [
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
+        "HYPRCURSOR_THEME,macos-cursors"
+        "HYPRCURSOR_SIZE,28"
         "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       ] ++ lib.optionals (hostName == "mbp") [
         "AQ_DRM_DEVICES,${
