@@ -101,13 +101,13 @@ in { inputs, pkgs, lib, ... }: {
     };
     ssh.extraConfig = ''
       Host desktop
-        HostName andreaw-home.duckdns.org
+        HostName andreaw-home.dynv6.net
         User andreaw
         Port 10000
         IdentityFile ~/files/ssh/desktop
 
-      Host mbp-home
-        HostName andreaw-home.duckdns.org
+      Host mbp
+        HostName andreaw-mbp.dynv6.net
         User andreaw
         Port 11000
         IdentityFile ~/files/ssh/mbp

@@ -1,27 +1,31 @@
 let
-  domain = "andreaw-laptop";
-  token = "62c67674-bc4c-4e57-8fd8-acb9c2f57dea";
+  domain = "andreaw-mbp.dynv6.net";
+  token = "x8nT91S9px-TAhiupXgtsxsFrMTwbo";
 
 in { pkgs, ... }: {
   networking.hostName = "mbp";
 
-  systemd = {
-    timers.duckdns-update = {
-      description = "DuckDNS updater timer";
-      timerConfig = {
-        OnBootSec = "1min";
-        OnUnitActiveSec = "5min";
-      };
-    };
-    services.duckdns-update = {
-      description = "DuckDNS updater";
-      serviceConfig = {
-        ExecStart = ''
-          ${pkgs.curl}/bin/curl -s "https://www.duckdns.org/update?domains=${domain}&token=${token}&ip="'';
-        Type = "oneshot";
-      };
-    };
-  };
+  environment.etc."NetworkManager/dispatcher.d/90-dynv6".source =
+    pkgs.writeShellScript "dynv6-dispatcher" ''
+      #!/usr/bin/env bash
+      set -eu
+
+      INTERFACE="$1"
+      ACTION="$2"
+
+      # Only update on useful events
+      case "$ACTION" in
+        up|dhcp4-change|dhcp6-change|connectivity-change)
+          ;;
+        *)
+          exit 0
+          ;;
+      esac
+
+      ${pkgs.curl}/bin/curl -fsS \
+        "https://dynv6.com/api/update?hostname=${domain}&token=${token}" \
+        || true
+    '';
 
   users.users.andreaw.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGkL74Zu5o9EJkDfLaiu59nEvYuyFWPuglvVceQ4Ny5y andreaw@desktop"
