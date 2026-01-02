@@ -38,8 +38,14 @@ in { pkgs, ... }: {
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGkL74Zu5o9EJkDfLaiu59nEvYuyFWPuglvVceQ4Ny5y andreaw@desktop"
   ];
   networking.firewall = {
-    allowedTCPPorts = [ 11000 ];
-    allowedUDPPorts = [ 11000 ];
+    allowedTCPPortRanges = [{
+      from = 11000;
+      to = 11999;
+    }];
+    allowedUDPPortRanges = [{
+      from = 11000;
+      to = 11999;
+    }];
   };
   services.openssh.ports = [ 11000 ];
 

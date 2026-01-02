@@ -10,8 +10,14 @@ in { pkgs, ... }: {
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBRjAP//SG64jLi0HZ2Pep2Zu0NtmYYZGHLDQ2w1sg+u andreaw@mbp"
   ];
   networking.firewall = {
-    allowedTCPPorts = [ 10000 ];
-    allowedUDPPorts = [ 10000 ];
+    allowedTCPPortRanges = [{
+      from = 10000;
+      to = 10999;
+    }];
+    allowedUDPPortRanges = [{
+      from = 10000;
+      to = 10999;
+    }];
   };
   services.openssh.ports = [ 10000 ];
 
