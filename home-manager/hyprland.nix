@@ -23,11 +23,7 @@
         # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
       ];
 
-      env = [
-        "HYPRCURSOR_THEME,macos-cursors"
-        "HYPRCURSOR_SIZE,28"
-        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
-      ] ++ lib.optionals (hostName == "mbp") [
+      env = lib.optionals (hostName == "mbp") [
         "AQ_DRM_DEVICES,${
           config.lib.file.mkOutOfStoreSymlink
           "/dev/dri/by-path/pci-0000:03:00.0-card"

@@ -71,7 +71,7 @@ in { config, pkgs, ... }: {
         \pset pager on
         \setenv PAGER vimt
       '';
-      ".icons/macos-cursors" = {
+      ".icons/default" = {
         recursive = true;
         source = ./macos-cursors;
       };
