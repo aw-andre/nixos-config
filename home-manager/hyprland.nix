@@ -139,6 +139,7 @@
 
         "$mainMod SHIFT, R, exec, unrotate"
         "$mainMod, R, exec, rotate"
+        "$mainMod, F, fullscreen"
 
         "$mainMod, escape, exec, hyprlock"
         "$mainMod SHIFT, escape, exit,"
