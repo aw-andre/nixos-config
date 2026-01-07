@@ -77,6 +77,8 @@ in { inputs, pkgs, ... }: {
       audio.enable = true;
     };
 
+    tailscale.enable = true;
+
     greetd = {
       enable = true;
       settings = rec {
