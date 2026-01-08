@@ -5,7 +5,7 @@
     settings = {
       monitor = [
         "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1, transform, 3"
-        ", preferred, auto, auto"
+        ", preferred, auto, 1, transform, 3"
       ] ++ lib.optionals (hostName == "mbp") [
         "desc: , disable"
         "desc:Apple Computer Inc Color LCD, preferred, auto, 1"
