@@ -3,20 +3,24 @@
     enable = true;
     xwayland.enable = true;
     settings = {
-      monitor = [
-        "desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto-right, 1, transform, 3"
-        ", preferred, auto, 1, transform, 3"
-      ] ++ lib.optionals (hostName == "mbp") [
-        "desc: , disable"
-        "desc:Apple Computer Inc Color LCD, preferred, auto, 1"
-      ];
+      monitor = [ ", preferred, auto, 1" ]
+        ++ lib.optionals (hostName == "mbp") [
+          "desc: , disable"
+          "desc:Apple Computer Inc Color LCD, preferred, auto, 1"
+        ];
 
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
 
-      exec-once =
-        [ "hyprlock" "swaync" "waybar" "keyctl link @u @s" "fork -w 1 kitty" ];
+      exec-once = [
+        "rotate"
+        "hyprlock"
+        "swaync"
+        "waybar"
+        "keyctl link @u @s"
+        "fork -w 1 kitty"
+      ];
 
       exec = [
         # "pkill waybar; waybar"
