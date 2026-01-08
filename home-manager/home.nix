@@ -47,6 +47,7 @@ in { config, pkgs, ... }: {
 
       curl
       wget
+      glab
 
       gemini-cli
       jq
@@ -106,7 +107,6 @@ in { config, pkgs, ... }: {
       enable = true;
       gitCredentialHelper.enable = true;
     };
-    glab.enable = true;
     google-chrome.enable = true;
     home-manager.enable = true;
     nh = {
