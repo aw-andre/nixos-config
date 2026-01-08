@@ -39,7 +39,7 @@ in { pkgs, ... }: {
       esac
 
       ${pkgs.curl}/bin/curl -fsS \
-        "https://dynv6.com/api/update?hostname=${domain}&token=${token}" \
+        "https://dynv6.com/api/update?hostname=${domain}&token=${token}&ipv4=auto" \
         || true
     '';
 }
