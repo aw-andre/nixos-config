@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-hyprctl keyword monitor 'desc:Samsung Electric Company U32J59x HCJX601110, preferred, auto, 1, transform, 3'
+monitors=$(hyprctl monitors -j)
+
+echo "$monitors" | jq -r '.[] | select(not(.name | startswith("eDP") or startswith("LVDS") or startswith("WAYLAND"))) | .description' | while read -r desc; do
+  hyprctl keyword monitor "$desc, preferred, auto, 1, transform, 3"
+done
