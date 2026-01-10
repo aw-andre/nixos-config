@@ -21,8 +21,6 @@ in { inputs, pkgs, ... }: {
     kernelParams = [ "quiet" "splash" ];
 
     consoleLogLevel = 3;
-
-    loader.systemd-boot.enable = true;
   };
 
   networking.networkmanager.enable = true;

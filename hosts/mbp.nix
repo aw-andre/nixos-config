@@ -73,7 +73,10 @@ in { pkgs, ... }: {
 
     initrd.kernelModules = [ "i915" "amdgpu" ];
 
-    loader.efi.efiSysMountPoint = "/boot/efi";
+    loader = {
+      efi.efiSysMountPoint = "/boot/efi";
+      systemd-boot.enable = true;
+    };
   };
 
   hardware = {

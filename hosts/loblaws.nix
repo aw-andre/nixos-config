@@ -3,26 +3,30 @@ let
   token = "x8nT91S9px-TAhiupXgtsxsFrMTwbo";
 
 in { pkgs, ... }: {
-  networking.hostName = "desktop";
-  boot = {
-    efi.efiSysMountPoint = "/boot";
-    loader.systemd-boot.enable = true;
+  networking.hostName = "loblaws";
+  boot.loader.efi.efiSysMountPoint = "/boot";
+
+  wsl = {
+    enable = true;
+    defaultUser = "andreaw";
   };
 
-  users.users.andreaw.openssh.authorizedKeys.keys = [
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBRjAP//SG64jLi0HZ2Pep2Zu0NtmYYZGHLDQ2w1sg+u andreaw@mbp"
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # users.users.andreaw.openssh.authorizedKeys.keys = [
+  #   "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBRjAP//SG64jLi0HZ2Pep2Zu0NtmYYZGHLDQ2w1sg+u andreaw@mbp"
+  # ];
   networking.firewall = {
     allowedTCPPortRanges = [{
-      from = 10000;
-      to = 10999;
+      from = 12000;
+      to = 12999;
     }];
     allowedUDPPortRanges = [{
-      from = 10000;
-      to = 10999;
+      from = 12000;
+      to = 12999;
     }];
   };
-  services.openssh.ports = [ 10000 ];
+  services.openssh.ports = [ 12000 ];
 
   environment.etc."NetworkManager/dispatcher.d/90-dynv6".source =
     pkgs.writeShellScript "dynv6-dispatcher" ''

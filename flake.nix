@@ -26,9 +26,15 @@
     };
 
     nixvim.url = "github:nix-community/nixvim";
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = inputs@{ self, nixos-hardware, nixvim, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixos-hardware, nixvim, nixpkgs, home-manager, nixos-wsl, ... }:
     let inherit (self) outputs;
     in {
       nixosConfigurations = {
@@ -68,6 +74,31 @@
             ./hosts/desktop.nix
             ./nixos/configuration.nix
 
+            home-manager.nixosModules.home-manager
+            ({ config, ... }: {
+              home-manager = {
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit inputs;
+                  inherit (config.networking) hostName;
+                };
+
+                users.andreaw = {
+                  imports =
+                    [ nixvim.homeModules.nixvim ./home-manager/home.nix ];
+                };
+              };
+            })
+          ];
+        };
+
+        loblaws = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/loblaws.nix
+            ./nixos/configuration.nix
+
+            nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
             ({ config, ... }: {
               home-manager = {
