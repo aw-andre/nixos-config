@@ -6,6 +6,6 @@ fi
 
 monitors=$(hyprctl monitors -j)
 
-echo "$monitors" | jq -r '.[] | select(not(.name | startswith("eDP") or startswith("LVDS") or startswith("WAYLAND"))) | .description' | while read -r desc; do
+echo "$monitors" | jq -r '.[] | select((.name | startswith("eDP") or startswith("LVDS") or startswith("WAYLAND")) | not) | .description' | while read -r desc; do
   hyprctl keyword monitor "$desc, preferred, auto, 1, transform, 1"
 done
