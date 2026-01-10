@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-HOST="$1"
-shift
-sudo nixos-rebuild switch --flake ".#$HOST" --impure "$@"
+sudo nixos-rebuild switch --flake ".#$HOSTNAME" --impure "$@"
