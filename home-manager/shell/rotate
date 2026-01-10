@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [[ -z "$WAYLAND_DISPLAY" || "$WAYLAND_DISPLAY" == "wayland-0" ]]; then
+  echo "No display!"
+fi
+
 monitors=$(hyprctl monitors -j)
 
 echo "$monitors" | jq -r '.[] | select(not(.name | startswith("eDP") or startswith("LVDS") or startswith("WAYLAND"))) | .description' | while read -r desc; do

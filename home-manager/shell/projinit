@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-CUR=$(winreset)
-rotate
-zsh -ci 'cdr && bfork -w 1 kitty'
-bfork -w 4 qutebrowser
-bfork -w 10 google-chrome-stable --new-window 'youtube.com'
-close "$CUR"

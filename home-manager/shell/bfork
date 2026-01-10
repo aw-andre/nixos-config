@@ -5,6 +5,12 @@ ARGS=()
 
 # Read options
 if [[ "$1" == "-w" ]]; then
+
+  if [[ -z "$WAYLAND_DISPLAY" || "$WAYLAND_DISPLAY" == "wayland-0" ]]; then
+    echo "No display!"
+    exit 1
+  fi
+
   WINDOW="$2"
   shift 2
 fi

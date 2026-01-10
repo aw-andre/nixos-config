@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
+if [[ -z "$WAYLAND_DISPLAY" || "$WAYLAND_DISPLAY" == "wayland-0" ]]; then
+  echo "No display!"
+  exit 1
+fi
+
 hyprctl dispatch closewindow address:"$1"

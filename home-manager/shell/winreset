@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [[ -z "$WAYLAND_DISPLAY" || "$WAYLAND_DISPLAY" == "wayland-0" ]]; then
+  echo "No display!"
+fi
+
 # Get the address of the currently active window
 active_addr=$(hyprctl activewindow -j | jq -r '.address')
 
