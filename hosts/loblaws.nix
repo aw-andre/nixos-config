@@ -1,5 +1,5 @@
 let
-  domain = "andreaw-desktop.dynv6.net";
+  domain = "andreaw-loblaws.dynv6.net";
   token = "x8nT91S9px-TAhiupXgtsxsFrMTwbo";
 
 in { pkgs, ... }: {
@@ -13,6 +13,7 @@ in { pkgs, ... }: {
     useWindowsDriver = true;
     wslConf.automount.options = "uid=1000,gid=100";
   };
+
   security.pki.certificateFiles = [ /etc/ssl/certs/loblaws-cert.crt ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
