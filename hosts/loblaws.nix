@@ -9,6 +9,9 @@ in { pkgs, ... }: {
   wsl = {
     enable = true;
     defaultUser = "andreaw";
+    docker-desktop.enable = true;
+    useWindowsDriver = true;
+    wslConf.automount.options = "uid=1000,gid=100";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
