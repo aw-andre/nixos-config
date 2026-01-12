@@ -13,6 +13,7 @@ in { pkgs, ... }: {
     useWindowsDriver = true;
     wslConf.automount.options = "uid=1000,gid=100";
   };
+  security.pki.certificateFiles = [ /etc/ssl/certs/loblaws-cert.crt ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
