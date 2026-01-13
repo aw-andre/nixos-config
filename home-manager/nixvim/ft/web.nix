@@ -3,7 +3,7 @@
     lsp.servers = {
       html = {
         enable = true;
-        filetypes = [ "html" "htmldjango" "htmlangular" "htmlcheetah" ];
+        filetypes = [ "j2" "html" "htmldjango" "htmlangular" "htmlcheetah" ];
       };
       htmx.enable = true;
       jsonls.enable = true;
