@@ -95,6 +95,12 @@ in { config, pkgs, ... }: {
 
   programs = {
     bat.enable = true;
+    dircolors = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      settings.OTHER_WRITABLE = "01;34";
+    };
     direnv = {
       enable = true;
       nix-direnv.enable = true;
