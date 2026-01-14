@@ -67,6 +67,9 @@
     # neovide
     linespace = 17;
     guifont = "Comic Code:h17";
+
+    exrc = true;
+    secure = true;
   };
 
   globals = {
