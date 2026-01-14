@@ -8,12 +8,14 @@
     (writeShellScriptBin "vimp" (builtins.readFile ./vimp))
     (writeShellScriptBin "vimpage" (builtins.readFile ./vimpage))
     (writeShellScriptBin "vimt" (builtins.readFile ./vimt))
+    (writeShellScriptBin "vimd" (builtins.readFile ./vimd))
     (writeShellScriptBin "winreset" (builtins.readFile ./winreset))
     (writeShellScriptBin "close" (builtins.readFile ./close))
 
     (writeShellScriptBin "maintty" ''fork -w 1 kitty "$@"'')
     (writeShellScriptBin "alttty" ''fork -w 3 kitty "$@"'')
     (writeShellScriptBin "vid" ''fork -w 2 neovide --no-tabs "$@"'')
+    (writeShellScriptBin "vidd" (builtins.readFile ./vidd))
     (writeShellScriptBin "gem" ''fork -w 4 gemini "$@"'')
   ];
 
