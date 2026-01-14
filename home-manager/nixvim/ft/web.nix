@@ -1,9 +1,13 @@
-{
+{ pkgs, ... }: {
   plugins = {
     lsp.servers = {
       html = {
         enable = true;
-        filetypes = [ "j2" "html" "htmldjango" "htmlangular" "htmlcheetah" ];
+        filetypes = [ "html" "htmldjango" "htmlangular" "htmlcheetah" ];
+      };
+      jinja-lsp = {
+        enable = true;
+        package = pkgs.jinja-lsp;
       };
       htmx.enable = true;
       jsonls.enable = true;
