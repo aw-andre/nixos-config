@@ -16,7 +16,7 @@ in { config, pkgs, ... }: {
     stateVersion = "25.05";
 
     sessionVariables = {
-      PAGER = "vimp";
+      PAGER = "vimpage";
       MANPAGER = "nvim -c 'Man!'";
       NIXOS_OZONE_WL = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";

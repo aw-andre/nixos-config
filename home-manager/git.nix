@@ -11,7 +11,7 @@
       };
       core = {
         editor = "nvim";
-        pager = "vimp";
+        pager = "vimpage";
       };
       pull.rebase = false;
     };

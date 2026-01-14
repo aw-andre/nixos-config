@@ -6,6 +6,7 @@
     (writeShellScriptBin "rotate" (builtins.readFile ./rotate))
     (writeShellScriptBin "unrotate" (builtins.readFile ./unrotate))
     (writeShellScriptBin "vimp" (builtins.readFile ./vimp))
+    (writeShellScriptBin "vimpage" (builtins.readFile ./vimpage))
     (writeShellScriptBin "vimt" (builtins.readFile ./vimt))
     (writeShellScriptBin "winreset" (builtins.readFile ./winreset))
     (writeShellScriptBin "close" (builtins.readFile ./close))
