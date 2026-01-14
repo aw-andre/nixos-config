@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+  filetype.extension.j2 = "html";
   plugins = {
     lsp.servers = {
       html = {
