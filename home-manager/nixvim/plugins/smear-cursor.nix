@@ -10,7 +10,8 @@
   };
 
   extraConfigLuaPost = ''
-    if vim.env.WAYLAND_DISPLAY == nil or vim.env.WAYLAND_DISPLAY == "wayland-0" then
+    if (vim.env.WAYLAND_DISPLAY == nil or vim.env.WAYLAND_DISPLAY == "wayland-0")
+      and not vim.g.neovide then
       require('lz.n').trigger_load('smear-cursor.nvim')
     end
   '';
