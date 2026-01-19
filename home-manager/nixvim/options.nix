@@ -70,6 +70,8 @@
 
     exrc = true;
     secure = true;
+
+    grepprg = "rg --vimgrep --hidden --smart-case";
   };
 
   globals = {
