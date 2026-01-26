@@ -38,6 +38,7 @@
       cdg = "cd $gm";
       cdd = "cd $ds";
       cdm = "cd $ms";
+      cdr = "cd $cr";
     };
     initContent = builtins.readFile ./zshrc.zsh;
     plugins = [

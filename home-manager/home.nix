@@ -5,7 +5,7 @@ let
     name != builtins.baseNameOf
     (builtins.unsafeGetAttrPos "dummy" { dummy = null; }).file
     && builtins.match ".*\\.nix" name != null) (builtins.attrNames files));
-in { config, pkgs, ... }: {
+in { config, pkgs, lib, hostName, ... }: {
   imports = nixFiles ++ [ ./nixvim ./shell ];
 
   nixpkgs.config.allowUnfree = true;
@@ -30,6 +30,8 @@ in { config, pkgs, ... }: {
       gm = "/home/andreaw/files/games";
       ds = "/home/andreaw/files/devshells/";
       ms = "/home/andreaw/files/music/";
+      cr = lib.optionals (hostName == "loblaws")
+        "/home/andreaw/files/projects/master-dashboard/";
     };
 
     packages = with pkgs; [
