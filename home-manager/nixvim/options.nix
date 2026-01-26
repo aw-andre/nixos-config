@@ -43,8 +43,6 @@
     expandtab = true;
     smarttab = true;
 
-    matchpairs = "(:),[:],{:},<:>";
-
     conceallevel = 0;
 
     undofile = true;
