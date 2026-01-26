@@ -13,7 +13,7 @@
         editor = "nvim";
         pager = "vimpage";
       };
-      pull.rebase = false;
+      pull.rebase = true;
     };
   };
 }
