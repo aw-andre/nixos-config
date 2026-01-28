@@ -30,8 +30,10 @@ in { config, pkgs, lib, hostName, ... }: {
       gm = "/home/andreaw/files/games";
       ds = "/home/andreaw/files/devshells/";
       ms = "/home/andreaw/files/music/";
-      cr = lib.optionals (hostName == "loblaws")
-        "/home/andreaw/files/projects/master-dashboard/";
+      cr = if hostName == "loblaws" then
+        "/home/andreaw/files/projects/master-dashboard/"
+      else
+        "";
     };
 
     packages = with pkgs; [
