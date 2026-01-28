@@ -2,7 +2,6 @@
   programs.tmux = {
     enable = true;
     keyMode = "vi";
-    prefix = "Delete";
     mouse = true;
     escapeTime = 0;
     terminal = "tmux-256color";
