@@ -4,9 +4,9 @@ let
 
 in { pkgs, ... }: {
   networking.hostName = "desktop";
-  boot = {
+  boot.loader = {
     efi.efiSysMountPoint = "/boot";
-    loader.systemd-boot.enable = true;
+    systemd-boot.enable = true;
   };
 
   users.users.andreaw.openssh.authorizedKeys.keys = [
