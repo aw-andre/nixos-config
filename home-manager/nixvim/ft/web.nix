@@ -1,6 +1,11 @@
 { pkgs, ... }: {
   filetype.extension.j2 = "htmldjango";
 
+  lsp.servers = {
+    sqls.enable = true;
+    sqruff.enable = true;
+  };
+
   plugins = {
     lsp.servers = {
       #   html = {
