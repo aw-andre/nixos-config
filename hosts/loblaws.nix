@@ -4,17 +4,21 @@ let
 
 in { pkgs, ... }: {
   networking.hostName = "loblaws";
-  boot.loader.efi.efiSysMountPoint = "/boot";
-
-  wsl = {
-    enable = true;
-    defaultUser = "andreaw";
-    docker-desktop.enable = true;
-    useWindowsDriver = true;
-    wslConf.automount.options = "uid=1000,gid=100";
+  boot.loader = {
+    efi = {
+      efiSysMountPoint = "/boot";
+      canTouchEfiVariables = false;
+    };
+    systemd-boot = {
+      enable = true;
+      graceful = true;
+    };
   };
 
-  security.pki.certificateFiles = [ /etc/ssl/certs/loblaws-cert.crt ];
+  networking.networkmanager.wifi.powersave = false;
+  hardware.enableRedistributableFirmware = true;
+
+  # security.pki.certificateFiles = [ /etc/ssl/certs/loblaws-cert.crt ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
