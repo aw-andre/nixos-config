@@ -18,7 +18,7 @@ in { pkgs, ... }: {
   networking.networkmanager.wifi.powersave = false;
   hardware.enableRedistributableFirmware = true;
 
-  # security.pki.certificateFiles = [ /etc/ssl/certs/loblaws-cert.crt ];
+  security.pki.certificateFiles = [ ./loblaws-cert.crt ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
