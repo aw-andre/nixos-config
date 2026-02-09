@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ "$(hyprctl monitors -j | jq length)" -gt 1 ]; then
+  hyprctl monitors -j | jq -r '.[] | select(.name | startswith("eDP") or startswith("LVDS")) | .description' | while read -r desc; do
+    hyprctl keyword monitor "desc:$desc, disable"
+  done
+fi

@@ -14,7 +14,6 @@
       "$menu" = "wofi --show drun";
 
       exec-once = [
-        "rotate"
         "hyprlock"
         "swaync"
         "waybar"
@@ -24,7 +23,8 @@
 
       exec = [
         # "pkill waybar; waybar"
-        # "if [ $(hyprctl monitors -j | jq length) -gt 1 ]; then hyprctl keyword monitor 'desc:Apple Computer Inc Color LCD, disable'; fi"
+        "rotate"
+        "screendisable"
       ];
 
       env = lib.optionals (hostName == "mbp") [

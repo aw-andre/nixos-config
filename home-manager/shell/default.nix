@@ -3,6 +3,8 @@
     (writeShellScriptBin "fork" (builtins.readFile ./fork))
     (writeShellScriptBin "bfork" (builtins.readFile ./bfork))
     (writeShellScriptBin "gui" (builtins.readFile ./gui))
+    (writeShellScriptBin "screenenable" (builtins.readFile ./screenenable))
+    (writeShellScriptBin "screendisable" (builtins.readFile ./screendisable))
     (writeShellScriptBin "rotate" (builtins.readFile ./rotate))
     (writeShellScriptBin "unrotate" (builtins.readFile ./unrotate))
     (writeShellScriptBin "vimp" (builtins.readFile ./vimp))

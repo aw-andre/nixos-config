@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+hyprctl monitors all -j | jq -r '.[] | select(.name | startswith("eDP") or startswith("LVDS")) | .description' | while read -r desc; do
+  hyprctl keyword monitor "desc:$desc, preferred, auto, 1"
+done
