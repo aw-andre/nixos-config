@@ -98,6 +98,30 @@
             ./hosts/loblaws.nix
             ./nixos/configuration.nix
 
+            home-manager.nixosModules.home-manager
+            ({ config, ... }: {
+              home-manager = {
+                useUserPackages = true;
+                extraSpecialArgs = {
+                  inherit inputs;
+                  inherit (config.networking) hostName;
+                };
+
+                users.andreaw = {
+                  imports =
+                    [ nixvim.homeModules.nixvim ./home-manager/home.nix ];
+                };
+              };
+            })
+          ];
+        };
+
+        loblaws-wsl = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/loblaws-wsl.nix
+            ./nixos/configuration.nix
+
             nixos-wsl.nixosModules.wsl
             home-manager.nixosModules.home-manager
             ({ config, ... }: {
