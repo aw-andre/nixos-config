@@ -155,7 +155,7 @@ in { inputs, pkgs, ... }: {
   ];
 
   environment = {
-    systemPackages = with pkgs; [ man-pages tldr ];
+    systemPackages = with pkgs; [ man-pages tldr openconnect gp-saml-gui cifs-utils networkmanagerapplet ];
 
     etc = {
       "inputrc".text = ''
