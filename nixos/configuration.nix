@@ -77,6 +77,8 @@ in { inputs, pkgs, ... }: {
 
     tailscale.enable = true;
 
+    resolved.enable = true;
+
     greetd = {
       enable = true;
       settings = rec {
