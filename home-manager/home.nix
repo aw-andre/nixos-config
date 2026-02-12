@@ -30,7 +30,7 @@ in { config, pkgs, lib, hostName, ... }: {
       gm = "/home/andreaw/files/games";
       ds = "/home/andreaw/files/devshells/";
       ms = "/home/andreaw/files/music/";
-      cr = if hostName == "loblaws" then
+      cr = if hostName == "loblaws" || hostName == "loblaws-wsl" then
         "/home/andreaw/files/projects/master-dashboard/"
       else
         "";
