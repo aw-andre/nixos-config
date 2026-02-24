@@ -65,6 +65,7 @@ in { config, pkgs, lib, hostName, ... }: {
       hyprshot
       poppler-utils
       ripgrep-all
+      sd
       unoconv
       unzip
       wineWow64Packages.waylandFull
