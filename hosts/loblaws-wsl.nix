@@ -1,4 +1,4 @@
-{
+{ pkgs, lib, ... }: {
   networking.hostName = "loblaws-wsl";
   boot.loader.efi.efiSysMountPoint = "/boot";
 
@@ -6,6 +6,8 @@
     enable = true;
     defaultUser = "andreaw";
   };
+
+  services.greetd.enable = lib.mkForce false;
 
   systemd = {
     services.fix-wsl-runtime = {
@@ -17,7 +19,7 @@
         chown 1000:1000 /run/user/1000
         chmod 700 /run/user/1000
         mkdir -p /run/user/1000/wslg
-        mount --bind /mnt/wslg/runtime-dir /run/user/1000/wslg
+        ${pkgs.util-linux}/bin/mount --bind /mnt/wslg/runtime-dir /run/user/1000/wslg
         ln -sf /mnt/wslg/runtime-dir/wayland-0 /run/user/1000/wayland-0
       '';
       wantedBy = [ "multi-user.target" ];
