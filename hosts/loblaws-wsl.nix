@@ -5,6 +5,7 @@
   wsl = {
     enable = true;
     defaultUser = "andreaw";
+    docker-desktop.enable = true;
   };
 
   services.greetd.enable = lib.mkForce false;
