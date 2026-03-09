@@ -73,6 +73,9 @@ in { config, pkgs, hostName, ... }: {
     ];
 
     file = {
+      ".config/utop/init.ml".text = ''
+        #edit_mode_vi;;
+      '';
       ".psqlrc".text = ''
         \pset pager on
         \setenv PAGER vimt
