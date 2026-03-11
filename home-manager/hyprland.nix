@@ -10,8 +10,6 @@
         ];
 
       "$terminal" = "kitty";
-      "$fileManager" = "dolphin";
-      "$menu" = "wofi --show drun";
 
       exec-once = [
         "hyprlock && swaync && waybar && keyctl link @u @s && fork -w 1 kitty"
@@ -145,7 +143,6 @@
         "$mainMod SHIFT, escape, exit,"
         "$mainMod, S, exec, hyprshot -m region -o ~/files/temp"
         "$mainMod SHIFT, S, exec, hyprshot -m window -o ~/files/temp"
-        "$mainMod, space, exec, $menu"
         "$mainMod, semicolon, togglefloating,"
         "$mainMod, comma, togglesplit,"
 
