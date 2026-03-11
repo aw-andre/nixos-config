@@ -23,8 +23,13 @@ in {
       };
       combinePlugins = {
         enable = true;
-        standalonePlugins =
-          [ "nvim-jdtls" "rustaceanvim" "copilot.lua" "blink.cmp" ];
+        standalonePlugins = [
+          "nvim-jdtls"
+          "rustaceanvim"
+          "copilot.lua"
+          "blink.cmp"
+          "haskell-scope-highlighting.nvim"
+        ];
       };
     };
     luaLoader.enable = true;
