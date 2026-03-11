@@ -5,12 +5,12 @@ let
 in { pkgs, ... }: {
   networking.hostName = "mbp";
 
-  nix.buildMachines = [{
-    hostName = "desktop";
-    system = "x86_64-linux";
-    maxJobs = 16;
-    supportedFeatures = [ "big-parallel" ];
-  }];
+  # nix.buildMachines = [{
+  #   hostName = "desktop";
+  #   system = "x86_64-linux";
+  #   maxJobs = 16;
+  #   supportedFeatures = [ "big-parallel" ];
+  # }];
 
   environment.etc."NetworkManager/dispatcher.d/90-dynv6".source =
     pkgs.writeShellScript "dynv6-dispatcher" ''
