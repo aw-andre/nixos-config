@@ -5,7 +5,7 @@ let
     name != builtins.baseNameOf
     (builtins.unsafeGetAttrPos "dummy" { dummy = null; }).file
     && builtins.match ".*\\.nix" name != null) (builtins.attrNames files));
-in { config, pkgs, lib, hostName, ... }: {
+in { config, pkgs, hostName, ... }: {
   imports = nixFiles ++ [ ./nixvim ./shell ];
 
   nixpkgs.config.allowUnfree = true;
