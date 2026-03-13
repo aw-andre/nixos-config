@@ -1,6 +1,8 @@
 {
+  lsp.inlayHints.enable = true;
   plugins.lsp = {
     enable = true;
+    inlayHints = true;
     keymaps = {
       extra = [
         {
