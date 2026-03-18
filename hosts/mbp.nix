@@ -47,7 +47,10 @@ in { pkgs, ... }: {
       to = 11999;
     }];
   };
-  services.openssh.ports = [ 11000 ];
+  services = {
+    openssh.ports = [ 11000 ];
+    tailscale.enable = true;
+  };
 
   boot = {
     kernelParams = [

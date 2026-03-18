@@ -22,7 +22,10 @@ in { pkgs, ... }: {
       to = 10999;
     }];
   };
-  services.openssh.ports = [ 10000 ];
+  services = {
+    openssh.ports = [ 10000 ];
+    tailscale.enable = true;
+  };
 
   environment.etc."NetworkManager/dispatcher.d/90-dynv6".source =
     pkgs.writeShellScript "dynv6-dispatcher" ''
