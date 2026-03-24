@@ -80,6 +80,9 @@ in { config, pkgs, hostName, ... }: {
         \pset pager on
         \setenv PAGER vimt
       '';
+      ".haskeline".text = ''
+        editMode: Vi
+      '';
       ".icons/default" = {
         recursive = true;
         source = ./macos-cursors;
