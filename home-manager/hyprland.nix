@@ -9,7 +9,7 @@
           "desc:Apple Computer Inc Color LCD, preferred, auto, 1"
         ]
         ++ lib.optionals (hostName == "loblaws") [
-          "desc:HP Inc. HP E233 3CQ8301NFN, preferred, auto, 0.66666"
+          "desc:HP Inc. HP E233 3CQ8301NFN, preferred, auto, 0.67"
         ];
 
       "$terminal" = "kitty";
