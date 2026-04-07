@@ -126,12 +126,6 @@ in { config, pkgs, hostName, ... }: {
     };
     google-chrome.enable = true;
     home-manager.enable = true;
-    nh = {
-      enable = true;
-      clean.enable = true;
-      clean.extraArgs = "--keep-since 7d";
-      flake = "/home/andreaw/files/config";
-    };
     nix-index.enable = true;
     ssh = {
       enable = true;
