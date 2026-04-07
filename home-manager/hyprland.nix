@@ -7,6 +7,9 @@
         ++ lib.optionals (hostName == "mbp") [
           "desc: , disable"
           "desc:Apple Computer Inc Color LCD, preferred, auto, 1"
+        ]
+        ++ lib.optionals (hostName == "loblaws") [
+          "desc:HP Inc. HP E233 3CQ8301NFN, preferred, auto, 0.66666"
         ];
 
       "$terminal" = "kitty";
