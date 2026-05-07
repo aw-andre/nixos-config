@@ -45,4 +45,19 @@ in { pkgs, ... }: {
         "https://dynv6.com/api/update?hostname=${domain}&token=${token}&ipv4=auto" \
         || true
     '';
+
+  systemd.tmpfiles.rules = [
+    ''
+      L+ /lib/systemd/system-sleep 777 andreaw users - ${pkgs.writeText "btup.sh" ''
+        case $1/$2 in
+          pre/*)
+            modprobe -rv ...
+            ;;
+          post/*)
+            modprobe -v ...
+            ;;
+        esac
+      ''}
+    ''
+  ];
 }
