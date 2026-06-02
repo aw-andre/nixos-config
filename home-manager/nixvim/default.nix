@@ -5,7 +5,7 @@ let
     name != builtins.baseNameOf
     (builtins.unsafeGetAttrPos "dummy" { dummy = null; }).file
     && builtins.match ".*\\.nix" name != null) (builtins.attrNames files));
-in {
+in { pkgs, ... }: {
   programs.nixvim = {
     imports = nixFiles ++ [ ./plugins ./ft ];
 
@@ -24,6 +24,7 @@ in {
       combinePlugins = {
         enable = true;
         standalonePlugins = [
+          "firenvim"
           "nvim-jdtls"
           "rustaceanvim"
           "copilot.lua"
@@ -42,6 +43,7 @@ in {
       maplocalleader = " ";
       have_nerd_font = true;
     };
+    extraPlugins = with pkgs.vimPlugins; [ firenvim ];
   };
 
   xdg = {

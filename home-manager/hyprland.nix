@@ -134,8 +134,7 @@
       bind = [
         "$mainMod, T, exec, $terminal"
         "$mainMod, P, exec, sioyek"
-        "$mainMod, B, exec, qutebrowser"
-        "$mainMod SHIFT, B, exec, google-chrome-stable --new-window 'google.com'"
+        "$mainMod, B, exec, google-chrome-stable --new-window 'google.com'"
         "$mainMod, X, killactive,"
 
         "$mainMod SHIFT, R, exec, unrotate"

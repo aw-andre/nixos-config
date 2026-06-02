@@ -57,12 +57,28 @@
           local bufname = vim.api.nvim_buf_get_name(bufnr)
 
           -- Only run for real files
-          if vim.fn.filereadable(bufname) == 1 then
+          if vim.fn.filereadable(bufname) == 1 and not (vim.g.started_by_firenvim == true) then
             vim.cmd("file")
           end
         end
       '';
       desc = "View file name on BufEnter for visible normal buffers";
+    }
+    {
+      event = "UIEnter";
+      callback.__raw = ''
+        function()
+          vim.defer_fn(function()
+            if vim.g.started_by_firenvim == true then
+              vim.o.lines = math.max(vim.o.lines, 3)
+              vim.api.nvim_set_hl(0, "Normal", { bg = "#1e1e1e" })
+              vim.keymap.set("n", "<CR>", function() vim.cmd("wq") end)
+              vim.cmd("startinsert")
+            end
+          end, 50)
+        end
+      '';
+      desc = "Firenvim";
     }
   ];
 }
