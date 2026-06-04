@@ -10,8 +10,7 @@
   };
 
   extraConfigLuaPost = ''
-    if (vim.env.WAYLAND_DISPLAY == nil or vim.env.WAYLAND_DISPLAY == "wayland-0")
-      and not vim.g.neovide then
+    if (vim.env.TERM ~= "xterm-256color") and not vim.g.neovide then
       require('lz.n').trigger_load('smear-cursor.nvim')
     end
   '';
