@@ -48,10 +48,10 @@
         name = "nix-shell";
         src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
       }
-      {
-        name = "you-should-use";
-        src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use";
-      }
+      # {
+      #   name = "you-should-use";
+      #   src = "${pkgs.zsh-you-should-use}/share/zsh/plugins/you-should-use";
+      # }
       {
         name = "zsh-vi-mode";
         src = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
