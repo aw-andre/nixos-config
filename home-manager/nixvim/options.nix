@@ -15,8 +15,6 @@
     statusline.link = "Normal";
     statuslinenc.link = "Normal";
     telescopeselection.link = "Normal";
-    copilotchatannotation.link = "Normal";
-    copilotchatannotationheader.link = "GruvboxAqua";
   };
 
   opts = {

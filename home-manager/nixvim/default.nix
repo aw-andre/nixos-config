@@ -27,7 +27,6 @@ in { pkgs, ... }: {
           "firenvim"
           "nvim-jdtls"
           "rustaceanvim"
-          "copilot.lua"
           "blink.cmp"
           "haskell-scope-highlighting.nvim"
         ];

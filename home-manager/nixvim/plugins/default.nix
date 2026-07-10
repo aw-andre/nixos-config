@@ -10,7 +10,6 @@ in {
 
   plugins = {
     direnv.enable = true;
-    copilot-lua.enable = true;
     web-devicons.enable = true;
     which-key.enable = true;
     markdown-preview.enable = true;

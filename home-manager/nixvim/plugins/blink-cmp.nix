@@ -3,19 +3,12 @@
     blink-cmp-dictionary.enable = true;
     blink-cmp-git.enable = true;
     blink-compat.enable = true;
-    blink-copilot.enable = true;
     blink-emoji.enable = true;
     blink-cmp = {
       enable = true;
       setupLspCapabilities = true;
 
       settings = {
-        enabled.__raw = ''
-          function()
-            return vim.bo.filetype ~= "copilot-chat"
-          end
-        '';
-
         completion = {
           accept.auto_brackets.enabled = false;
           menu = {
@@ -42,7 +35,6 @@
             "buffer"
             "dictionary"
             "git"
-            "copilot"
             "emoji"
             "dadbod"
           ];
@@ -81,23 +73,6 @@
               '';
               score_offset = 100;
               opts.git_centers.git_hub = { };
-            };
-
-            copilot = {
-              async = true;
-              module = "blink-copilot";
-              name = "Copilot";
-              score_offset = -10;
-              opts = {
-                max_completions = 3;
-                max_attempts = 4;
-                kind = "Copilot";
-                debounce = 750;
-                auto_refresh = {
-                  backward = true;
-                  forward = true;
-                };
-              };
             };
 
             emoji = {
