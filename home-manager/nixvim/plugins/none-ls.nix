@@ -22,7 +22,7 @@
 
   autoCmd = [{
     event = "BufWritePre";
-    callback.__raw = "vim.lsp.buf.format";
+    callback.__raw = ''function() vim.cmd("norm =") end'';
     desc = "Format when writing text";
   }];
 }
