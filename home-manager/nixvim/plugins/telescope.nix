@@ -115,14 +115,43 @@
     }
   ];
 
+  globals = {
+    load_symbols = false;
+    stdin = 0;
+  };
   autoCmd = [
     {
       event = [ "StdinReadPost" ];
-      callback.__raw = "function() stdin = 1 end";
+      callback.__raw = "function() vim.g.stdin = 1 end";
     }
     {
       event = [ "VimEnter" ];
-      callback.__raw = builtins.readFile ./grep-files.lua;
+      callback.__raw = ''
+        function()
+          if vim.fn.argc() == 0 and vim.fn.len(vim.fn.expand('%')) == 0 and vim.g.stdin == 0 and not (vim.g.started_by_firenvim == true)
+          then
+            if vim.env.MAIN == nil
+            then
+              require('telescope.builtin').live_grep()
+            else
+              vim.g.load_symbols = true
+              vim.defer_fn(function() vim.cmd("edit" .. vim.env.MAIN) end, 50)
+            end
+          end
+        end
+      '';
+    }
+    {
+      event = [ "LspAttach" ];
+      callback.__raw = ''
+        function()
+          if vim.g.load_symbols == true
+          then
+            vim.g.load_symbols = false
+            vim.defer_fn(require('telescope.builtin').lsp_dynamic_workspace_symbols, 50)
+          end
+        end
+      '';
     }
   ];
 }

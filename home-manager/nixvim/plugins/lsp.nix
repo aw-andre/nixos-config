@@ -38,10 +38,10 @@
         }
         {
           mode = "n";
-          key = "<leader>fS";
+          key = "<leader>fw";
           action.__raw =
             "require('telescope.builtin').lsp_dynamic_workspace_symbols";
-          options.desc = "[F]ind Dynamic Workspace [S]ymbols";
+          options.desc = "[F]ind Dynamic [W]orkspace Symbols";
         }
         {
           mode = "n";
